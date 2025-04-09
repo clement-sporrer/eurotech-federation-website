@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
@@ -21,12 +22,16 @@ const HeroSection = () => {
               EuroTech Federation connects students, institutions, and corporate partners to position Europe as a global leader in tech innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" style={{ animationDelay: '0.4s' }}>
-              <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white text-lg px-6 py-6">
-                Join Our Network
-              </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-eurotech-blue text-lg px-6 py-6">
-                Discover Events <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link to="/join-us">
+                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white text-lg px-6 py-6">
+                  Join Our Network
+                </Button>
+              </Link>
+              <Link to="/events">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-eurotech-blue text-lg px-6 py-6">
+                  Discover Events <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
           

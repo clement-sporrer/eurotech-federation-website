@@ -1,21 +1,34 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const PartnersSection = () => {
-  // Sample partner logos (these would be replaced with actual partner logos)
+  // Updated university partners
   const universities = [
     { name: "Imperial College London", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Imperial_College_London_Logo.svg/1200px-Imperial_College_London_Logo.svg.png" },
     { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
     { name: "EPFL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/EPFL_logo.svg/2560px-EPFL_logo.svg.png" },
     { name: "Dauphine-PSL", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Logo_Universit%C3%A9_Paris-Dauphine.svg/1200px-Logo_Universit%C3%A9_Paris-Dauphine.svg.png" },
+    { name: "UCL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UCL_logo.svg/2560px-UCL_logo.svg.png" },
+    { name: "CS", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Logo_CentraleSup%C3%A9lec.svg/1200px-Logo_CentraleSup%C3%A9lec.svg.png" },
+    { name: "ESSEC Business School", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/ESSEC_Business_School_logo.svg/2560px-ESSEC_Business_School_logo.svg.png" },
   ];
   
+  // Updated corporate partners
   const companies = [
-    { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" },
-    { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" },
-    { name: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/2560px-SAP_2011_logo.svg.png" },
-    { name: "Siemens", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/2560px-Siemens-logo.svg.png" },
+    { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" },
+    { name: "Kima Ventures", logo: "https://website-v3-assets.s3.amazonaws.com/assets/5ef40e465f0a2845c149aa91/5ef582a25f0a281b40507c0d/kima.png" },
+    { name: "Entrepreneurs First", logo: "https://upload.wikimedia.org/wikipedia/commons/3/34/Entrepreneur_First_Logo.png" },
+    { name: "BCE", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/BCE_Logo.svg/1200px-BCE_Logo.svg.png" },
+    { name: "Project Europe", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1280px-Flag_of_Europe.svg.png" },
   ];
 
   return (
@@ -28,42 +41,60 @@ const PartnersSection = () => {
           </p>
         </div>
 
-        {/* University Partners */}
+        {/* University Partners Carousel */}
         <div className="mb-16">
           <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Academic Institutions</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {universities.map((university, index) => (
-              <div key={index} className="flex justify-center items-center bg-white p-6 rounded-lg shadow-sm">
-                <img 
-                  src={university.logo} 
-                  alt={university.name} 
-                  className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all"
-                />
-              </div>
-            ))}
+          <div className="mx-auto max-w-6xl px-6">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {universities.map((university, index) => (
+                  <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                    <div className="flex justify-center items-center bg-white p-6 h-full rounded-lg shadow-sm">
+                      <img 
+                        src={university.logo} 
+                        alt={university.name} 
+                        className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all" 
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0" />
+              <CarouselNext className="right-0" />
+            </Carousel>
           </div>
         </div>
 
-        {/* Corporate Partners */}
+        {/* Corporate Partners Carousel */}
         <div className="mb-16">
           <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Corporate Partners</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {companies.map((company, index) => (
-              <div key={index} className="flex justify-center items-center bg-white p-6 rounded-lg shadow-sm">
-                <img 
-                  src={company.logo} 
-                  alt={company.name} 
-                  className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all"
-                />
-              </div>
-            ))}
+          <div className="mx-auto max-w-6xl px-6">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {companies.map((company, index) => (
+                  <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                    <div className="flex justify-center items-center bg-white p-6 h-full rounded-lg shadow-sm">
+                      <img 
+                        src={company.logo} 
+                        alt={company.name} 
+                        className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all" 
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0" />
+              <CarouselNext className="right-0" />
+            </Carousel>
           </div>
         </div>
 
         <div className="text-center mt-12">
-          <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">
-            Become a Partner
-          </Button>
+          <Link to="/partners">
+            <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">
+              Become a Partner
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

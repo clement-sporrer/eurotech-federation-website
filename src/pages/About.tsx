@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, Flag, Network, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const goals = [
@@ -52,34 +53,35 @@ const About = () => {
     },
   ];
 
+  // Updated leadership team
   const team = [
     {
-      name: "Sarah Johnson",
-      role: "President",
-      university: "Imperial College London",
-      linkedin: "https://linkedin.com",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-    },
-    {
-      name: "Markus Weber",
-      role: "Vice President",
-      university: "Technical University of Munich",
-      linkedin: "https://linkedin.com",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-    },
-    {
-      name: "Elena Rossi",
-      role: "Events Director",
+      name: "Clément Sporrer",
+      role: "Co-Founder @Utopia",
       university: "EPFL",
       linkedin: "https://linkedin.com",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80"
+      image: "/lovable-uploads/4e38543c-151a-4dc4-ba69-6a614e06d7f6.png"
     },
     {
-      name: "Thomas Laurent",
-      role: "Partnerships Lead",
-      university: "Telecom Paris",
+      name: "Stanislas Michel",
+      role: "Head of Partnerships @Utopia",
+      university: "EPFL",
       linkedin: "https://linkedin.com",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+      image: "/lovable-uploads/4e38543c-151a-4dc4-ba69-6a614e06d7f6.png"
+    },
+    {
+      name: "Louis Piallat",
+      role: "General Secretary @Utopia",
+      university: "EPFL",
+      linkedin: "https://linkedin.com",
+      image: "/lovable-uploads/4e38543c-151a-4dc4-ba69-6a614e06d7f6.png"
+    },
+    {
+      name: "Nicolas Bigeard",
+      role: "Partnership advisor @Utopia",
+      university: "EPFL",
+      linkedin: "https://linkedin.com",
+      image: "/lovable-uploads/4e38543c-151a-4dc4-ba69-6a614e06d7f6.png"
     },
   ];
 
@@ -96,9 +98,11 @@ const About = () => {
                 EuroTech Federation is the largest student-led tech network in Europe, 
                 bringing together top universities, student associations, and corporate partners.
               </p>
-              <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
-                Join Our Mission
-              </Button>
+              <Link to="/join-us">
+                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
+                  Join Our Mission
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

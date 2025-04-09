@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
-import { Mail, MapPin, Phone, Linkedin, Instagram, Twitter } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Instagram, Twitter } from 'lucide-react';
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -84,22 +84,13 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-eurotech-blue mr-4 mt-1" />
-                  <div>
-                    <h3 className="font-bold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+49 123 4567 890</p>
-                    <p className="text-gray-500 text-sm mt-1">Monday-Friday, 9AM-5PM CET</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
                   <MapPin className="h-6 w-6 text-eurotech-blue mr-4 mt-1" />
                   <div>
                     <h3 className="font-bold text-gray-900">Headquarters</h3>
                     <p className="text-gray-600">
-                      Technical University of Munich<br />
-                      Arcisstraße 21<br />
-                      80333 Munich, Germany
+                      PSL Dauphine University<br />
+                      Place du Maréchal de Lattre de Tassigny<br />
+                      75016 Paris, France
                     </p>
                   </div>
                 </div>
@@ -138,7 +129,7 @@ const Contact = () => {
               {/* Map Placeholder */}
               <div className="mt-10 bg-gray-200 h-64 rounded-lg overflow-hidden">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.9604489971912!2d11.566499376491385!3d48.15254067124259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e7604ff374767%3A0x8c33402a157f19b0!2sTechnical%20University%20of%20Munich!5e0!3m2!1sen!2sus!4v1682437085985!5m2!1sen!2sus" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.467145428186!2d2.2699736765450365!3d48.8682708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e665462d3fa229%3A0x8c56dccde4f693d0!2sUniversit%C3%A9%20Paris%20Dauphine%20-%20PSL!5e0!3m2!1sen!2sus!4v1682437085985!5m2!1sen!2sus" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

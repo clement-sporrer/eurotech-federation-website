@@ -68,7 +68,9 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:block">
-            <Button className="bg-eurotech-blue hover:bg-eurotech-dark">Join Network</Button>
+            <Link to="/join-us">
+              <Button className="bg-eurotech-blue hover:bg-eurotech-dark">Join Network</Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -131,7 +133,9 @@ const Header = () => {
               Contact
             </Link>
             <div className="mt-4 px-3">
-              <Button className="w-full bg-eurotech-blue hover:bg-eurotech-dark">Join Network</Button>
+              <Link to="/join-us">
+                <Button className="w-full bg-eurotech-blue hover:bg-eurotech-dark">Join Network</Button>
+              </Link>
             </div>
           </div>
         </div>
