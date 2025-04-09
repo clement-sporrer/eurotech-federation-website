@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Link } from 'react-router-dom';
 
 // Event type definition
 type EventType = {
@@ -18,6 +19,7 @@ type EventType = {
   image: string;
   type: 'Conference' | 'Hackathon' | 'Keynote' | 'Side Event';
   description: string;
+  link?: string;
 };
 
 const Events = () => {
@@ -85,10 +87,21 @@ const Events = () => {
     }
   ];
 
-  // Past events
+  // Past events - updated with links to detailed pages
   const pastEvents: EventType[] = [
     {
       id: 101,
+      title: "From LLM to Agentic AI Hackathon",
+      date: "April 4-6, 2024",
+      location: "ESSEC Business School, Paris",
+      attendees: "250+",
+      image: "/lovable-uploads/d0fd3b60-b34d-46b7-a481-e715896ff019.png",
+      type: "Hackathon",
+      description: "A 36-hour hackathon co-organized by Utopia and KRYPTOSPHERE® focused on developing agentic AI solutions across multiple domains.",
+      link: "/past-events/llm-to-agentic-ai"
+    },
+    {
+      id: 102,
       title: "European Tech Conference 2024",
       date: "November 10-11, 2024",
       location: "Amsterdam, Netherlands",
@@ -98,7 +111,7 @@ const Events = () => {
       description: "Our flagship event featuring industry leaders, innovative startups, and cutting-edge research presentations from across Europe."
     },
     {
-      id: 102,
+      id: 103,
       title: "Blockchain Hackathon",
       date: "October 5-7, 2024",
       location: "Lisbon, Portugal",
@@ -108,7 +121,7 @@ const Events = () => {
       description: "A successful 3-day hackathon focused on blockchain solutions for supply chain, identity management, and financial services."
     },
     {
-      id: 103,
+      id: 104,
       title: "AI Ethics Symposium",
       date: "September 15, 2024",
       location: "Vienna, Austria",
@@ -227,7 +240,7 @@ const Events = () => {
                       <img 
                         src={event.image} 
                         alt={event.title} 
-                        className="w-full h-full object-cover grayscale"
+                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all"
                       />
                       <Badge className="absolute top-4 right-4 bg-gray-600">
                         {event.type}
@@ -254,18 +267,30 @@ const Events = () => {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Button variant="outline" className="w-full border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white">
-                        View Event Recap
-                      </Button>
+                      {event.link ? (
+                        <Link to={event.link} className="w-full">
+                          <Button variant="outline" className="w-full border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white">
+                            View Event Recap
+                          </Button>
+                        </Link>
+                      ) : (
+                        <Link to="/past-events" className="w-full">
+                          <Button variant="outline" className="w-full border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white">
+                            View Event Recap
+                          </Button>
+                        </Link>
+                      )}
                     </CardFooter>
                   </Card>
                 ))}
               </div>
 
               <div className="mt-12 text-center">
-                <Button variant="outline" className="border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white">
-                  Load More Past Events
-                </Button>
+                <Link to="/past-events">
+                  <Button variant="outline" className="border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white">
+                    Load More Past Events
+                  </Button>
+                </Link>
               </div>
             </TabsContent>
           </Tabs>

@@ -11,6 +11,8 @@ import Partners from "./pages/Partners";
 import JoinUs from "./pages/JoinUs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import PastEvents from "./pages/PastEvents";
+import PastEventDetail from "./pages/PastEventDetail";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/partners" element={<Partners />} />
           <Route path="/join-us" element={<JoinUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/past-events" element={<PastEvents />} />
+          <Route path="/past-events/llm-to-agentic-ai" element={<PastEventDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

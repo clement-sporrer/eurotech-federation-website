@@ -11,14 +11,14 @@ import {
 } from "@/components/ui/carousel";
 
 const PartnersSection = () => {
-  // Updated university partners
+  // Updated university partners with CS = CentraleSupélec
   const universities = [
     { name: "Imperial College London", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Imperial_College_London_Logo.svg/1200px-Imperial_College_London_Logo.svg.png" },
     { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
     { name: "EPFL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/EPFL_logo.svg/2560px-EPFL_logo.svg.png" },
     { name: "Dauphine-PSL", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Logo_Universit%C3%A9_Paris-Dauphine.svg/1200px-Logo_Universit%C3%A9_Paris-Dauphine.svg.png" },
     { name: "UCL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UCL_logo.svg/2560px-UCL_logo.svg.png" },
-    { name: "CS", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Logo_CentraleSup%C3%A9lec.svg/1200px-Logo_CentraleSup%C3%A9lec.svg.png" },
+    { name: "CentraleSupélec", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Logo_CentraleSup%C3%A9lec.svg/1200px-Logo_CentraleSup%C3%A9lec.svg.png" },
     { name: "ESSEC Business School", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/ESSEC_Business_School_logo.svg/2560px-ESSEC_Business_School_logo.svg.png" },
   ];
   
@@ -45,7 +45,7 @@ const PartnersSection = () => {
         <div className="mb-16">
           <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Academic Institutions</h3>
           <div className="mx-auto max-w-6xl px-6">
-            <Carousel className="w-full">
+            <Carousel className="w-full" opts={{ loop: true, align: "start" }}>
               <CarouselContent>
                 {universities.map((university, index) => (
                   <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
@@ -69,7 +69,7 @@ const PartnersSection = () => {
         <div className="mb-16">
           <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Corporate Partners</h3>
           <div className="mx-auto max-w-6xl px-6">
-            <Carousel className="w-full">
+            <Carousel className="w-full" opts={{ loop: true, align: "start" }}>
               <CarouselContent>
                 {companies.map((company, index) => (
                   <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">

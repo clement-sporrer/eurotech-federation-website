@@ -28,60 +28,90 @@ const About = () => {
 
   const founders = [
     {
-      name: "TUM AI",
-      university: "Technical University of Munich",
-      country: "Germany",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png"
+      name: "Utopia",
+      university: "ESSEC",
+      country: "France",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/ESSEC_Business_School_logo.svg/2560px-ESSEC_Business_School_logo.svg.png"
     },
     {
-      name: "UTOPIA",
+      name: "Kryptosphere",
+      university: "Network",
+      country: "France",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
+    },
+    {
+      name: "BSA EPFL",
       university: "EPFL",
       country: "Switzerland",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/EPFL_logo.svg/2560px-EPFL_logo.svg.png"
     },
     {
-      name: "Imperial AI Society",
+      name: "Imperial Blockchain",
       university: "Imperial College London",
       country: "United Kingdom",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Imperial_College_London_Logo.svg/1200px-Imperial_College_London_Logo.svg.png"
     },
     {
-      name: "Telecom Data Science",
-      university: "Telecom Paris",
+      name: "Imperial AI",
+      university: "Imperial College London",
+      country: "United Kingdom",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Imperial_College_London_Logo.svg/1200px-Imperial_College_London_Logo.svg.png"
+    },
+    {
+      name: "TUM Blockchain Club",
+      university: "TUM",
+      country: "Germany",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png"
+    },
+    {
+      name: "TUM AI",
+      university: "TUM",
+      country: "Germany",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png"
+    },
+    {
+      name: "RoboTUM",
+      university: "TUM",
+      country: "Germany",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png"
+    },
+    {
+      name: "DAU'IA",
+      university: "Dauphine",
       country: "France",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Telecom_paris_logo.png/1200px-Telecom_paris_logo.png"
+      logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Logo_Universit%C3%A9_Paris-Dauphine.svg/1200px-Logo_Universit%C3%A9_Paris-Dauphine.svg.png"
     },
   ];
 
-  // Updated leadership team
+  // Updated leadership team with correct information
   const team = [
     {
       name: "Clément Sporrer",
       role: "Co-Founder @Utopia",
-      university: "EPFL",
+      university: "ESSEC Business School",
       linkedin: "https://linkedin.com",
-      image: "/lovable-uploads/4e38543c-151a-4dc4-ba69-6a614e06d7f6.png"
+      image: "/lovable-uploads/b48a4ca7-0621-46f8-990b-809affd8341d.png"
     },
     {
       name: "Stanislas Michel",
       role: "Head of Partnerships @Utopia",
-      university: "EPFL",
+      university: "ESSEC Business School & Fundação Getulio Vargas",
       linkedin: "https://linkedin.com",
-      image: "/lovable-uploads/4e38543c-151a-4dc4-ba69-6a614e06d7f6.png"
+      image: "/lovable-uploads/05f48d13-7ec0-4300-8d2f-fb18a60ad628.png"
     },
     {
       name: "Louis Piallat",
       role: "General Secretary @Utopia",
-      university: "EPFL",
+      university: "ESSEC Business School & Sorbonne University",
       linkedin: "https://linkedin.com",
-      image: "/lovable-uploads/4e38543c-151a-4dc4-ba69-6a614e06d7f6.png"
+      image: "/lovable-uploads/b360efb5-beeb-4bd0-a7a6-f3ce41a9a04c.png"
     },
     {
       name: "Nicolas Bigeard",
       role: "Partnership advisor @Utopia",
-      university: "EPFL",
+      university: "ESILV",
       linkedin: "https://linkedin.com",
-      image: "/lovable-uploads/4e38543c-151a-4dc4-ba69-6a614e06d7f6.png"
+      image: "/lovable-uploads/cbe74abd-6016-4e3a-87f4-b60934900860.png"
     },
   ];
 
