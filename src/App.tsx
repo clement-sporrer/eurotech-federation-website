@@ -15,7 +15,14 @@ import PastEvents from "./pages/PastEvents";
 import PastEventDetail from "./pages/PastEventDetail";
 import UniversityAssociations from "./pages/UniversityAssociations";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -33,6 +40,7 @@ const App = () => (
           <Route path="/past-events" element={<PastEvents />} />
           <Route path="/past-events/llm-to-agentic-ai" element={<PastEventDetail />} />
           <Route path="/university-associations" element={<UniversityAssociations />} />
+          {/* Catch-all route for better error handling */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

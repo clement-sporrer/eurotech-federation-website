@@ -21,14 +21,14 @@ const HeroSection = () => {
             <p className="text-xl md:text-2xl mb-8 text-gray-100 max-w-2xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               EuroTech Federation connects students, institutions, and corporate partners to position Europe as a global leader in tech innovation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Link to="/join-us">
-                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white text-lg px-6 py-6">
+                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white text-lg px-6 py-6 w-full sm:w-auto">
                   Join Our Network
                 </Button>
               </Link>
               <Link to="/events">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-eurotech-blue text-lg px-6 py-6">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-eurotech-blue text-lg px-6 py-6 w-full sm:w-auto">
                   Discover Events <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -53,17 +53,17 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Updated Stats with new KPIs */}
+        {/* Stats KPIs */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
+          <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center hover:bg-white/15 transition-colors">
             <div className="text-4xl md:text-5xl font-bold mb-2">8+</div>
             <div className="text-lg">World Class European Universities</div>
           </div>
-          <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
+          <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center hover:bg-white/15 transition-colors">
             <div className="text-4xl md:text-5xl font-bold mb-2">35k+</div>
             <div className="text-lg">People Network</div>
           </div>
-          <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
+          <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center hover:bg-white/15 transition-colors">
             <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
             <div className="text-lg">Events Per Year</div>
           </div>

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import {
@@ -12,7 +12,7 @@ import {
 import Autoplay from 'embla-carousel-autoplay';
 
 const PartnersSection = () => {
-  // Updated university partners with CS = CentraleSupélec
+  // Updated university partners list (removed BCE)
   const universities = [
     { name: "Imperial College London", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Imperial_College_London_Logo.svg/1200px-Imperial_College_London_Logo.svg.png" },
     { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
@@ -23,7 +23,7 @@ const PartnersSection = () => {
     { name: "ESSEC Business School", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/ESSEC_Business_School_logo.svg/2560px-ESSEC_Business_School_logo.svg.png" },
   ];
   
-  // Updated corporate partners to only include the 4 requested
+  // Corporate partners
   const companies = [
     { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" },
     { name: "Kima Ventures", logo: "https://website-v3-assets.s3.amazonaws.com/assets/5ef40e465f0a2845c149aa91/5ef582a25f0a281b40507c0d/kima.png" },
@@ -31,11 +31,22 @@ const PartnersSection = () => {
     { name: "Project Europe", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1280px-Flag_of_Europe.svg.png" },
   ];
 
-  // Configure autoplay plugin for carousels
-  const autoplayOptions = {
-    delay: 3000,
-    stopOnInteraction: false,
-  };
+  // Configure autoplay plugin with improved settings
+  const autoplayOptionsUniversities = useRef(
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+    })
+  );
+
+  const autoplayOptionsCompanies = useRef(
+    Autoplay({
+      delay: 4000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+    })
+  );
 
   return (
     <section className="bg-eurotech-gray py-16 md:py-24">
@@ -47,11 +58,17 @@ const PartnersSection = () => {
           </p>
         </div>
 
-        {/* University Partners Carousel - Changed title to "Universities Represented" */}
+        {/* University Partners Carousel */}
         <div className="mb-16">
           <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Universities Represented</h3>
           <div className="mx-auto max-w-6xl px-6">
-            <Carousel className="w-full" opts={{ loop: true, align: "start" }} plugins={[Autoplay(autoplayOptions)]}>
+            <Carousel 
+              className="w-full" 
+              opts={{ loop: true, align: "start" }} 
+              plugins={[autoplayOptionsUniversities.current]}
+              onMouseEnter={() => autoplayOptionsUniversities.current.stop()}
+              onMouseLeave={() => autoplayOptionsUniversities.current.play()}
+            >
               <CarouselContent>
                 {universities.map((university, index) => (
                   <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
@@ -67,8 +84,8 @@ const PartnersSection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0" />
-              <CarouselNext className="right-0" />
+              <CarouselPrevious className="left-0 hidden sm:flex" />
+              <CarouselNext className="right-0 hidden sm:flex" />
             </Carousel>
           </div>
         </div>
@@ -77,7 +94,13 @@ const PartnersSection = () => {
         <div className="mb-16">
           <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Corporate Partners</h3>
           <div className="mx-auto max-w-6xl px-6">
-            <Carousel className="w-full" opts={{ loop: true, align: "start" }} plugins={[Autoplay(autoplayOptions)]}>
+            <Carousel 
+              className="w-full" 
+              opts={{ loop: true, align: "start" }} 
+              plugins={[autoplayOptionsCompanies.current]}
+              onMouseEnter={() => autoplayOptionsCompanies.current.stop()}
+              onMouseLeave={() => autoplayOptionsCompanies.current.play()}
+            >
               <CarouselContent>
                 {companies.map((company, index) => (
                   <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
@@ -91,8 +114,8 @@ const PartnersSection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0" />
-              <CarouselNext className="right-0" />
+              <CarouselPrevious className="left-0 hidden sm:flex" />
+              <CarouselNext className="right-0 hidden sm:flex" />
             </Carousel>
           </div>
         </div>
