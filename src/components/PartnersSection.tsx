@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from 'embla-carousel-autoplay';
 
 const PartnersSection = () => {
   // Updated university partners with CS = CentraleSupélec
@@ -27,9 +28,14 @@ const PartnersSection = () => {
     { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" },
     { name: "Kima Ventures", logo: "https://website-v3-assets.s3.amazonaws.com/assets/5ef40e465f0a2845c149aa91/5ef582a25f0a281b40507c0d/kima.png" },
     { name: "Entrepreneurs First", logo: "https://upload.wikimedia.org/wikipedia/commons/3/34/Entrepreneur_First_Logo.png" },
-    { name: "BCE", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/BCE_Logo.svg/1200px-BCE_Logo.svg.png" },
     { name: "Project Europe", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1280px-Flag_of_Europe.svg.png" },
   ];
+
+  // Configure autoplay plugin for carousels
+  const autoplayOptions = {
+    delay: 3000,
+    stopOnInteraction: false,
+  };
 
   return (
     <section className="bg-eurotech-gray py-16 md:py-24">
@@ -43,19 +49,21 @@ const PartnersSection = () => {
 
         {/* University Partners Carousel */}
         <div className="mb-16">
-          <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Academic Institutions</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Universities Represented</h3>
           <div className="mx-auto max-w-6xl px-6">
-            <Carousel className="w-full" opts={{ loop: true, align: "start" }}>
+            <Carousel className="w-full" opts={{ loop: true, align: "start" }} plugins={[Autoplay(autoplayOptions)]}>
               <CarouselContent>
                 {universities.map((university, index) => (
                   <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                    <div className="flex justify-center items-center bg-white p-6 h-full rounded-lg shadow-sm">
-                      <img 
-                        src={university.logo} 
-                        alt={university.name} 
-                        className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all" 
-                      />
-                    </div>
+                    <Link to="/partners" className="block h-full">
+                      <div className="flex justify-center items-center bg-white p-6 h-full rounded-lg shadow-sm hover:shadow-md transition-all">
+                        <img 
+                          src={university.logo} 
+                          alt={university.name} 
+                          className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all" 
+                        />
+                      </div>
+                    </Link>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -69,11 +77,11 @@ const PartnersSection = () => {
         <div className="mb-16">
           <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Corporate Partners</h3>
           <div className="mx-auto max-w-6xl px-6">
-            <Carousel className="w-full" opts={{ loop: true, align: "start" }}>
+            <Carousel className="w-full" opts={{ loop: true, align: "start" }} plugins={[Autoplay(autoplayOptions)]}>
               <CarouselContent>
                 {companies.map((company, index) => (
                   <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                    <div className="flex justify-center items-center bg-white p-6 h-full rounded-lg shadow-sm">
+                    <div className="flex justify-center items-center bg-white p-6 h-full rounded-lg shadow-sm hover:shadow-md transition-all">
                       <img 
                         src={company.logo} 
                         alt={company.name} 

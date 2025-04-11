@@ -45,26 +45,26 @@ const HeroSection = () => {
               />
               <div className="absolute -bottom-6 -right-6 bg-eurotech-accent p-4 rounded-lg shadow-lg animate-float">
                 <div className="flex items-center gap-3 text-white">
-                  <span className="text-5xl font-bold">25+</span>
-                  <span className="text-lg leading-tight">Top European Universities</span>
+                  <span className="text-5xl font-bold">8+</span>
+                  <span className="text-lg leading-tight">World Class European Universities</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Stats */}
+        {/* Updated Stats with new KPIs */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">200+</div>
-            <div className="text-lg">Active Participants</div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">8+</div>
+            <div className="text-lg">World Class European Universities</div>
           </div>
           <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">€10K+</div>
-            <div className="text-lg">Prize Pool</div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">35k+</div>
+            <div className="text-lg">People Network</div>
           </div>
           <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">15+</div>
+            <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
             <div className="text-lg">Events Per Year</div>
           </div>
         </div>

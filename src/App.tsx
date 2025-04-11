@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import PastEvents from "./pages/PastEvents";
 import PastEventDetail from "./pages/PastEventDetail";
+import UniversityAssociations from "./pages/UniversityAssociations";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/past-events" element={<PastEvents />} />
           <Route path="/past-events/llm-to-agentic-ai" element={<PastEventDetail />} />
+          <Route path="/university-associations" element={<UniversityAssociations />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
