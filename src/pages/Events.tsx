@@ -23,71 +23,21 @@ type EventType = {
 };
 
 const Events = () => {
-  // Sample events data
+  // Sample events data - updated to only have one upcoming event as requested
   const allEvents: EventType[] = [
     {
       id: 1,
-      title: "European Tech Summit 2025",
-      date: "May 15-16, 2025",
-      location: "Munich, Germany",
-      attendees: "500+",
+      title: "RAISE Summit — Biggest Side Event (Opening Event)",
+      date: "June 12, 2025",
+      location: "Paris, France",
+      attendees: "300+",
       image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       type: "Conference",
-      description: "Join Europe's largest tech summit, featuring keynotes from industry leaders, workshops, and networking opportunities with professionals from across the continent."
-    },
-    {
-      id: 2,
-      title: "AI Innovation Hackathon",
-      date: "June 10-12, 2025",
-      location: "Paris, France",
-      attendees: "200+",
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      type: "Hackathon",
-      description: "A 48-hour hackathon challenging teams to develop AI-powered solutions for real-world problems. €10,000 in prizes available for the winning teams."
-    },
-    {
-      id: 3,
-      title: "Future of Tech: Keynote Series",
-      date: "July 5, 2025",
-      location: "London, UK",
-      attendees: "300+",
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      type: "Keynote",
-      description: "An evening of inspiring talks from tech visionaries about the future of European innovation, digital transformation, and emerging technologies."
-    },
-    {
-      id: 4,
-      title: "Startup Networking Mixer",
-      date: "August 20, 2025",
-      location: "Berlin, Germany",
-      attendees: "150+",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      type: "Side Event",
-      description: "Connect with founders, investors, and tech enthusiasts in a casual setting. Perfect for expanding your network and discovering collaboration opportunities."
-    },
-    {
-      id: 5,
-      title: "Women in Tech Conference",
-      date: "September 8-9, 2025",
-      location: "Stockholm, Sweden",
-      attendees: "400+",
-      image: "https://images.unsplash.com/photo-1532649538693-f3a2ec1bf8bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      type: "Conference",
-      description: "A two-day conference celebrating and supporting women in technology fields across Europe, with workshops, panels, and mentorship opportunities."
-    },
-    {
-      id: 6,
-      title: "FinTech Innovation Workshop",
-      date: "October 15, 2025",
-      location: "Zurich, Switzerland",
-      attendees: "100+",
-      image: "https://images.unsplash.com/photo-1559223607-a43c990c692c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      type: "Side Event",
-      description: "An interactive workshop exploring the latest in financial technology innovations, blockchain applications, and digital banking solutions."
+      description: "Join us for the opening event of RAISE Summit, the biggest side event in Paris bringing together tech leaders, investors, and innovators from across Europe."
     }
   ];
-
-  // Past events - updated with links to detailed pages
+  
+  // Past events - only showing the one specific event as requested
   const pastEvents: EventType[] = [
     {
       id: 101,
@@ -99,36 +49,6 @@ const Events = () => {
       type: "Hackathon",
       description: "A 36-hour hackathon co-organized by Utopia and KRYPTOSPHERE® focused on developing agentic AI solutions across multiple domains.",
       link: "/past-events/llm-to-agentic-ai"
-    },
-    {
-      id: 102,
-      title: "European Tech Conference 2024",
-      date: "November 10-11, 2024",
-      location: "Amsterdam, Netherlands",
-      attendees: "450+",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      type: "Conference",
-      description: "Our flagship event featuring industry leaders, innovative startups, and cutting-edge research presentations from across Europe."
-    },
-    {
-      id: 103,
-      title: "Blockchain Hackathon",
-      date: "October 5-7, 2024",
-      location: "Lisbon, Portugal",
-      attendees: "180+",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-      type: "Hackathon",
-      description: "A successful 3-day hackathon focused on blockchain solutions for supply chain, identity management, and financial services."
-    },
-    {
-      id: 104,
-      title: "AI Ethics Symposium",
-      date: "September 15, 2024",
-      location: "Vienna, Austria",
-      attendees: "250+",
-      image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2012&q=80",
-      type: "Keynote",
-      description: "A thought-provoking symposium on the ethical implications of artificial intelligence and its impact on society and industry."
     }
   ];
 
@@ -139,6 +59,9 @@ const Events = () => {
   const filteredUpcomingEvents = activeFilter === 'All' 
     ? allEvents 
     : allEvents.filter(event => event.type === activeFilter);
+
+  // EuroTech Federation LinkedIn URL
+  const eurotechLinkedIn = "https://www.linkedin.com/company/eurotech-federation";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -154,6 +77,16 @@ const Events = () => {
                 From major conferences to intimate networking opportunities, 
                 we bring together the brightest minds in tech.
               </p>
+              <div className="flex items-center gap-4">
+                <a 
+                  href={eurotechLinkedIn}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-white hover:text-eurotech-accent font-medium"
+                >
+                  Follow us on LinkedIn for event updates <Calendar className="ml-2 h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -187,7 +120,7 @@ const Events = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
                 {filteredUpcomingEvents.map((event) => (
                   <Card key={event.id} className="overflow-hidden card-hover">
                     <div className="relative h-48">
@@ -233,7 +166,7 @@ const Events = () => {
             <TabsContent value="past">
               <h2 className="text-3xl font-bold text-eurotech-blue mb-8">Past Events</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
                 {pastEvents.map((event) => (
                   <Card key={event.id} className="overflow-hidden card-hover">
                     <div className="relative h-48">
@@ -274,23 +207,13 @@ const Events = () => {
                           </Button>
                         </Link>
                       ) : (
-                        <Link to="/past-events" className="w-full">
-                          <Button variant="outline" className="w-full border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white">
-                            View Event Recap
-                          </Button>
-                        </Link>
+                        <Button variant="outline" className="w-full border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white" disabled>
+                          Recap Coming Soon
+                        </Button>
                       )}
                     </CardFooter>
                   </Card>
                 ))}
-              </div>
-
-              <div className="mt-12 text-center">
-                <Link to="/past-events">
-                  <Button variant="outline" className="border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white">
-                    Load More Past Events
-                  </Button>
-                </Link>
               </div>
             </TabsContent>
           </Tabs>

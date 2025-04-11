@@ -101,6 +101,9 @@ const UniversityAssociations = () => {
     }
   ];
 
+  // EuroTech Federation LinkedIn URL
+  const eurotechLinkedIn = "https://www.linkedin.com/company/eurotech-federation";
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -200,11 +203,21 @@ const UniversityAssociations = () => {
             <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-700">
               Is your student association focused on technology and innovation? Join our growing network of Europe's brightest tech talents.
             </p>
-            <Link to="/join-us" className="inline-block">
-              <button className="bg-eurotech-blue hover:bg-eurotech-dark text-white px-6 py-3 rounded-md font-medium transition-colors">
-                Apply to Join
-              </button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/join-us" className="inline-block">
+                <button className="bg-eurotech-blue hover:bg-eurotech-dark text-white px-6 py-3 rounded-md font-medium transition-colors">
+                  Apply to Join
+                </button>
+              </Link>
+              <a 
+                href={eurotechLinkedIn}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white px-6 py-3 rounded-md font-medium transition-colors"
+              >
+                Follow Us on LinkedIn <Linkedin className="ml-2 h-5 w-5" />
+              </a>
+            </div>
           </div>
         </section>
       </main>

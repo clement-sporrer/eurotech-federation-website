@@ -23,7 +23,7 @@ const PartnersSection = () => {
     { name: "ESSEC Business School", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/ESSEC_Business_School_logo.svg/2560px-ESSEC_Business_School_logo.svg.png" },
   ];
   
-  // Updated corporate partners
+  // Updated corporate partners to only include the 4 requested
   const companies = [
     { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" },
     { name: "Kima Ventures", logo: "https://website-v3-assets.s3.amazonaws.com/assets/5ef40e465f0a2845c149aa91/5ef582a25f0a281b40507c0d/kima.png" },
@@ -47,7 +47,7 @@ const PartnersSection = () => {
           </p>
         </div>
 
-        {/* University Partners Carousel */}
+        {/* University Partners Carousel - Changed title to "Universities Represented" */}
         <div className="mb-16">
           <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Universities Represented</h3>
           <div className="mx-auto max-w-6xl px-6">
@@ -55,7 +55,7 @@ const PartnersSection = () => {
               <CarouselContent>
                 {universities.map((university, index) => (
                   <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                    <Link to="/partners" className="block h-full">
+                    <Link to="/university-associations" className="block h-full">
                       <div className="flex justify-center items-center bg-white p-6 h-full rounded-lg shadow-sm hover:shadow-md transition-all">
                         <img 
                           src={university.logo} 

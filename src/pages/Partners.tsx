@@ -6,8 +6,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Check } from 'lucide-react';
+import { Check, ExternalLink } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
+import { Link } from 'react-router-dom';
 
 const Partners = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,23 +28,22 @@ const Partners = () => {
     "Pan-European visibility in the tech education sector"
   ];
 
-  // Partners logos
+  // Partners logos - updated to only include the 4 requested corporate partners
   const universities = [
     { name: "Imperial College London", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Imperial_College_London_Logo.svg/1200px-Imperial_College_London_Logo.svg.png" },
     { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
     { name: "EPFL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/EPFL_logo.svg/2560px-EPFL_logo.svg.png" },
     { name: "Dauphine-PSL", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Logo_Universit%C3%A9_Paris-Dauphine.svg/1200px-Logo_Universit%C3%A9_Paris-Dauphine.svg.png" },
-    { name: "ETH Zurich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/ETH_Zurich_Logo.svg/2560px-ETH_Zurich_Logo.svg.png" },
-    { name: "KTH Royal Institute", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/KTH_Royal_Institute_of_Technology_logo.svg/1200px-KTH_Royal_Institute_of_Technology_logo.svg.png" },
+    { name: "UCL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UCL_logo.svg/2560px-UCL_logo.svg.png" },
+    { name: "CentraleSupélec", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Logo_CentraleSup%C3%A9lec.svg/1200px-Logo_CentraleSup%C3%A9lec.svg.png" },
+    { name: "ESSEC Business School", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/ESSEC_Business_School_logo.svg/2560px-ESSEC_Business_School_logo.svg.png" },
   ];
   
   const companies = [
-    { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" },
-    { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" },
-    { name: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/2560px-SAP_2011_logo.svg.png" },
-    { name: "Siemens", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/2560px-Siemens-logo.svg.png" },
-    { name: "Bosch", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bosch-Logo.svg/1280px-Bosch-Logo.svg.png" },
-    { name: "Nokia", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nokia_wordmark.svg/2560px-Nokia_wordmark.svg.png" },
+    { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" },
+    { name: "Kima Ventures", logo: "https://website-v3-assets.s3.amazonaws.com/assets/5ef40e465f0a2845c149aa91/5ef582a25f0a281b40507c0d/kima.png" },
+    { name: "Entrepreneurs First", logo: "https://upload.wikimedia.org/wikipedia/commons/3/34/Entrepreneur_First_Logo.png" },
+    { name: "Project Europe", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1280px-Flag_of_Europe.svg.png" },
   ];
 
   // Testimonials
@@ -64,6 +64,9 @@ const Partners = () => {
       title: "VP of Talent Acquisition, Siemens Digital"
     }
   ];
+
+  // EuroTech Federation LinkedIn URL
+  const eurotechLinkedIn = "https://www.linkedin.com/company/eurotech-federation";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -114,23 +117,25 @@ const Partners = () => {
             </p>
 
             <div className="mb-16">
-              <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Academic Partners</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+              <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Universities Represented</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {universities.map((university, index) => (
-                  <div key={index} className="flex justify-center items-center bg-white p-6 rounded-lg shadow-sm">
-                    <img 
-                      src={university.logo} 
-                      alt={university.name} 
-                      className="h-12 md:h-16 object-contain"
-                    />
-                  </div>
+                  <Link key={index} to="/university-associations" className="block">
+                    <div className="flex justify-center items-center bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all">
+                      <img 
+                        src={university.logo} 
+                        alt={university.name} 
+                        className="h-12 md:h-16 object-contain"
+                      />
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
 
             <div>
               <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Corporate Partners</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {companies.map((company, index) => (
                   <div key={index} className="flex justify-center items-center bg-white p-6 rounded-lg shadow-sm">
                     <img 
@@ -173,6 +178,17 @@ const Partners = () => {
             <p className="text-xl text-gray-600 mb-12 text-center">
               Interested in partnering with EuroTech Federation? Fill out the form below to start the conversation.
             </p>
+
+            <div className="flex justify-center mb-8">
+              <a 
+                href={eurotechLinkedIn}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-eurotech-blue hover:text-eurotech-accent font-medium"
+              >
+                Visit our LinkedIn <ExternalLink className="ml-1 h-4 w-4" />
+              </a>
+            </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
