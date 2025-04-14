@@ -89,29 +89,78 @@ const About = () => {
       name: "Clément Sporrer",
       role: "Co-Founder @Utopia",
       university: "ESSEC Business School",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/clementsporrer/",
       image: "/lovable-uploads/b48a4ca7-0621-46f8-990b-809affd8341d.png"
     },
     {
       name: "Stanislas Michel",
       role: "Head of Partnerships @Utopia",
       university: "ESSEC Business School & Fundação Getulio Vargas",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/stanislas-michel-675b18224/",
       image: "/lovable-uploads/05f48d13-7ec0-4300-8d2f-fb18a60ad628.png"
     },
     {
       name: "Louis Piallat",
       role: "General Secretary @Utopia",
       university: "ESSEC Business School & Sorbonne University",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/louispiallat/",
       image: "/lovable-uploads/b360efb5-beeb-4bd0-a7a6-f3ce41a9a04c.png"
+    },
+    {
+      name: "Fawzi Elghazoui",
+      role: "Head of Com @KS",
+      university: "ESILV",
+      linkedin: "https://www.linkedin.com/in/favsidv/",
+      image: "/lovable-uploads/1744305940400.jpeg"
     },
     {
       name: "Nicolas Bigeard",
       role: "Partnership advisor @Utopia",
       university: "ESILV",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/nicolas-bigeard-b12687272/",
       image: "/lovable-uploads/cbe74abd-6016-4e3a-87f4-b60934900860.png"
+    },
+    {
+      name: "Mathieu Laruelle",
+      role: "Treasurer @KS",
+      university: "ESILV",
+      linkedin: "https://www.linkedin.com/in/mathieu-laruelle/",
+      image: "/lovable-uploads/1713304215880.jpeg"
+    },
+    {
+      name: "Alexandre Mourot",
+      role: "President @BSA EPFL",
+      university: "EPFL",
+      linkedin: "https://www.linkedin.com/in/alexandre-mourot-01b965239/",
+      image: "/lovable-uploads/1730368238246.jpeg"
+    },
+    {
+      name: "Gopi Mehta",
+      role: "CS @ TUM Blockchain Club",
+      university: "TUM",
+      linkedin: "https://www.linkedin.com/in/gopimehta/",
+      image: "/lovable-uploads/1724027530719.jpeg"
+    },
+    {
+      name: "Laurenz Sommerlad",
+      role: "Advisor @TUM AI",
+      university: "TUM",
+      linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
+      image: "/lovable-uploads/1682378092540.jpeg"
+    },
+    {
+      name: "Ming Xiao",
+      role: "President @Imperial Blockchain Group",
+      university: "Imperial College London",
+      linkedin: "https://www.linkedin.com/in/minghan-xiao-b36678236/",
+      image: "/lovable-uploads/1728905960703.jpeg"
+    },
+    {
+      name: "Alessia Antonielli",
+      role: "Co-Founder @Utopia",
+      university: "ESSEC Business School",
+      linkedin: "https://www.linkedin.com/in/alessia-antonielli/",
+      image: "/lovable-uploads/1722526280418.jpeg"
     },
   ];
 
@@ -209,10 +258,10 @@ const About = () => {
           </div>
         </section>
 
-        {/* Leadership Team */}
+        {/* Our Team */}
         <section className="bg-eurotech-gray py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Leadership Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Our Team</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {team.map((member, index) => (

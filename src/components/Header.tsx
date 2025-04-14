@@ -28,7 +28,7 @@ const Header = () => {
                 alt="EuroTech Federation Logo"
                 className="h-10 mr-3"
               />
-              <span className="text-eurotech-blue font-heading font-semibold text-xl">EuroTech</span>
+              <span className="text-eurotech-blue font-heading font-semibold text-xl">EuroTec Federation</span>
             </Link>
           </div>
 
@@ -40,27 +40,11 @@ const Header = () => {
             <Link to="/about" className="text-gray-700 hover:text-eurotech-blue font-medium">
               About Us
             </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="text-gray-700 hover:text-eurotech-blue font-medium flex items-center">
-                  <span>Events</span>
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link to="/events" className="w-full">Upcoming Events</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/events/past" className="w-full">Past Events</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link to="/events" className="text-gray-700 hover:text-eurotech-blue font-medium">
+              Events
+            </Link>
             <Link to="/partners" className="text-gray-700 hover:text-eurotech-blue font-medium">
               Partners
-            </Link>
-            <Link to="/join-us" className="text-gray-700 hover:text-eurotech-blue font-medium">
-              Join Us
             </Link>
             <Link to="/contact" className="text-gray-700 hover:text-eurotech-blue font-medium">
               Contact
@@ -117,13 +101,6 @@ const Header = () => {
               onClick={toggleMenu}
             >
               Partners
-            </Link>
-            <Link
-              to="/join-us"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-eurotech-blue"
-              onClick={toggleMenu}
-            >
-              Join Us
             </Link>
             <Link
               to="/contact"

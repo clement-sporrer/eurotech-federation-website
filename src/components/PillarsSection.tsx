@@ -18,7 +18,7 @@ const PillarsSection = () => {
       link: "/events"
     },
     {
-      title: "Startup Acceleration",
+      title: "Startup Incubator",
       description: "Supporting the next generation of European tech entrepreneurs with resources and mentorship.",
       icon: <Lightbulb className="h-12 w-12 text-eurotech-blue" />,
       link: "/join-us"
