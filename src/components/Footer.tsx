@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Instagram, Twitter, Mail } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -44,12 +44,6 @@ const Footer = () => {
             <div className="flex space-x-4 mb-4">
               <a href="https://linkedin.com" className="text-white hover:text-eurotech-accent transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={24} />
-              </a>
-              <a href="https://instagram.com" className="text-white hover:text-eurotech-accent transition-colors" target="_blank" rel="noopener noreferrer">
-                <Instagram size={24} />
-              </a>
-              <a href="https://twitter.com" className="text-white hover:text-eurotech-accent transition-colors" target="_blank" rel="noopener noreferrer">
-                <Twitter size={24} />
               </a>
               <a href="mailto:contact@eurotech-federation.org" className="text-white hover:text-eurotech-accent transition-colors">
                 <Mail size={24} />

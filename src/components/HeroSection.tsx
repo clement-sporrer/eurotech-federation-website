@@ -28,7 +28,7 @@ const HeroSection = () => {
                 </Button>
               </Link>
               <Link to="/events">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-eurotech-blue text-lg px-6 py-6 w-full sm:w-auto">
+                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white text-lg px-6 py-6 w-full sm:w-auto">
                   Discover Events <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
