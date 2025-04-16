@@ -30,19 +30,20 @@ const Partners = () => {
 
   // Partners logos - updated to only include the 4 requested corporate partners
   const universities = [
-    { name: "Imperial College London", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Imperial_College_London_Logo.svg/1200px-Imperial_College_London_Logo.svg.png" },
+    { name: "Imperial College London", logo: "/lovable-uploads/imperial-college-london5190.jpg" },
     { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
-    { name: "EPFL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/EPFL_logo.svg/2560px-EPFL_logo.svg.png" },
-    { name: "Dauphine-PSL", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Logo_Universit%C3%A9_Paris-Dauphine.svg/1200px-Logo_Universit%C3%A9_Paris-Dauphine.svg.png" },
-    { name: "UCL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UCL_logo.svg/2560px-UCL_logo.svg.png" },
-    { name: "CentraleSupélec", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Logo_CentraleSup%C3%A9lec.svg/1200px-Logo_CentraleSup%C3%A9lec.svg.png" },
-    { name: "ESSEC Business School", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/ESSEC_Business_School_logo.svg/2560px-ESSEC_Business_School_logo.svg.png" },
+    { name: "EPFL", logo: "/lovable-uploads/logo-epfl-1024x576.png" },
+    { name: "Dauphine-PSL", logo: "/lovable-uploads/000104777.jpg" },
+    { name: "UCL", logo: "/lovable-uploads/UCL_Institute_of_Education_logo.png" },
+    { name: "CentraleSupélec", logo: "/lovable-uploads/Logo_CentraleSupélec.png" },
+    { name: "ESSEC Business School", logo: "/lovable-uploads/Logo-essec.jpg" },
+    { name: "ESILV Engineering School", logo: "/lovable-uploads/Logo_esilv_png_blanc.png" },
   ];
   
   const companies = [
     { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" },
-    { name: "Kima Ventures", logo: "https://website-v3-assets.s3.amazonaws.com/assets/5ef40e465f0a2845c149aa91/5ef582a25f0a281b40507c0d/kima.png" },
-    { name: "Entrepreneurs First", logo: "https://upload.wikimedia.org/wikipedia/commons/3/34/Entrepreneur_First_Logo.png" },
+    { name: "Kima Ventures", logo: "/lovable-uploads/1_GJACgbkjAaphmVP8uxGEAQ.png" },
+    { name: "Entrepreneurs First", logo: "/lovable-uploads/entrepreneurFirst.jpeg" },
     { name: "Project Europe", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1280px-Flag_of_Europe.svg.png" },
   ];
 

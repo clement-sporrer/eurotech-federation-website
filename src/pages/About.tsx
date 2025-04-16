@@ -27,60 +27,14 @@ const About = () => {
   ];
 
   const founders = [
-    {
-      name: "Utopia",
-      university: "ESSEC",
-      country: "France",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/ESSEC_Business_School_logo.svg/2560px-ESSEC_Business_School_logo.svg.png"
-    },
-    {
-      name: "Kryptosphere",
-      university: "Network",
-      country: "France",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
-    },
-    {
-      name: "BSA EPFL",
-      university: "EPFL",
-      country: "Switzerland",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/EPFL_logo.svg/2560px-EPFL_logo.svg.png"
-    },
-    {
-      name: "Imperial Blockchain",
-      university: "Imperial College London",
-      country: "United Kingdom",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Imperial_College_London_Logo.svg/1200px-Imperial_College_London_Logo.svg.png"
-    },
-    {
-      name: "Imperial AI",
-      university: "Imperial College London",
-      country: "United Kingdom",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Imperial_College_London_Logo.svg/1200px-Imperial_College_London_Logo.svg.png"
-    },
-    {
-      name: "TUM Blockchain Club",
-      university: "TUM",
-      country: "Germany",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png"
-    },
-    {
-      name: "TUM AI",
-      university: "TUM",
-      country: "Germany",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png"
-    },
-    {
-      name: "RoboTUM",
-      university: "TUM",
-      country: "Germany",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png"
-    },
-    {
-      name: "DAU'IA",
-      university: "Dauphine",
-      country: "France",
-      logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Logo_Universit%C3%A9_Paris-Dauphine.svg/1200px-Logo_Universit%C3%A9_Paris-Dauphine.svg.png"
-    },
+    { name: "Imperial College London", logo: "/lovable-uploads/imperial-college-london5190.jpg" },
+    { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
+    { name: "EPFL", logo: "/lovable-uploads/logo-epfl-1024x576.png" },
+    { name: "Dauphine-PSL", logo: "/lovable-uploads/000104777.jpg" },
+    { name: "UCL", logo: "/lovable-uploads/UCL_Institute_of_Education_logo.png" },
+    { name: "CentraleSupélec", logo: "/lovable-uploads/Logo_CentraleSupélec.png" },
+    { name: "ESSEC Business School", logo: "/lovable-uploads/Logo-essec.jpg" },
+    { name: "ESILV Engineering School", logo: "/lovable-uploads/Logo_esilv_png_blanc.png" },
   ];
 
   // Updated leadership team with correct information
@@ -236,9 +190,9 @@ const About = () => {
           </div>
         </section>
 
-        {/* Founding Associations */}
+        {/* Universities represented */}
         <section className="container-section">
-          <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Founding Associations</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Universities represented</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {founders.map((founder, index) => (
@@ -250,8 +204,6 @@ const About = () => {
                     className="h-16 object-contain mb-4"
                   />
                   <h3 className="text-xl font-bold text-eurotech-blue mb-1">{founder.name}</h3>
-                  <p className="text-gray-600">{founder.university}</p>
-                  <p className="text-gray-500">{founder.country}</p>
                 </CardContent>
               </Card>
             ))}
