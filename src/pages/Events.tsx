@@ -155,7 +155,7 @@ const Events = () => {
                     </CardContent>
                     <CardFooter>
                       <Button className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
-                        Register Now
+                        View Event Details
                       </Button>
                     </CardFooter>
                   </Card>
