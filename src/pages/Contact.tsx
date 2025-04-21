@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -9,12 +8,74 @@ import { toast } from '@/components/ui/use-toast';
 import { Mail, MapPin, Linkedin, Instagram, Twitter } from 'lucide-react';
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We've received your message and will get back to you soon.",
-    });
+    
+    try {
+      setIsSubmitting(true);
+      
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      let data;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        try {
+          const text = await response.text();
+          data = text ? JSON.parse(text) : {};
+        } catch (parseError) {
+          console.error("JSON parsing error:", parseError);
+          throw new Error("Invalid server response");
+        }
+      } else {
+        console.warn("Response is not in JSON format");
+        data = { message: await response.text() || "Empty response" };
+      }
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'An error occurred while sending the message');
+      }
+      
+      toast({
+        title: "Message sent!",
+        description: "We've received your message and will get back to you soon.",
+      });
+      
+      // Reset the form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Sending failed",
+        description: error instanceof Error ? error.message : "An error occurred. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -46,23 +107,53 @@ const Contact = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                    <Input id="name" placeholder="John Doe" required />
+                    <Input 
+                      id="name" 
+                      placeholder="John Doe" 
+                      required 
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <Input id="email" type="email" placeholder="you@example.com" required />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="you@example.com" 
+                      required 
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
                   </div>
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                  <Input id="subject" placeholder="How can we help you?" required />
+                  <Input 
+                    id="subject" 
+                    placeholder="How can we help you?" 
+                    required 
+                    value={formData.subject}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                  <Textarea id="message" placeholder="Tell us how we can help..." rows={6} required />
+                  <Textarea 
+                    id="message" 
+                    placeholder="Tell us how we can help..." 
+                    rows={6} 
+                    required 
+                    value={formData.message}
+                    onChange={handleChange}
+                  />
                 </div>
-                <Button type="submit" className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
-                  Send Message
+                <Button 
+                  type="submit" 
+                  className="w-full bg-eurotech-blue hover:bg-eurotech-dark"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </div>
