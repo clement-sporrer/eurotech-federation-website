@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,6 +6,7 @@ import PillarsSection from '@/components/PillarsSection';
 import EventsSection from '@/components/EventsSection';
 import PartnersSection from '@/components/PartnersSection';
 import NewsletterSection from '@/components/NewsletterSection';
+import LinkedInFeed from '@/components/LinkedInFeed';
 
 const Index = () => {
   return (
@@ -17,6 +17,7 @@ const Index = () => {
         <PillarsSection />
         <EventsSection />
         <PartnersSection />
+        <LinkedInFeed />
         <NewsletterSection />
       </main>
       <Footer />
