@@ -64,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				eurotech: {
-					blue: '#1F4B9A',
+					blue: '#123192',
 					lightblue: '#4285F4',
 					dark: '#0F2557',
 					gray: '#F7F9FC',

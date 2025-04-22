@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -7,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 210 30% 99%;
+    --background: 37 29% 95%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -110,7 +109,8 @@
   }
   
   .container-section {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+    /*@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;*/
+    @apply max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .section-title {
@@ -123,5 +123,40 @@
   
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .logo-scroll-wrapper {
+    @apply overflow-hidden;
+  }
+  
+  .logo-scroll-container {
+    @apply relative h-[600px] overflow-visible;
+  }
+  
+  .logo-scroll-track {
+    @apply absolute flex flex-col w-full animate-logo-scroll;
+  }
+  
+  .logo-item {
+    @apply mb-5 transition-all;
+  }
+}
+
+@keyframes logo-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@layer utilities {
+  .animate-logo-scroll {
+    animation: logo-scroll 20s linear infinite;
+  }
+  
+  .pause-animation-on-hover:hover {
+    animation-play-state: paused;
   }
 }

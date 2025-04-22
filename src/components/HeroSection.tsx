@@ -1,20 +1,26 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
-  return (
-    <section className="relative bg-eurotech-blue text-white overflow-hidden">
-      {/* Background Pattern Overlay */}
-      <div className="absolute inset-0 bg-circuit-pattern opacity-10"></div>
+  // Define logos with their paths and countries
+  const logos = [
+    { src: "/flag_france.svg", alt: "France" },
+    { src: "/flag_france.svg", alt: "Switzerland" }, // This should be updated to the actual Swiss flag
+    { src: "/flag_france.svg", alt: "Germany" }, // This should be updated to the actual German flag
+    { src: "/flag_france.svg", alt: "Italy" }, // This should be updated to the actual Italian flag
+    { src: "/flag_france.svg", alt: "Spain" }, // This should be updated to the actual Spanish flag
+    { src: "/flag_france.svg", alt: "Netherlands" }, // This should be updated to the actual Dutch flag
+  ];
 
+  return (
+    <section className="relative h-screen bg-eurotech-blue text-white overflow-hidden pt-16">
       {/* Hero Content */}
-      <div className="container-section relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
+      <div className="container-section relative z-10 h-full flex items-center">
+        <div className="flex flex-col lg:flex-row items-center w-full h-full justify-between gap-12">
+          <div className="lg:w-2/3 text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in">
               Uniting Europe's Brightest<br />
               <span className="text-eurotech-accent">Tech Talents</span>
             </h1>
@@ -24,85 +30,46 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Link to="/join-us">
                 <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white text-lg px-6 py-6 w-full sm:w-auto">
-                  Join Our Network
-                </Button>
-              </Link>
-              <Link to="/events">
-                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white text-lg px-6 py-6 w-full sm:w-auto">
-                  Discover Events <ArrowRight className="ml-2 h-5 w-5" />
+                  Join Network
                 </Button>
               </Link>
             </div>
           </div>
 
-          <div className="lg:w-1/2 flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-blue opacity-20 rounded-lg"></div>
-              <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Tech conference attendees collaborating"
-                className="rounded-lg shadow-xl w-full max-w-lg object-cover h-[400px]"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-eurotech-accent p-4 rounded-lg shadow-lg animate-float">
-                <div className="flex items-center gap-3 text-white">
-                  <span className="text-lg leading-tight">Make European Tech Great Again</span>
-                  <span className="text-5xl font-bold"></span>
+          <div className="lg:w-1/3 flex justify-center lg:justify-end animate-fade-in h-full" style={{ animationDelay: '0.3s' }}>
+            <div className="logo-scroll-wrapper relative w-full max-w-[500px] overflow-visible">
+              <div className="logo-scroll-container w-full h-full">
+                {/* Top blur effect */}
+                <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-eurotech-blue via-eurotech-blue to-transparent z-10"></div>
+                
+                <div className="logo-scroll-track">
+                  {/* First set of logos */}
+                  {logos.map((logo, index) => (
+                    <div 
+                      key={`logo-1-${index}`} 
+                      className={`logo-item bg-white p-1.5 rounded-lg shadow-lg w-80 mx-auto ${index % 2 === 1 ? '-translate-x-12' : 'translate-x-12'}`}
+                    >
+                      <img src={logo.src} alt={logo.alt} className="w-full h-auto" />
+                    </div>
+                  ))}
+                  
+                  {/* Duplicate set of logos for seamless looping */}
+                  {logos.map((logo, index) => (
+                    <div 
+                      key={`logo-2-${index}`} 
+                      className={`logo-item bg-white p-1.5 rounded-lg shadow-lg w-80 mx-auto ${index % 2 === 1 ? '-translate-x-12' : 'translate-x-12'}`}
+                    >
+                      <img src={logo.src} alt={logo.alt} className="w-full h-auto" />
+                    </div>
+                  ))}
                 </div>
+
+                {/* Bottom blur effect */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-eurotech-blue via-eurotech-blue to-transparent z-10"></div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Sectors We Operate In */}
-        <div className="mt-12 flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          {[
-            "Descriptive and Generative AI",
-            "Cyber",
-            "Robotics",
-            "Quantum Computing",
-            "Web3",
-            "Finance",
-            "Defense",
-            "Energy",
-          ].map((sector, index) => (
-            <div
-              key={index}
-              className="bg-white/10 backdrop-blur text-white text-sm md:text-base font-medium px-5 py-3 rounded-lg shadow-sm hover:bg-white/15 transition-colors"
-            >
-              {sector}
-            </div>
-          ))}
-        </div>
-
-
-        {/* University Logos Section */}
-        <div className="mt-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          <h2 className="text-2xl md:text-3xl font-semibold text-center text-white mb-10">Partner Universities</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
-            {[
-              { name: "Imperial College London", logo: "/lovable-uploads/imperial-college-london5190.jpg" },
-              { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
-              { name: "EPFL", logo: "/lovable-uploads/logo-epfl-1024x576.png" },
-              { name: "Dauphine-PSL", logo: "/lovable-uploads/000104777.jpg" },
-              { name: "UCL", logo: "/lovable-uploads/UCL_Institute_of_Education_logo.png" },
-              { name: "CentraleSupélec", logo: "/lovable-uploads/Logo_CentraleSupélec.png" },
-              { name: "ESSEC Business School", logo: "/lovable-uploads/Logo-essec.jpg" },
-              { name: "ESILV Engineering School", logo: "/lovable-uploads/Logo_esilv_png_blanc.png" },
-            ].map((uni, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center text-center transition-all hover:shadow-lg"
-              >
-                <img
-                  src={uni.logo}
-                  alt={uni.name}
-                  className="h-12 md:h-16 object-contain mb-2"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
   );

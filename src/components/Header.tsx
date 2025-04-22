@@ -18,42 +18,42 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="bg-eurotech-blue text-white absolute w-full top-0 z-50">
+      <div className="container-section">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img
-                src="/lovable-uploads/987b295b-2e7d-4c36-a6d1-e9bc43844786.png"
+                src="/logo.png"
                 alt="EuroTech Federation Logo"
                 className="h-10 mr-3"
               />
-              <span className="text-eurotech-blue font-heading font-semibold text-xl">EuroTech Federation</span>
+              <span className="text-white font-heading font-semibold text-xl">EuroTech Federation</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-eurotech-blue font-medium">
+            <Link to="/" className="text-white hover:text-eurotech-blue font-medium">
               Home
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-eurotech-blue font-medium">
+            <Link to="/about" className="text-white hover:text-eurotech-blue font-medium">
               About Us
             </Link>
-            <Link to="/events" className="text-gray-700 hover:text-eurotech-blue font-medium">
+            <Link to="/events" className="text-white hover:text-eurotech-blue font-medium">
               Events
             </Link>
-            <Link to="/partners" className="text-gray-700 hover:text-eurotech-blue font-medium">
+            <Link to="/partners" className="text-white hover:text-eurotech-blue font-medium">
               Partners
             </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-eurotech-blue font-medium">
+            <Link to="/contact" className="text-white hover:text-eurotech-blue font-medium">
               Contact
             </Link>
           </nav>
 
           <div className="hidden md:block">
             <Link to="/join-us">
-              <Button className="bg-eurotech-blue hover:bg-eurotech-dark">Join Network</Button>
+              <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">Join Network</Button>
             </Link>
           </div>
 
