@@ -68,8 +68,8 @@ const Events = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-eurotech-blue text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-eurotech-blue text-white pt-40 pb-24">
+          <div className="container-section">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Events</h1>
               <p className="text-xl mb-6">
@@ -92,9 +92,9 @@ const Events = () => {
         </section>
 
         {/* Events Section */}
-        <section className="container-section">
+        <section className="container-section py-24">
           <Tabs defaultValue="upcoming" className="w-full">
-            <TabsList className="mb-8 grid w-full grid-cols-2">
+            <TabsList className="mb-8 grid w-full grid-cols-2 bg-eurotech-blue text-white">
               <TabsTrigger value="upcoming">Upcoming Events</TabsTrigger>
               <TabsTrigger value="past">Past Events</TabsTrigger>
             </TabsList>

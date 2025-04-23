@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 210 30% 99%;
+    --background: 37 29% 95%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -110,11 +109,12 @@
   }
   
   .container-section {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+    /*@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;*/
+    @apply max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 text-eurotech-blue;
+    @apply text-3xl md:text-4xl font-bold text-eurotech-blue;
   }
   
   .gradient-text {
@@ -123,5 +123,44 @@
   
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .logo-scroll-wrapper {
+    @apply overflow-hidden;
+  }
+  
+  .logo-scroll-container {
+    @apply relative h-[600px] overflow-visible;
+  }
+  
+  .logo-scroll-track {
+    @apply absolute flex flex-col w-full animate-logo-scroll will-change-transform;
+  }
+  
+  .logo-item {
+    @apply mb-6 transition-transform;
+  }
+}
+
+@keyframes logo-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@layer utilities {
+  .animate-logo-scroll {
+    animation: logo-scroll 30s linear infinite;
+  }
+  
+  .pause-animation-on-hover:hover {
+    animation-play-state: paused;
+  }
+  
+  .will-change-transform {
+    will-change: transform;
   }
 }

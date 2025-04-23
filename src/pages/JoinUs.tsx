@@ -32,8 +32,8 @@ const JoinUs = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-eurotech-blue text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-eurotech-blue text-white pt-40 pb-24">
+          <div className="container-section">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Join Our Network</h1>
               <p className="text-xl mb-6">
@@ -44,7 +44,7 @@ const JoinUs = () => {
         </section>
 
         {/* Join Options Section */}
-        <section className="container-section">
+        <section className="container-section pt-24">
           <div className="text-center mb-16">
             <h2 className="section-title">How to Get Involved</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -106,7 +106,7 @@ const JoinUs = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Apply to Join</h2>
             
             <Tabs defaultValue="students" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-12">
+              <TabsList className="grid w-full grid-cols-3 mb-12 bg-eurotech-blue text-white">
                 <TabsTrigger value="students">Students</TabsTrigger>
                 <TabsTrigger value="associations">Associations</TabsTrigger>
                 <TabsTrigger value="organizations">Organizations</TabsTrigger>
@@ -262,35 +262,6 @@ const JoinUs = () => {
                 </Card>
               </TabsContent>
             </Tabs>
-          </div>
-        </section>
-
-        {/* Newsletter Section */}
-        <section className="container-section">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-4">Stay Informed</h2>
-            <p className="text-xl mb-8">
-              Subscribe to our newsletter to receive updates on events, opportunities, and news from the EuroTech network.
-            </p>
-            
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow"
-                required
-              />
-              <Button 
-                type="submit" 
-                className="bg-eurotech-blue hover:bg-eurotech-dark"
-              >
-                Subscribe
-              </Button>
-            </form>
-            
-            <p className="mt-4 text-sm text-gray-500">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
           </div>
         </section>
       </main>

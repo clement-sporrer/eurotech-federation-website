@@ -8,46 +8,46 @@ const PillarsSection = () => {
     {
       title: "Network",
       description: "Building a collaborative ecosystem of students, universities, and corporate partners across Europe.",
-      icon: <Network className="h-12 w-12 text-eurotech-blue" />,
-      link: "/about"
+      icon: <Network className="h-12 w-12 text-white" />,
+      link: "/partners"
     },
     {
       title: "Events",
       description: "Organizing high-impact conferences, hackathons, and networking opportunities throughout Europe.",
-      icon: <Calendar className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Calendar className="h-12 w-12 text-white" />,
       link: "/events"
     },
     {
       title: "Startup Incubator",
       description: "Supporting the next generation of European tech entrepreneurs with resources and mentorship.",
-      icon: <Lightbulb className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Lightbulb className="h-12 w-12 text-white" />,
       link: "/join-us"
     }
   ];
 
   return (
-    <section className="container-section">
-      <div className="text-center mb-16">
+    <section className="container-section mb-16 md:mb-48">
+      <div className="text-center mb-16 flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center">
         <h2 className="section-title">Our Pillars</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-left text-gray-600 max-w-3xl">
           EuroTech Federation stands on three foundational pillars that guide our mission to position Europe as a global tech leader.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {pillars.map((pillar, index) => (
-          <Card key={index} className="card-hover">
+          <Card key={index} className="card-hover bg-eurotech-blue">
             <CardHeader>
-              <div className="mb-4">{pillar.icon}</div>
-              <CardTitle className="text-2xl font-heading text-eurotech-blue">{pillar.title}</CardTitle>
+              <div className="mb-48">{pillar.icon}</div>
+              <CardTitle className="text-2xl font-heading text-white">{pillar.title}</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription className="text-base text-gray-600">{pillar.description}</CardDescription>
+              <CardDescription className="text-base text-white">{pillar.description}</CardDescription>
             </CardContent>
             <CardFooter>
               <a 
                 href={pillar.link} 
-                className="text-eurotech-blue font-medium flex items-center hover:underline"
+                className="text-white font-medium flex items-center hover:underline"
               >
                 Learn more
                 <ArrowUpRight className="ml-1 h-4 w-4" />

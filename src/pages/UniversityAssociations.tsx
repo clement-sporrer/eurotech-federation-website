@@ -109,8 +109,8 @@ const UniversityAssociations = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-eurotech-blue text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-eurotech-blue text-white pt-40 pb-24">
+          <div className="container-section">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">University Associations</h1>
               <p className="text-xl mb-6">
@@ -126,7 +126,7 @@ const UniversityAssociations = () => {
         </section>
 
         {/* Associations Grid */}
-        <section className="py-16 container-section">
+        <section className="py-24 container-section">
           <h2 className="section-title text-center mb-12">Our Member Associations</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

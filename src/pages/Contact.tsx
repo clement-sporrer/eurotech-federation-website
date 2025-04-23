@@ -83,8 +83,8 @@ const Contact = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-eurotech-blue text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-eurotech-blue text-white pt-40 pb-24">
+          <div className="container-section">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
               <p className="text-xl mb-6">
@@ -95,7 +95,7 @@ const Contact = () => {
         </section>
 
         {/* Contact Form & Info */}
-        <section className="container-section">
+        <section className="container-section pt-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-eurotech-blue mb-6">Get in Touch</h2>
@@ -169,7 +169,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-eurotech-blue mr-4 mt-1" />
                   <div>
                     <h3 className="font-bold text-gray-900">Email</h3>
-                    <p className="text-gray-600">contact@eurotech-federation.org</p>
+                    <p className="text-gray-600">contact@eurotechfederation.com</p>
                     <p className="text-gray-500 text-sm mt-1">For general inquiries</p>
                   </div>
                 </div>
@@ -204,14 +204,6 @@ const Contact = () => {
                       rel="noopener noreferrer"
                     >
                       <Instagram className="h-5 w-5" />
-                    </a>
-                    <a 
-                      href="https://twitter.com" 
-                      className="bg-eurotech-blue text-white p-3 rounded-full hover:bg-eurotech-dark transition-colors"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <Twitter className="h-5 w-5" />
                     </a>
                   </div>
                 </div>
