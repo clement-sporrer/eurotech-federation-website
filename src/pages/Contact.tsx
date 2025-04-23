@@ -169,7 +169,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-eurotech-blue mr-4 mt-1" />
                   <div>
                     <h3 className="font-bold text-gray-900">Email</h3>
-                    <p className="text-gray-600">contact@eurotech-federation.org</p>
+                    <p className="text-gray-600">contact@eurotechfederation.com</p>
                     <p className="text-gray-500 text-sm mt-1">For general inquiries</p>
                   </div>
                 </div>
@@ -204,14 +204,6 @@ const Contact = () => {
                       rel="noopener noreferrer"
                     >
                       <Instagram className="h-5 w-5" />
-                    </a>
-                    <a 
-                      href="https://twitter.com" 
-                      className="bg-eurotech-blue text-white p-3 rounded-full hover:bg-eurotech-dark transition-colors"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <Twitter className="h-5 w-5" />
                     </a>
                   </div>
                 </div>
