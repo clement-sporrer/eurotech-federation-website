@@ -26,8 +26,8 @@ const PillarsSection = () => {
   ];
 
   return (
-    <section className="container-section mb-48">
-      <div className="text-center mb-16 flex justify-between items-center">
+    <section className="container-section mb-16 md:mb-48">
+      <div className="text-center mb-16 flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center">
         <h2 className="section-title">Our Pillars</h2>
         <p className="text-xl text-left text-gray-600 max-w-3xl">
           EuroTech Federation stands on three foundational pillars that guide our mission to position Europe as a global tech leader.

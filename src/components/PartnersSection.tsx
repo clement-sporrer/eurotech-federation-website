@@ -52,7 +52,7 @@ const PartnersSection = () => {
       <div className="container-section">
         {/* Corporate Partners Carousel */}
         <div className="mb-16">
-            <div className='flex justify-between items-center mb-8'>
+            <div className='flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0'>
               <h3 className="section-title text-eurotech-blue text-begin">Corporate Partners</h3>
               <Link to="/partners">
                 <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">
@@ -87,7 +87,7 @@ const PartnersSection = () => {
 
         {/* University Partners Carousel */}
         <div className="mb-16">
-          <div className='flex justify-between items-center mb-8'>
+          <div className='flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0'>
             <h3 className="section-title text-eurotech-blue text-begin">Universities Represented</h3>
             <Link to="/university-associations">
               <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">

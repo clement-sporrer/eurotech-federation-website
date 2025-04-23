@@ -61,7 +61,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               type="button"
-              className="text-gray-700 hover:text-eurotech-blue"
+              className="text-white hover:text-eurotech-accent"
               onClick={toggleMenu}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -73,45 +73,45 @@ const Header = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 py-32 space-y-1 sm:px-3 h-full">
             <Link
               to="/"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-eurotech-blue"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-eurotech-accent"
               onClick={toggleMenu}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-eurotech-blue"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-eurotech-accent"
               onClick={toggleMenu}
             >
               About Us
             </Link>
             <Link
               to="/events"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-eurotech-blue"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-eurotech-accent"
               onClick={toggleMenu}
             >
               Events
             </Link>
             <Link
               to="/partners"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-eurotech-blue"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-eurotech-accent"
               onClick={toggleMenu}
             >
               Partners
             </Link>
             <Link
               to="/contact"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-eurotech-blue"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-eurotech-accent"
               onClick={toggleMenu}
             >
               Contact
             </Link>
             <div className="mt-4 px-3">
               <Link to="/join-us">
-                <Button className="w-full bg-eurotech-blue hover:bg-eurotech-dark">Join Network</Button>
+                <Button className="w-full bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">Join Network</Button>
               </Link>
             </div>
           </div>

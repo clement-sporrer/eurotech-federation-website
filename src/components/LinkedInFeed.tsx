@@ -14,7 +14,7 @@ const LinkedInFeed = () => {
   return (
     <section className="bg-eurotech-gray py-16 md:pb-48">
       <div className="container-section">
-        <div className="text-center mb-16 flex justify-between items-center">
+        <div className="text-center mb-16 flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center">
           <h2 className="section-title">Connect With Us</h2>
           <p className="text-xl text-left text-gray-600 max-w-3xl">
             Stay updated with the latest news, events, and innovations from the EuroTech community through our LinkedIn feed.

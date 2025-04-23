@@ -14,12 +14,12 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative h-screen bg-eurotech-blue text-white overflow-hidden pt-16">
+    <section className="relative  md:h-screen bg-eurotech-blue text-white overflow-hidden pt-16">
       {/* Hero Content */}
-      <div className="container-section relative z-10 h-full flex items-center">
-        <div className="flex flex-col lg:flex-row items-center w-full h-full justify-between gap-12">
-          <div className="lg:w-2/3 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in">
+      <div className="container-section relative z-10 h-full flex items-center py-24 md:py-0">
+        <div className="flex flex-col lg:flex-row items-center w-full h-full justify-center lg:justify-between gap-12">
+          <div className="lg:w-2/3 text-left lg:text-left">
+            <h1 className="text-3xl md:text-5xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in">
               Uniting Europe's Brightest<br />
               <span className="text-eurotech-accent">Tech Talents</span>
             </h1>
@@ -35,7 +35,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="lg:w-1/3 flex justify-center lg:justify-end animate-fade-in h-full" style={{ animationDelay: '0.3s' }}>
+          <div className="lg:w-1/3 hidden md:flex justify-center lg:justify-end animate-fade-in h-full" style={{ animationDelay: '0.3s' }}>
             <div className="logo-scroll-wrapper relative w-full max-w-[500px] overflow-hidden">
               <div className="logo-scroll-container w-full h-full">
                 {/* Top blur effect */}
