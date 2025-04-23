@@ -165,7 +165,7 @@ const Partners = () => {
 
         {/* Partners Showcase */}
         <section className="bg-eurotech-gray py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container-section">
             <h2 className="section-title text-center">Our Current Partners</h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
               We're proud to collaborate with leading academic institutions and companies.
@@ -207,7 +207,7 @@ const Partners = () => {
 
         {/* Testimonials */}
         <section className="bg-eurotech-gray py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container-section">
             <h2 className="section-title text-center">Partner Testimonials</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               {testimonials.map((testimonial, index) => (
