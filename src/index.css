@@ -134,29 +134,33 @@
   }
   
   .logo-scroll-track {
-    @apply absolute flex flex-col w-full animate-logo-scroll;
+    @apply absolute flex flex-col w-full animate-logo-scroll will-change-transform;
   }
   
   .logo-item {
-    @apply mb-5 transition-all;
+    @apply mb-6 transition-transform;
   }
 }
 
 @keyframes logo-scroll {
   0% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateY(-50%);
+    transform: translate3d(0, -50%, 0);
   }
 }
 
 @layer utilities {
   .animate-logo-scroll {
-    animation: logo-scroll 20s linear infinite;
+    animation: logo-scroll 30s linear infinite;
   }
   
   .pause-animation-on-hover:hover {
     animation-play-state: paused;
+  }
+  
+  .will-change-transform {
+    will-change: transform;
   }
 }
