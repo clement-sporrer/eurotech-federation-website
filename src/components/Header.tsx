@@ -34,19 +34,19 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-white hover:text-eurotech-blue font-medium">
+            <Link to="/" className="text-white hover:text-eurotech-accent font-medium">
               Home
             </Link>
-            <Link to="/about" className="text-white hover:text-eurotech-blue font-medium">
+            <Link to="/about" className="text-white hover:text-eurotech-accent font-medium">
               About Us
             </Link>
-            <Link to="/events" className="text-white hover:text-eurotech-blue font-medium">
+            <Link to="/events" className="text-white hover:text-eurotech-accent font-medium">
               Events
             </Link>
-            <Link to="/partners" className="text-white hover:text-eurotech-blue font-medium">
+            <Link to="/partners" className="text-white hover:text-eurotech-accent font-medium">
               Partners
             </Link>
-            <Link to="/contact" className="text-white hover:text-eurotech-blue font-medium">
+            <Link to="/contact" className="text-white hover:text-eurotech-accent font-medium">
               Contact
             </Link>
           </nav>
