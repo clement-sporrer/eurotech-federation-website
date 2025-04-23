@@ -5,18 +5,18 @@ import { Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-eurotech-dark text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-eurotech-blue text-white py-24">
+      <div className="container-section">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center">
               <img
-                src="/lovable-uploads/987b295b-2e7d-4c36-a6d1-e9bc43844786.png"
+                src="/logo.png"
                 alt="EuroTech Federation Logo"
-                className="h-12 mr-3 filter brightness-0 invert"
+                className="h-12 mr-3"
               />
             </Link>
-            <h3 className="text-xl font-heading font-bold mt-4">EuroTech Federation</h3>
+            <h3 className="text-xl font-heading font-bold mt-4">EuroTech <span className="font-extralight">Federation</span></h3>
             <p className="mt-2 text-gray-300">Uniting Europe's brightest tech talents</p>
           </div>
           
@@ -25,8 +25,9 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/" className="hover:text-eurotech-accent transition-colors">Home</Link></li>
               <li><Link to="/about" className="hover:text-eurotech-accent transition-colors">About Us</Link></li>
-              <li><Link to="/events" className="hover:text-eurotech-accent transition-colors">Events</Link></li>
+              <li><Link to="/incubator" className="hover:text-eurotech-accent transition-colors">Incubator</Link></li>
               <li><Link to="/partners" className="hover:text-eurotech-accent transition-colors">Partners</Link></li>
+              <li><Link to="/events" className="hover:text-eurotech-accent transition-colors">Events</Link></li>
             </ul>
           </div>
           
@@ -53,7 +54,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-700">
+        <div className="mt-12 pt-8 border-t border-white">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400">&copy; {new Date().getFullYear()} EuroTech Federation. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex space-x-6">

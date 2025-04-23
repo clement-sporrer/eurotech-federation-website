@@ -28,7 +28,7 @@ const Header = () => {
                 alt="EuroTech Federation Logo"
                 className="h-10 mr-3"
               />
-              <span className="text-white font-heading font-semibold text-xl">EuroTech Federation</span>
+              <span className="text-white font-heading font-bold text-xl">EuroTech <span className="font-extralight">Federation</span></span>
             </Link>
           </div>
 

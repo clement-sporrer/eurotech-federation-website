@@ -7,11 +7,10 @@ const HeroSection = () => {
   // Define logos with their paths and countries
   const logos = [
     { src: "/flag_france.svg", alt: "France" },
-    { src: "/flag_france.svg", alt: "Switzerland" }, // This should be updated to the actual Swiss flag
-    { src: "/flag_france.svg", alt: "Germany" }, // This should be updated to the actual German flag
-    { src: "/flag_france.svg", alt: "Italy" }, // This should be updated to the actual Italian flag
-    { src: "/flag_france.svg", alt: "Spain" }, // This should be updated to the actual Spanish flag
-    { src: "/flag_france.svg", alt: "Netherlands" }, // This should be updated to the actual Dutch flag
+    { src: "/flag_suisse.svg", alt: "Switzerland" }, // This should be updated to the actual Swiss flag
+    { src: "/flag_uk.svg", alt: "United Kingdom" }, // This should be updated to the actual German flag
+    { src: "/flag_italy.svg", alt: "Italy" }, // This should be updated to the actual Italian flag
+    { src: "/flag_germany.svg", alt: "Germany" }, // This should be updated to the actual Spanish flag
   ];
 
   return (
@@ -47,9 +46,9 @@ const HeroSection = () => {
                   {logos.map((logo, index) => (
                     <div 
                       key={`logo-1-${index}`} 
-                      className={`logo-item bg-white p-1.5 rounded-lg shadow-lg w-80 mx-auto ${index % 2 === 1 ? '-translate-x-12' : 'translate-x-12'}`}
+                      className={`opacity-80 logo-item bg-white p-1.5 rounded-lg shadow-lg w-80 mx-auto ${index % 2 === 1 ? '-translate-x-12' : 'translate-x-12'}`}
                     >
-                      <img src={logo.src} alt={logo.alt} className="w-full h-auto" />
+                      <img src={logo.src} alt={logo.alt} className="w-full h-48 object-cover" />
                     </div>
                   ))}
                   
@@ -57,9 +56,9 @@ const HeroSection = () => {
                   {logos.map((logo, index) => (
                     <div 
                       key={`logo-2-${index}`} 
-                      className={`logo-item bg-white p-1.5 rounded-lg shadow-lg w-80 mx-auto ${index % 2 === 1 ? '-translate-x-12' : 'translate-x-12'}`}
+                      className={`opacity-80 logo-item bg-white p-1.5 rounded-lg shadow-lg w-80 mx-auto ${index % 2 === 0 ? '-translate-x-12' : 'translate-x-12'}`}
                     >
-                      <img src={logo.src} alt={logo.alt} className="w-full h-auto" />
+                      <img src={logo.src} alt={logo.alt} className="w-full h-48 object-cover" />
                     </div>
                   ))}
                 </div>

@@ -48,12 +48,12 @@ const PartnersSection = () => {
   );
 
   return (
-    <section className="bg-eurotech-gray py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-eurotech-gray py-16 md:pb-48 md:pt-64">
+      <div className="container-section">
         {/* Corporate Partners Carousel */}
         <div className="mb-16">
             <div className='flex justify-between items-center mb-8'>
-              <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue text-begin">Corporate Partners</h3>
+              <h3 className="section-title text-eurotech-blue text-begin">Corporate Partners</h3>
               <Link to="/partners">
                 <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">
                   Become a Partner
@@ -88,7 +88,7 @@ const PartnersSection = () => {
         {/* University Partners Carousel */}
         <div className="mb-16">
           <div className='flex justify-between items-center mb-8'>
-            <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue text-begin">Universities Represented</h3>
+            <h3 className="section-title text-eurotech-blue text-begin">Universities Represented</h3>
             <Link to="/university-associations">
               <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">
                 Become a University Partner
