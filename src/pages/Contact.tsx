@@ -83,7 +83,7 @@ const Contact = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-eurotech-blue text-white py-20">
+        <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
@@ -95,7 +95,7 @@ const Contact = () => {
         </section>
 
         {/* Contact Form & Info */}
-        <section className="container-section">
+        <section className="container-section pt-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-eurotech-blue mb-6">Get in Touch</h2>

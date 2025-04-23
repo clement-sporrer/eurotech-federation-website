@@ -74,7 +74,7 @@ const Partners = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-eurotech-blue text-white py-20">
+        <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Partner With Us</h1>
@@ -89,7 +89,7 @@ const Partners = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="container-section">
+        <section className="container-section pt-24">
           <div className="max-w-3xl mx-auto">
             <h2 className="section-title text-center">Why Partner With Us?</h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
@@ -110,7 +110,7 @@ const Partners = () => {
         </section>
 
         {/* Partners Showcase */}
-        <section className="bg-white py-16 md:py-24">
+        <section className="bg-eurotech-gray py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="section-title text-center">Our Current Partners</h2>
             <p className="text-xl text-gray-600 mb-12 text-center">
@@ -171,72 +171,7 @@ const Partners = () => {
             </div>
           </div>
         </section>
-
-        {/* Inquiry Form */}
-        <section className="container-section bg-white">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="section-title text-center">Partner Inquiry</h2>
-            <p className="text-xl text-gray-600 mb-12 text-center">
-              Interested in partnering with EuroTech Federation? Fill out the form below to start the conversation.
-            </p>
-
-            <div className="flex justify-center mb-8">
-              <a 
-                href={eurotechLinkedIn}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-eurotech-blue hover:text-eurotech-accent font-medium"
-              >
-                Visit our LinkedIn <ExternalLink className="ml-1 h-4 w-4" />
-              </a>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                  <Input id="name" placeholder="John Doe" required />
-                </div>
-                <div>
-                  <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-1">Organization</label>
-                  <Input id="organization" placeholder="Company Inc." required />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                  <Input id="email" type="email" placeholder="you@example.com" required />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone (optional)</label>
-                  <Input id="phone" placeholder="+1 (555) 123-4567" />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="partnershipType" className="block text-sm font-medium text-gray-700 mb-1">Partnership Interest</label>
-                <select 
-                  id="partnershipType" 
-                  className="w-full rounded-md border border-input bg-background px-3 py-2"
-                  required
-                >
-                  <option value="">Select an option</option>
-                  <option value="corporate">Corporate Partner</option>
-                  <option value="academic">Academic Institution</option>
-                  <option value="sponsor">Event Sponsor</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <Textarea id="message" placeholder="Tell us about your goals and how you'd like to partner with us" rows={5} required />
-              </div>
-              <Button type="submit" className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
-                Submit Inquiry
-              </Button>
-            </form>
-          </div>
-        </section>
-      </main>
+     </main>
       <Footer />
     </div>
   );
