@@ -50,7 +50,7 @@ const Footer = () => {
                 <Mail size={24} />
               </a>
             </div>
-            <p className="text-gray-300">contact@eurotech-federation.org</p>
+            <p className="text-gray-300">contact@eurotechfederation.com</p>
           </div>
         </div>
         
