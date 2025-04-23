@@ -9,7 +9,7 @@ const PillarsSection = () => {
       title: "Network",
       description: "Building a collaborative ecosystem of students, universities, and corporate partners across Europe.",
       icon: <Network className="h-12 w-12 text-white" />,
-      link: "/about"
+      link: "/partners"
     },
     {
       title: "Events",

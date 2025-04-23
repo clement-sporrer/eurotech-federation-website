@@ -33,7 +33,7 @@ const JoinUs = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container-section">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Join Our Network</h1>
               <p className="text-xl mb-6">
@@ -106,7 +106,7 @@ const JoinUs = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Apply to Join</h2>
             
             <Tabs defaultValue="students" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-12">
+              <TabsList className="grid w-full grid-cols-3 mb-12 bg-eurotech-blue text-white">
                 <TabsTrigger value="students">Students</TabsTrigger>
                 <TabsTrigger value="associations">Associations</TabsTrigger>
                 <TabsTrigger value="organizations">Organizations</TabsTrigger>

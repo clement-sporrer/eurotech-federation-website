@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Check, ExternalLink } from 'lucide-react';
+import { Check, ExternalLink, Users, Globe, Presentation, Lightbulb, Building, Award } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 import { Link } from 'react-router-dom';
 
@@ -20,12 +19,60 @@ const Partners = () => {
   };
 
   const benefits = [
-    "Access to top tech talent from Europe's premier universities",
-    "Co-branding opportunities at high-profile tech events",
-    "Speaking and workshop opportunities",
-    "Recruitment and networking with future tech leaders",
-    "Early access to innovative student projects and startups",
-    "Pan-European visibility in the tech education sector"
+    {
+      title: "Access to Top Talent",
+      description: "Connect with the brightest minds from Europe's premier universities",
+      icon: <Users className="h-10 w-10" />,
+      color: "bg-eurotech-blue",
+      textColor: "text-white",
+      cols: "col-span-1 md:col-span-1",
+      rows: "row-span-1",
+    },
+    {
+      title: "Co-branding Opportunities",
+      description: "Gain visibility at high-profile tech events across Europe",
+      icon: <Building className="h-10 w-10" />,
+      color: "bg-eurotech-blue",
+      textColor: "text-white",
+      cols: "col-span-1 md:col-span-1",
+      rows: "row-span-1",
+    },
+    {
+      title: "Speaking Engagements",
+      description: "Share your expertise through workshops and presentations",
+      icon: <Presentation className="h-10 w-10" />,
+      color: "bg-eurotech-blue",
+      textColor: "text-white",
+      cols: "col-span-2 md:col-span-1",
+      rows: "row-span-1",
+    },
+    {
+      title: "Recruitment Network",
+      description: "Connect with future tech leaders and potential team members",
+      icon: <Users className="h-10 w-10" />,
+      color: "bg-eurotech-blue",
+      textColor: "text-white",
+      cols: "col-span-1 md:col-span-2",
+      rows: "row-span-1",
+    },
+    {
+      title: "Innovation Pipeline",
+      description: "Early access to innovative student projects and emerging startups",
+      icon: <Lightbulb className="h-10 w-10" />,
+      color: "bg-eurotech-blue",
+      textColor: "text-white",
+      cols: "col-span-1 md:col-span-1",
+      rows: "row-span-1 md:row-span-2",
+    },
+    {
+      title: "Pan-European Reach",
+      description: "Gain visibility across the European tech education landscape",
+      icon: <Globe className="h-10 w-10" />,
+      color: "bg-eurotech-blue",
+      textColor: "text-white",
+      cols: "col-span-2 md:col-span-2",
+      rows: "row-span-1",
+    },
   ];
 
   // Partners logos - updated to only include the 4 requested corporate partners
@@ -75,7 +122,7 @@ const Partners = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container-section">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Partner With Us</h1>
               <p className="text-xl mb-6">
@@ -89,23 +136,30 @@ const Partners = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="container-section pt-24">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="section-title text-center">Why Partner With Us?</h2>
-            <p className="text-xl text-gray-600 mb-12 text-center">
+        <section className="py-24 container-section">
+          <div className="flex flex-col md:flex-row items-start md:items-center w-full justify-between mb-16 gap-6">
+            <h2 className="section-title">Why Partner With Us?</h2>
+            <p className="text-xl text-gray-600 max-w-xl">
               Partnering with EuroTech Federation offers unique advantages for organizations looking to engage with Europe's tech talent ecosystem.
             </p>
+          </div>
 
-            <div className="bg-eurotech-gray rounded-xl p-8">
-              <ul className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start">
-                    <Check className="h-6 w-6 text-eurotech-blue mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-lg text-gray-700">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+            {benefits.map((benefit, index) => (
+              <div 
+                key={index}
+                className={`${benefit.cols} ${benefit.rows} ${benefit.color} rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 overflow-hidden relative group`}
+              >
+                <div className="flex flex-col h-full justify-between z-10 relative">
+                  <div>
+                    <h3 className={`font-bold text-xl mb-2 ${benefit.textColor}`}>{benefit.title}</h3>
+                    <p className={`${benefit.color === 'bg-white' ? 'text-gray-600' : 'text-white/80'}`}>
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
