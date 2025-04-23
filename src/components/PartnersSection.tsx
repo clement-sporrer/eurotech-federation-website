@@ -50,17 +50,51 @@ const PartnersSection = () => {
   return (
     <section className="bg-eurotech-gray py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="section-title">Our Partners</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            EuroTech Federation collaborates with top universities and industry leaders to create opportunities for Europe's tech talent.
-          </p>
+        {/* Corporate Partners Carousel */}
+        <div className="mb-16">
+            <div className='flex justify-between items-center mb-8'>
+              <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue text-begin">Corporate Partners</h3>
+              <Link to="/partners">
+                <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">
+                  Become a Partner
+                </Button>
+              </Link>
+            </div>
+            <Carousel 
+              className="w-full" 
+              opts={{ loop: true, align: "start" }} 
+              plugins={[autoplayOptionsCompanies.current]}
+              onMouseEnter={() => autoplayOptionsCompanies.current.stop()}
+              onMouseLeave={() => autoplayOptionsCompanies.current.play()}
+            >
+              <CarouselContent>
+                {companies.map((company, index) => (
+                  <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                    <div className="flex justify-center items-center bg-white p-6 h-full rounded-lg shadow-sm hover:shadow-md transition-all">
+                      <img 
+                        src={company.logo} 
+                        alt={company.name} 
+                        className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all" 
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0 hidden sm:flex" />
+              <CarouselNext className="right-0 hidden sm:flex" />
+            </Carousel>
         </div>
 
         {/* University Partners Carousel */}
         <div className="mb-16">
-          <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Universities Represented</h3>
-          <div className="mx-auto max-w-6xl px-6">
+          <div className='flex justify-between items-center mb-8'>
+            <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue text-begin">Universities Represented</h3>
+            <Link to="/university-associations">
+              <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">
+                Become a University Partner
+              </Button>
+            </Link>
+          </div>
             <Carousel 
               className="w-full" 
               opts={{ loop: true, align: "start" }} 
@@ -86,45 +120,11 @@ const PartnersSection = () => {
               <CarouselPrevious className="left-0 hidden sm:flex" />
               <CarouselNext className="right-0 hidden sm:flex" />
             </Carousel>
-          </div>
         </div>
 
-        {/* Corporate Partners Carousel */}
-        <div className="mb-16">
-          <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Corporate Partners</h3>
-          <div className="mx-auto max-w-6xl px-6">
-            <Carousel 
-              className="w-full" 
-              opts={{ loop: true, align: "start" }} 
-              plugins={[autoplayOptionsCompanies.current]}
-              onMouseEnter={() => autoplayOptionsCompanies.current.stop()}
-              onMouseLeave={() => autoplayOptionsCompanies.current.play()}
-            >
-              <CarouselContent>
-                {companies.map((company, index) => (
-                  <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                    <div className="flex justify-center items-center bg-white p-6 h-full rounded-lg shadow-sm hover:shadow-md transition-all">
-                      <img 
-                        src={company.logo} 
-                        alt={company.name} 
-                        className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all" 
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-0 hidden sm:flex" />
-              <CarouselNext className="right-0 hidden sm:flex" />
-            </Carousel>
-          </div>
-        </div>
 
         <div className="text-center mt-12">
-          <Link to="/partners">
-            <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">
-              Become a Partner
-            </Button>
-          </Link>
+          
         </div>
       </div>
     </section>

@@ -65,9 +65,10 @@ export default {
 				},
 				eurotech: {
 					blue: '#123192',
+					bg: '#f5f3ed',
 					lightblue: '#4285F4',
 					dark: '#0F2557',
-					gray: '#F7F9FC',
+					gray: '#f5f3ed',
 					accent: '#5CBBF6'
 				}
 			},
