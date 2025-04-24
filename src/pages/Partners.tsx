@@ -8,6 +8,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Check, ExternalLink, Users, Globe, Presentation, Lightbulb, Building, Award } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 import { Link } from 'react-router-dom';
+import PartnerGrid from '@/components/PartnerGrid';
+import { universities, companies } from '@/data/partnersData';
 
 const Partners = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -73,25 +75,6 @@ const Partners = () => {
       cols: "col-span-2 md:col-span-2",
       rows: "row-span-1",
     },
-  ];
-
-  // Partners logos - updated to only include the 4 requested corporate partners
-  const universities = [
-    { name: "Imperial College London", logo: "/lovable-uploads/imperial-college-london5190.jpg" },
-    { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
-    { name: "EPFL", logo: "/lovable-uploads/logo-epfl-1024x576.png" },
-    { name: "Dauphine-PSL", logo: "/lovable-uploads/000104777.jpg" },
-    { name: "UCL", logo: "/lovable-uploads/UCL_Institute_of_Education_logo.png" },
-    { name: "CentraleSupélec", logo: "/lovable-uploads/Logo_CentraleSupélec.png" },
-    { name: "ESSEC Business School", logo: "/lovable-uploads/Logo-essec.jpg" },
-    { name: "ESILV Engineering School", logo: "/lovable-uploads/Logo_esilv_png_blanc.png" },
-  ];
-  
-  const companies = [
-    { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" },
-    { name: "Kima Ventures", logo: "/lovable-uploads/1_GJACgbkjAaphmVP8uxGEAQ.png" },
-    { name: "Entrepreneurs First", logo: "/lovable-uploads/entrepreneurFirst.jpeg" },
-    { name: "Project Europe", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1280px-Flag_of_Europe.svg.png" },
   ];
 
   // Testimonials
@@ -166,42 +149,21 @@ const Partners = () => {
         {/* Partners Showcase */}
         <section className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="section-title text-center">Our Current Partners</h2>
-            <p className="text-xl text-gray-600 mb-12 text-center">
-              We're proud to collaborate with leading academic institutions and companies.
-            </p>
-
-            <div className="mb-16">
-              <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Universities Represented</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {universities.map((university, index) => (
-                  <Link key={index} to="/university-associations" className="block">
-                    <div className="flex justify-center items-center bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all">
-                      <img 
-                        src={university.logo} 
-                        alt={university.name} 
-                        className="h-12 md:h-16 object-contain"
-                      />
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold text-eurotech-blue mb-8 text-center">Corporate Partners</h3>
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {companies.map((company, index) => (
-                  <div key={index} className="flex justify-center items-center bg-white p-6 rounded-lg shadow-sm">
-                    <img 
-                      src={company.logo} 
-                      alt={company.name} 
-                      className="h-10 md:h-12 object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+            <h2 className="section-title text-center mb-12">Our Current Partners</h2>
+            
+            {/* University Partners */}
+            <PartnerGrid 
+              title="Universities Represented" 
+              partners={universities} 
+              buttonLink="/university-associations"
+            />
+            
+            {/* Corporate Partners */}
+            <PartnerGrid 
+              title="Corporate Partners" 
+              partners={companies} 
+              buttonLink="/contact"
+            />
           </div>
         </section>
 

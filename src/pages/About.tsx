@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, Flag, Network, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import PartnerGrid from '@/components/PartnerGrid';
+import { universities } from '@/data/partnersData';
 
 const About = () => {
   const goals = [
@@ -24,17 +25,6 @@ const About = () => {
       description: "Support emerging tech entrepreneurs with resources, mentorship, and funding opportunities to create the next generation of European tech leaders.",
       icon: <Briefcase className="h-12 w-12 text-eurotech-blue" />,
     },
-  ];
-
-  const founders = [
-    { name: "Imperial College London", logo: "/lovable-uploads/imperial-college-london5190.jpg" },
-    { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
-    { name: "EPFL", logo: "/lovable-uploads/logo-epfl-1024x576.png" },
-    { name: "Dauphine-PSL", logo: "/lovable-uploads/000104777.jpg" },
-    { name: "UCL", logo: "/lovable-uploads/UCL_Institute_of_Education_logo.png" },
-    { name: "CentraleSupélec", logo: "/lovable-uploads/Logo_CentraleSupélec.png" },
-    { name: "ESSEC Business School", logo: "/lovable-uploads/Logo-essec.jpg" },
-    { name: "ESILV Engineering School", logo: "/lovable-uploads/Logo_esilv_png_blanc.png" },
   ];
 
   // Updated leadership team with correct information
@@ -191,23 +181,15 @@ const About = () => {
         </section>
 
         {/* Universities represented */}
-        <section className="container-section">
+        <section className="container-section py-16 md:py-24">
           <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Universities represented</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {founders.map((founder, index) => (
-              <Card key={index} className="card-hover">
-                <CardContent className="pt-6 flex flex-col items-center text-center">
-                  <img 
-                    src={founder.logo} 
-                    alt={founder.name} 
-                    className="h-16 object-contain mb-4"
-                  />
-                  <h3 className="text-xl font-bold text-eurotech-blue mb-1">{founder.name}</h3>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <PartnerGrid 
+            title="Member Universities" 
+            partners={universities} 
+            buttonLink="/university-associations"
+            showTitle={false}
+          />
         </section>
 
         {/* Our Team */}
