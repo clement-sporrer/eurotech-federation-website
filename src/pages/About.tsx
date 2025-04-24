@@ -13,17 +13,17 @@ const About = () => {
     {
       title: "Build an Active European Tech Network",
       description: "Create a vibrant community of students, professionals, and institutions across Europe to foster collaboration and innovation.",
-      icon: <Network className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Network className="h-12 w-12 text-white" />,
     },
     {
       title: "Organize Flagship Events",
       description: "Host high-impact conferences, hackathons, and networking events across European cities to showcase talent and ideas.",
-      icon: <Flag className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Flag className="h-12 w-12 text-white" />,
     },
     {
       title: "Launch a Pan-European Startup Accelerator",
       description: "Support emerging tech entrepreneurs with resources, mentorship, and funding opportunities to create the next generation of European tech leaders.",
-      icon: <Briefcase className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Briefcase className="h-12 w-12 text-white" />,
     },
   ];
 
@@ -168,11 +168,11 @@ const About = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {goals.map((goal, index) => (
-                <Card key={index} className="card-hover h-full">
+                <Card key={index} className="card-hover bg-eurotech-blue h-full">
                   <CardContent className="pt-6">
                     <div className="mb-4">{goal.icon}</div>
-                    <h3 className="text-xl font-bold text-eurotech-blue mb-3">{goal.title}</h3>
-                    <p className="text-gray-600">{goal.description}</p>
+                    <h3 className="text-xl font-bold text-white mb-3">{goal.title}</h3>
+                    <p className="text-white">{goal.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -199,16 +199,16 @@ const About = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {team.map((member, index) => (
-                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm card-hover">
+                <div key={index} className="rounded-lg overflow-hidden">
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-64 object-cover"
+                    className="w-full h-64 object-cover rounded-lg"
                   />
-                  <div className="p-6">
+                  <div className="pt-4">
                     <h3 className="text-xl font-bold text-eurotech-blue">{member.name}</h3>
-                    <p className="text-eurotech-accent font-medium">{member.role}</p>
-                    <p className="text-gray-600 mb-3">{member.university}</p>
+                    <p className="text-eurotech-blue font-medium">{member.role}</p>
+                    <p className="text-eurotech-blue mb-3">{member.university}</p>
                     <a 
                       href={member.linkedin} 
                       target="_blank" 

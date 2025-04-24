@@ -167,25 +167,18 @@ const Partners = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="bg-eurotech-gray py-16 md:py-24">
-          <div className="container-section">
-            <h2 className="section-title text-center">Partner Testimonials</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="bg-white">
-                  <CardContent className="pt-6">
-                    <div className="text-4xl text-eurotech-blue mb-4">"</div>
-                    <p className="text-gray-700 italic mb-6">{testimonial.quote}</p>
-                    <div>
-                      <p className="font-bold text-eurotech-blue">{testimonial.author}</p>
-                      <p className="text-gray-600">{testimonial.title}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+        {/* Join Network CTA Section */}
+        <section className="py-24 container-section text-center">
+          <h2 className="section-title mb-8">Join Our Growing Network</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+            Is your company or university association looking to connect with Europe's leading tech talent network?
+            Partner with us today and gain access to exclusive recruitment opportunities, collaborative events, and innovation resources.
+          </p>
+          <Link to="/join-us">
+            <Button className="bg-eurotech-blue text-white hover:bg-eurotech-accent px-8 py-6 text-lg font-semibold">
+              Join Our Network
+            </Button>
+          </Link>
         </section>
      </main>
       <Footer />

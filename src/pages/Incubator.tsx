@@ -11,17 +11,17 @@ const Incubator = () => {
     {
       title: "12-Week Intensive Program",
       description: "A focused curriculum designed to accelerate your startup from concept to market-ready in just three months.",
-      icon: <Calendar className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Calendar className="h-12 w-12 text-white" />,
     },
     {
       title: "Hybrid Format",
       description: "Combine online learning and mentorship with in-person workshops and networking events for maximum flexibility.",
-      icon: <Lightbulb className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Lightbulb className="h-12 w-12 text-white" />,
     },
     {
       title: "Pan-European Network",
       description: "Access resources and connections across multiple European tech hubs, expanding your startup's reach from day one.",
-      icon: <Globe className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Globe className="h-12 w-12 text-white" />,
     },
   ];
 
@@ -111,11 +111,11 @@ const Incubator = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="card-hover h-full">
+              <Card key={index} className="card-hover bg-eurotech-blue h-full">
                 <CardContent className="pt-6">
                   <div className="mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-bold text-eurotech-blue mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-white">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -129,7 +129,7 @@ const Incubator = () => {
             
             <div className="space-y-12 max-w-4xl mx-auto">
               {phases.map((phase, index) => (
-                <div key={index} className="flex flex-col md:flex-row gap-6 items-start bg-white p-8 rounded-lg shadow-sm">
+                <div key={index} className="flex flex-col md:flex-row gap-6 items-start p-4 rounded-lg">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-full bg-eurotech-blue flex items-center justify-center text-white font-bold text-xl">
                       {phase.number}
