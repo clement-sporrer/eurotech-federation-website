@@ -111,9 +111,11 @@ const Partners = () => {
               <p className="text-xl mb-6">
                 Join forces with Europe's largest student-led tech network and connect with the brightest minds across the continent.
               </p>
-              <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
-                Become a Partner
-              </Button>
+              <Link to="/join-us">
+                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
+                  Become a Partner
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

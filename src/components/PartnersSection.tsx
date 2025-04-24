@@ -19,7 +19,7 @@ const PartnersSection = () => {
           title="Universities Represented"
           partners={universities}
           buttonText="Become a University Partner"
-          buttonLink="/university-associations"
+          buttonLink="/partners"
         />
 
         <div className="text-center mt-12">

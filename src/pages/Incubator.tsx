@@ -77,9 +77,11 @@ const Incubator = () => {
                 Launch your tech startup with Europe's premier student-led incubator program, 
                 connecting you with resources, mentors, and opportunities across the continent.
               </p>
-              <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
-                Apply Now
-              </Button>
+              <Link to="/contact">
+                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
+                  Apply Now
+                </Button>
+              </Link>
               <div className="flex items-center mt-12 space-x-8">
                 <div className="flex flex-col items-center">
                   <span className="text-4xl font-bold">12</span>
