@@ -172,8 +172,10 @@ const Incubator = () => {
               and take your startup to the next level.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-eurotech-blue text-white hover:bg-eurotech-accent hover:text-white">
-                Apply Now
+              <Button asChild>
+                <Link to="/contact" className="bg-eurotech-blue text-white hover:bg-eurotech-accent hover:text-white">
+                  Apply Now
+                </Link>
               </Button>
             </div>
           </div>
