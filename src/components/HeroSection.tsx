@@ -19,7 +19,7 @@ const HeroSection = () => {
       <div className="container-section relative z-10 h-full flex items-center py-24 md:py-0">
         <div className="flex flex-col lg:flex-row items-center w-full h-full justify-center lg:justify-between gap-12">
           <div className="lg:w-2/3 text-left lg:text-left">
-            <h1 className="text-3xl md:text-5xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in">
+            <h1 className="text-3xl text-eurotech-gray md:text-5xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in">
               Uniting Europe's Brightest<br />
               <span className="text-eurotech-accent">Tech Talents</span>
             </h1>

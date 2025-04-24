@@ -53,46 +53,46 @@ const JoinUs = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="card-hover">
+            <Card className="card-hover bg-eurotech-blue">
               <CardHeader>
-                <GraduationCap className="h-12 w-12 text-eurotech-blue mb-4" />
-                <CardTitle className="text-2xl font-heading text-eurotech-blue">For Students</CardTitle>
+                <GraduationCap className="h-12 w-12 text-white mb-4" />
+                <CardTitle className="text-2xl font-heading text-white">For Students</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-gray-600 mb-6">
+                <CardDescription className="text-base text-white mb-6">
                   Join our network as an individual student to access events, opportunities, and connect with peers across Europe.
                 </CardDescription>
-                <Button className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
+                <Button className="bg-eurotech-blue">
                   Sign Up <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="card-hover">
+            <Card className="card-hover bg-eurotech-blue">
               <CardHeader>
-                <User className="h-12 w-12 text-eurotech-blue mb-4" />
-                <CardTitle className="text-2xl font-heading text-eurotech-blue">For Associations</CardTitle>
+                <User className="h-12 w-12 text-white mb-4" />
+                <CardTitle className="text-2xl font-heading text-white">For Associations</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-gray-600 mb-6">
+                <CardDescription className="text-base text-white mb-6">
                   Student associations can join our federation to collaborate on events, share resources, and expand your network.
                 </CardDescription>
-                <Button className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
+                <Button className="bg-eurotech-blue">
                   Apply to Join <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="card-hover">
+            <Card className="card-hover bg-eurotech-blue">
               <CardHeader>
-                <Building className="h-12 w-12 text-eurotech-blue mb-4" />
-                <CardTitle className="text-2xl font-heading text-eurotech-blue">For Organizations</CardTitle>
+                <Building className="h-12 w-12 text-white mb-4" />
+                <CardTitle className="text-2xl font-heading text-white">For Organizations</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-gray-600 mb-6">
+                <CardDescription className="text-base text-white mb-6">
                   Companies and institutions can partner with us to access talent, sponsor events, and promote innovation.
                 </CardDescription>
-                <Button className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
+                <Button className="bg-eurotech-blue">
                   Become a Partner <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -113,7 +113,7 @@ const JoinUs = () => {
               </TabsList>
               
               <TabsContent value="students">
-                <Card>
+                <Card className="bg-eurotech-gray border-none">
                   <CardHeader>
                     <CardTitle className="text-2xl text-eurotech-blue">Student Application</CardTitle>
                     <CardDescription>
@@ -155,7 +155,7 @@ const JoinUs = () => {
               </TabsContent>
               
               <TabsContent value="associations">
-                <Card>
+                <Card className="bg-eurotech-gray border-none">
                   <CardHeader>
                     <CardTitle className="text-2xl text-eurotech-blue">Association Application</CardTitle>
                     <CardDescription>
@@ -201,7 +201,7 @@ const JoinUs = () => {
               </TabsContent>
               
               <TabsContent value="organizations">
-                <Card>
+                <Card className="bg-eurotech-gray border-none">
                   <CardHeader>
                     <CardTitle className="text-2xl text-eurotech-blue">Organization Partnership Inquiry</CardTitle>
                     <CardDescription>

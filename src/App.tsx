@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import PastEvents from "./pages/PastEvents";
 import PastEventDetail from "./pages/PastEventDetail";
 import UniversityAssociations from "./pages/UniversityAssociations";
+import Incubator from "./pages/Incubator";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/past-events" element={<PastEvents />} />
           <Route path="/past-events/llm-to-agentic-ai" element={<PastEventDetail />} />
           <Route path="/university-associations" element={<UniversityAssociations />} />
+          <Route path="/incubator" element={<Incubator />} />
           {/* Catch-all route for better error handling */}
           <Route path="*" element={<NotFound />} />
         </Routes>

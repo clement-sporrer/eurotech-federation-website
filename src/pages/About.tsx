@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,35 +5,26 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, Flag, Network, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import PartnerGrid from '@/components/PartnerGrid';
+import { universities } from '@/data/partnersData';
 
 const About = () => {
   const goals = [
     {
       title: "Build an Active European Tech Network",
       description: "Create a vibrant community of students, professionals, and institutions across Europe to foster collaboration and innovation.",
-      icon: <Network className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Network className="h-12 w-12 text-white" />,
     },
     {
       title: "Organize Flagship Events",
       description: "Host high-impact conferences, hackathons, and networking events across European cities to showcase talent and ideas.",
-      icon: <Flag className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Flag className="h-12 w-12 text-white" />,
     },
     {
       title: "Launch a Pan-European Startup Accelerator",
       description: "Support emerging tech entrepreneurs with resources, mentorship, and funding opportunities to create the next generation of European tech leaders.",
-      icon: <Briefcase className="h-12 w-12 text-eurotech-blue" />,
+      icon: <Briefcase className="h-12 w-12 text-white" />,
     },
-  ];
-
-  const founders = [
-    { name: "Imperial College London", logo: "/lovable-uploads/imperial-college-london5190.jpg" },
-    { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
-    { name: "EPFL", logo: "/lovable-uploads/logo-epfl-1024x576.png" },
-    { name: "Dauphine-PSL", logo: "/lovable-uploads/000104777.jpg" },
-    { name: "UCL", logo: "/lovable-uploads/UCL_Institute_of_Education_logo.png" },
-    { name: "CentraleSupélec", logo: "/lovable-uploads/Logo_CentraleSupélec.png" },
-    { name: "ESSEC Business School", logo: "/lovable-uploads/Logo-essec.jpg" },
-    { name: "ESILV Engineering School", logo: "/lovable-uploads/Logo_esilv_png_blanc.png" },
   ];
 
   // Updated leadership team with correct information
@@ -178,11 +168,11 @@ const About = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {goals.map((goal, index) => (
-                <Card key={index} className="card-hover h-full">
+                <Card key={index} className="card-hover bg-eurotech-blue h-full">
                   <CardContent className="pt-6">
                     <div className="mb-4">{goal.icon}</div>
-                    <h3 className="text-xl font-bold text-eurotech-blue mb-3">{goal.title}</h3>
-                    <p className="text-gray-600">{goal.description}</p>
+                    <h3 className="text-xl font-bold text-white mb-3">{goal.title}</h3>
+                    <p className="text-white">{goal.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -191,23 +181,15 @@ const About = () => {
         </section>
 
         {/* Universities represented */}
-        <section className="container-section">
+        <section className="container-section py-16 md:py-24">
           <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Universities represented</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {founders.map((founder, index) => (
-              <Card key={index} className="card-hover">
-                <CardContent className="pt-6 flex flex-col items-center text-center">
-                  <img 
-                    src={founder.logo} 
-                    alt={founder.name} 
-                    className="h-16 object-contain mb-4"
-                  />
-                  <h3 className="text-xl font-bold text-eurotech-blue mb-1">{founder.name}</h3>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <PartnerGrid 
+            title="Member Universities" 
+            partners={universities} 
+            buttonLink="/university-associations"
+            showTitle={false}
+          />
         </section>
 
         {/* Our Team */}
@@ -217,16 +199,16 @@ const About = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {team.map((member, index) => (
-                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm card-hover">
+                <div key={index} className="rounded-lg overflow-hidden">
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-64 object-cover"
+                    className="w-full h-64 object-cover rounded-lg"
                   />
-                  <div className="p-6">
+                  <div className="pt-4">
                     <h3 className="text-xl font-bold text-eurotech-blue">{member.name}</h3>
-                    <p className="text-eurotech-accent font-medium">{member.role}</p>
-                    <p className="text-gray-600 mb-3">{member.university}</p>
+                    <p className="text-eurotech-blue font-medium">{member.role}</p>
+                    <p className="text-eurotech-blue mb-3">{member.university}</p>
                     <a 
                       href={member.linkedin} 
                       target="_blank" 

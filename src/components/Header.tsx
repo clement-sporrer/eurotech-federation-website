@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -42,6 +41,9 @@ const Header = () => {
             </Link>
             <Link to="/events" className="text-white hover:text-eurotech-accent font-medium">
               Events
+            </Link>
+            <Link to="/incubator" className="text-white hover:text-eurotech-accent font-medium">
+              Incubator
             </Link>
             <Link to="/partners" className="text-white hover:text-eurotech-accent font-medium">
               Partners
@@ -94,6 +96,13 @@ const Header = () => {
               onClick={toggleMenu}
             >
               Events
+            </Link>
+            <Link
+              to="/incubator"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-eurotech-accent"
+              onClick={toggleMenu}
+            >
+              Incubator
             </Link>
             <Link
               to="/partners"

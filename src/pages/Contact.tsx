@@ -7,6 +7,26 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
 import { Mail, MapPin, Linkedin, Instagram, Twitter } from 'lucide-react';
 
+// FAQ data
+const faqData = [
+  {
+    question: "How can my university join the EuroTech Federation?",
+    answer: "Universities can join through their student tech associations. Visit our \"Join Us\" page and fill out the association application form to start the process."
+  },
+  {
+    question: "Do you offer internship or job opportunities?",
+    answer: "While we don't directly offer employment, our network includes many leading tech companies that regularly recruit from our community. Attend our events to connect with potential employers."
+  },
+  {
+    question: "Can I attend events if my university isn't a member?",
+    answer: "Yes! Most of our events are open to all students, though members may receive priority registration or discounted tickets. Check individual event details for specific eligibility requirements."
+  },
+  {
+    question: "How can companies sponsor EuroTech Federation events?",
+    answer: "We offer various sponsorship packages for companies looking to engage with Europe's tech talent. Contact us through the partnership inquiry form on our Partners page to discuss options."
+  }
+];
+
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -230,34 +250,13 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Frequently Asked Questions</h2>
             
-            <div className="space-y-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold text-eurotech-blue mb-2">How can my university join the EuroTech Federation?</h3>
-                <p className="text-gray-600">
-                  Universities can join through their student tech associations. Visit our "Join Us" page and fill out the association application form to start the process.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold text-eurotech-blue mb-2">Do you offer internship or job opportunities?</h3>
-                <p className="text-gray-600">
-                  While we don't directly offer employment, our network includes many leading tech companies that regularly recruit from our community. Attend our events to connect with potential employers.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold text-eurotech-blue mb-2">Can I attend events if my university isn't a member?</h3>
-                <p className="text-gray-600">
-                  Yes! Most of our events are open to all students, though members may receive priority registration or discounted tickets. Check individual event details for specific eligibility requirements.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold text-eurotech-blue mb-2">How can companies sponsor EuroTech Federation events?</h3>
-                <p className="text-gray-600">
-                  We offer various sponsorship packages for companies looking to engage with Europe's tech talent. Contact us through the partnership inquiry form on our Partners page to discuss options.
-                </p>
-              </div>
+            <div className="space-y-6">
+              {faqData.map((faq, index) => (
+                <div key={index} className="border-b border-gray-300 pb-6 last:border-b-0">
+                  <h3 className="text-xl font-bold text-eurotech-blue mb-2">{faq.question}</h3>
+                  <p className="text-gray-600">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
