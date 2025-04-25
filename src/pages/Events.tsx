@@ -70,7 +70,7 @@ const Events = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Events</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">Events</h1>
               <p className="text-xl mb-6">
                 Join EuroTech Federation at our events across Europe. 
                 From major conferences to intimate networking opportunities, 

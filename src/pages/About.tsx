@@ -116,7 +116,7 @@ const About = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">About EuroTech Federation</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">About EuroTech Federation</h1>
               <p className="text-xl mb-6">
                 EuroTech Federation is the largest student-led tech network in Europe, 
                 bringing together top universities, student associations, and corporate partners.

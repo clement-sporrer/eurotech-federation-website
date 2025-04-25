@@ -72,7 +72,7 @@ const Incubator = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">EuroTech Incubator Program</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">EuroTech Incubator Program</h1>
               <p className="text-xl mb-6">
                 Launch your tech startup with Europe's premier student-led incubator program, 
                 connecting you with resources, mentors, and opportunities across the continent.

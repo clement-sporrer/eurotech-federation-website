@@ -106,7 +106,7 @@ const Contact = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">Contact Us</h1>
               <p className="text-xl mb-6">
                 Have questions or want to learn more about EuroTech Federation? We'd love to hear from you.
               </p>
