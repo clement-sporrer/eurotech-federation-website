@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ActionButton } from '@/components/ui/action-button';
 import { Link } from 'react-router-dom';
 import {
@@ -8,6 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 export interface Partner {
   name: string;
@@ -21,6 +23,8 @@ export interface PartnerCarouselProps {
   buttonLink?: string;
   itemsPerView?: string;
   showButton?: boolean;
+  autoplayDelay?: number;
+  autoplayEnabled?: boolean;
 }
 
 const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
@@ -29,8 +33,12 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
   buttonText,
   buttonLink,
   itemsPerView = "md:basis-1/3 lg:basis-1/4",
-  showButton = true
+  showButton = true,
+  autoplayDelay = 4000,
+  autoplayEnabled = true
 }) => {
+  const [api, setApi] = useState<any>(null);
+
   return (
     <div className="mb-16">
       <div className='flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0'>
@@ -46,6 +54,7 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
       <Carousel 
         className="w-full" 
         opts={{ loop: true, align: "start", dragFree: true }}
+        setApi={setApi}
       >
         <CarouselContent>
           {partners.map((partner, index) => (
@@ -65,8 +74,34 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
         <CarouselPrevious className="left-0 hidden sm:flex" />
         <CarouselNext className="right-0 hidden sm:flex" />
       </Carousel>
+      
+      {/* Set up autoplay using useEffect */}
+      {autoplayEnabled && (
+        <UseAutoplay 
+          api={api} 
+          delay={autoplayDelay} 
+          enabled={autoplayEnabled} 
+        />
+      )}
     </div>
   );
+};
+
+// Custom hook to handle autoplay functionality
+const UseAutoplay = ({ api, delay, enabled }: { api: any, delay: number, enabled: boolean }) => {
+  useEffect(() => {
+    if (!api || !enabled) return;
+    
+    // Set up interval for autoplay
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, delay);
+    
+    // Clear interval on cleanup
+    return () => clearInterval(interval);
+  }, [api, delay, enabled]);
+  
+  return null;
 };
 
 export default PartnerCarousel; 

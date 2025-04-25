@@ -3,13 +3,16 @@ import PartnerCarousel from '@/components/PartnerCarousel';
 import { universities, companies } from '@/data/partnersData';
 
 const PartnersSection = () => {
+  // Duplicate the companies array by concatenating it with itself
+  const duplicatedCompanies = [...companies, ...companies];
+  
   return (
     <section className="bg-eurotech-gray py-16 md:pb-48 md:pt-64">
       <div className="container-section">
         {/* Corporate Partners Carousel */}
         <PartnerCarousel 
           title="Some of our Corporate Partners"
-          partners={companies}
+          partners={duplicatedCompanies}
           buttonText="Become a Partner"
           buttonLink="/partners"
           showButton={false}
