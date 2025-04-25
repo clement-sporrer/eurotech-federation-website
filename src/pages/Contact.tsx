@@ -211,20 +211,12 @@ const Contact = () => {
                   <h3 className="font-bold text-gray-900 mb-3">Connect With Us</h3>
                   <div className="flex space-x-4">
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/company/eurotech-federation/" 
                       className="bg-eurotech-blue text-white p-3 rounded-full hover:bg-eurotech-dark transition-colors"
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
                       <Linkedin className="h-5 w-5" />
-                    </a>
-                    <a 
-                      href="https://instagram.com" 
-                      className="bg-eurotech-blue text-white p-3 rounded-full hover:bg-eurotech-dark transition-colors"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <Instagram className="h-5 w-5" />
                     </a>
                   </div>
                 </div>

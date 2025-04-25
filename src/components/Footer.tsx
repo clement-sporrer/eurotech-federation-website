@@ -42,7 +42,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-heading font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4 mb-4">
-              <a href="https://linkedin.com" className="text-white hover:text-eurotech-accent transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/eurotech-federation/" className="text-white hover:text-eurotech-accent transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={24} />
               </a>
               <a href="mailto:contact@eurotech-federation.org" className="text-white hover:text-eurotech-accent transition-colors">
