@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Calendar, MapPin, Users, Filter } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -71,7 +70,7 @@ const Events = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Events</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">Events</h1>
               <p className="text-xl mb-6">
                 Join EuroTech Federation at our events across Europe. 
                 From major conferences to intimate networking opportunities, 
@@ -82,9 +81,12 @@ const Events = () => {
                   href={eurotechLinkedIn}
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-white hover:text-eurotech-accent font-medium"
+                  className="inline-flex items-center"
                 >
-                  Follow us on LinkedIn for event updates <Calendar className="ml-2 h-5 w-5" />
+                  <ActionButton variant="secondary">
+                    Follow us on LinkedIn for event updates
+                    <Calendar className="ml-2 h-5 w-5" />
+                  </ActionButton>
                 </a>
               </div>
             </div>
@@ -154,9 +156,9 @@ const Events = () => {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Button className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
+                      <ActionButton variant="primary" className="w-full">
                         View Event Details
-                      </Button>
+                      </ActionButton>
                     </CardFooter>
                   </Card>
                 ))}
@@ -202,14 +204,14 @@ const Events = () => {
                     <CardFooter>
                       {event.link ? (
                         <Link to={event.link} className="w-full">
-                          <Button variant="outline" className="w-full border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white">
+                          <ActionButton variant="secondary" className="w-full border border-eurotech-blue">
                             View Event Recap
-                          </Button>
+                          </ActionButton>
                         </Link>
                       ) : (
-                        <Button variant="outline" className="w-full border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white" disabled>
+                        <ActionButton variant="secondary" className="w-full border border-eurotech-blue" disabled>
                           Recap Coming Soon
-                        </Button>
+                        </ActionButton>
                       )}
                     </CardFooter>
                   </Card>

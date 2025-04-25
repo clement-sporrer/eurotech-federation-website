@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Check, ExternalLink, Users, Globe, Presentation, Lightbulb, Building, Award } from 'lucide-react';
@@ -107,14 +107,14 @@ const Partners = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Partner With Us</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">Partner With Us</h1>
               <p className="text-xl mb-6">
                 Join forces with Europe's largest student-led tech network and connect with the brightest minds across the continent.
               </p>
               <Link to="/join-us">
-                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
+                <ActionButton variant="secondary">
                   Become a Partner
-                </Button>
+                </ActionButton>
               </Link>
             </div>
           </div>
@@ -177,9 +177,9 @@ const Partners = () => {
             Partner with us today and gain access to exclusive recruitment opportunities, collaborative events, and innovation resources.
           </p>
           <Link to="/join-us">
-            <Button className="bg-eurotech-blue text-white hover:bg-eurotech-accent px-8 py-6 text-lg font-semibold">
+            <ActionButton variant="primary">
               Join Our Network
-            </Button>
+            </ActionButton>
           </Link>
         </section>
      </main>

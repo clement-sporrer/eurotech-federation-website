@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 
@@ -45,9 +44,9 @@ const EventsSection = () => {
             Join us at our upcoming events across Europe to connect, learn, and innovate.
           </p>
         </div>
-        <Button className="mt-4 md:mt-0 flex items-center bg-eurotech-blue hover:bg-eurotech-dark">
+        <ActionButton variant="primary" className="mt-4 md:mt-0 flex items-center">
           View All Events <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
+        </ActionButton>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -83,9 +82,12 @@ const EventsSection = () => {
               </div>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" className="w-full border-eurotech-blue text-eurotech-blue hover:bg-eurotech-blue hover:text-white">
+              <ActionButton 
+                variant="secondary" 
+                className="w-full border border-eurotech-blue"
+              >
                 Register Now
-              </Button>
+              </ActionButton>
             </CardFooter>
           </Card>
         ))}

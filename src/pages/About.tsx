@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, Flag, Network, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -116,15 +116,15 @@ const About = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">About EuroTech Federation</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">About EuroTech Federation</h1>
               <p className="text-xl mb-6">
                 EuroTech Federation is the largest student-led tech network in Europe, 
                 bringing together top universities, student associations, and corporate partners.
               </p>
               <Link to="/join-us">
-                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
+                <ActionButton variant="secondary">
                   Join Our Mission
-                </Button>
+                </ActionButton>
               </Link>
             </div>
           </div>
@@ -164,7 +164,7 @@ const About = () => {
         {/* Our Goals */}
         <section className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Our Goals</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Goals</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {goals.map((goal, index) => (
@@ -182,20 +182,18 @@ const About = () => {
 
         {/* Universities represented */}
         <section className="container-section py-16 md:py-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Universities represented</h2>
-          
           <PartnerGrid 
-            title="Member Universities" 
+            title="Universities represented" 
             partners={universities} 
             buttonLink="/university-associations"
-            showTitle={false}
+            showTitle={true}
           />
         </section>
 
         {/* Our Team */}
         <section className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Team</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {team.map((member, index) => (

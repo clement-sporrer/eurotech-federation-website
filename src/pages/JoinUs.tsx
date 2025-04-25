@@ -1,9 +1,8 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { ArrowRight, Building, GraduationCap, User } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
@@ -35,7 +34,7 @@ const JoinUs = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Join Our Network</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">Join Our Network</h1>
               <p className="text-xl mb-6">
                 EuroTech Federation offers multiple ways to get involved in Europe's largest student-led tech network.
               </p>
@@ -62,9 +61,9 @@ const JoinUs = () => {
                 <CardDescription className="text-base text-white mb-6">
                   Join our network as an individual student to access events, opportunities, and connect with peers across Europe.
                 </CardDescription>
-                <Button className="bg-eurotech-blue">
+                <ActionButton variant="primary">
                   Sign Up <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                </ActionButton>
               </CardContent>
             </Card>
 
@@ -77,9 +76,9 @@ const JoinUs = () => {
                 <CardDescription className="text-base text-white mb-6">
                   Student associations can join our federation to collaborate on events, share resources, and expand your network.
                 </CardDescription>
-                <Button className="bg-eurotech-blue">
+                <ActionButton variant="primary">
                   Apply to Join <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                </ActionButton>
               </CardContent>
             </Card>
 
@@ -92,9 +91,9 @@ const JoinUs = () => {
                 <CardDescription className="text-base text-white mb-6">
                   Companies and institutions can partner with us to access talent, sponsor events, and promote innovation.
                 </CardDescription>
-                <Button className="bg-eurotech-blue">
+                <ActionButton variant="primary">
                   Become a Partner <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                </ActionButton>
               </CardContent>
             </Card>
           </div>
@@ -146,9 +145,9 @@ const JoinUs = () => {
                         <label htmlFor="student-motivation" className="block text-sm font-medium text-gray-700 mb-1">Why do you want to join?</label>
                         <Textarea id="student-motivation" placeholder="Tell us why you're interested in joining EuroTech Federation" rows={4} required />
                       </div>
-                      <Button type="submit" className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
+                      <ActionButton type="submit" variant="primary" className="w-full">
                         Submit Application
-                      </Button>
+                      </ActionButton>
                     </form>
                   </CardContent>
                 </Card>
@@ -192,9 +191,9 @@ const JoinUs = () => {
                         <label htmlFor="assoc-motivation" className="block text-sm font-medium text-gray-700 mb-1">Why do you want to join?</label>
                         <Textarea id="assoc-motivation" placeholder="How do you envision your association contributing to and benefiting from the EuroTech Federation?" rows={4} required />
                       </div>
-                      <Button type="submit" className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
+                      <ActionButton type="submit" variant="primary" className="w-full">
                         Submit Application
-                      </Button>
+                      </ActionButton>
                     </form>
                   </CardContent>
                 </Card>
@@ -251,12 +250,12 @@ const JoinUs = () => {
                         </div>
                       </div>
                       <div>
-                        <label htmlFor="org-interest" className="block text-sm font-medium text-gray-700 mb-1">Partnership Interest</label>
-                        <Textarea id="org-interest" placeholder="Describe how you would like to partner with EuroTech Federation and what you hope to achieve" rows={4} required />
+                        <label htmlFor="org-interests" className="block text-sm font-medium text-gray-700 mb-1">Partnership Interests</label>
+                        <Textarea id="org-interests" placeholder="Tell us how you'd like to partner with EuroTech Federation" rows={4} required />
                       </div>
-                      <Button type="submit" className="w-full bg-eurotech-blue hover:bg-eurotech-dark">
+                      <ActionButton type="submit" variant="primary" className="w-full">
                         Submit Inquiry
-                      </Button>
+                      </ActionButton>
                     </form>
                   </CardContent>
                 </Card>

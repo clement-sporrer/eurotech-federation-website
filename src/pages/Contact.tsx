@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
@@ -106,7 +106,7 @@ const Contact = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">Contact Us</h1>
               <p className="text-xl mb-6">
                 Have questions or want to learn more about EuroTech Federation? We'd love to hear from you.
               </p>
@@ -168,13 +168,14 @@ const Contact = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <Button 
+                <ActionButton 
                   type="submit" 
-                  className="w-full bg-eurotech-blue hover:bg-eurotech-dark"
+                  variant="primary"
+                  className="w-full"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
-                </Button>
+                </ActionButton>
               </form>
             </div>
             
@@ -210,20 +211,12 @@ const Contact = () => {
                   <h3 className="font-bold text-gray-900 mb-3">Connect With Us</h3>
                   <div className="flex space-x-4">
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/company/eurotech-federation/" 
                       className="bg-eurotech-blue text-white p-3 rounded-full hover:bg-eurotech-dark transition-colors"
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
                       <Linkedin className="h-5 w-5" />
-                    </a>
-                    <a 
-                      href="https://instagram.com" 
-                      className="bg-eurotech-blue text-white p-3 rounded-full hover:bg-eurotech-dark transition-colors"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <Instagram className="h-5 w-5" />
                     </a>
                   </div>
                 </div>
@@ -252,9 +245,9 @@ const Contact = () => {
             
             <div className="space-y-6">
               {faqData.map((faq, index) => (
-                <div key={index} className="border-b border-gray-300 pb-6 last:border-b-0">
-                  <h3 className="text-xl font-bold text-eurotech-blue mb-2">{faq.question}</h3>
-                  <p className="text-gray-600">{faq.answer}</p>
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-bold text-eurotech-blue mb-3">{faq.question}</h3>
+                  <p className="text-gray-700">{faq.answer}</p>
                 </div>
               ))}
             </div>

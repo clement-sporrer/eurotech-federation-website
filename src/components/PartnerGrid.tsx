@@ -34,7 +34,7 @@ const PartnerGrid: React.FC<PartnerGridProps> = ({
               <img 
                 src={partner.logo} 
                 alt={partner.name} 
-                className="h-12 md:h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" 
+                className="h-12 md:h-16 object-contain group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" 
               />
             </div>
           </Link>

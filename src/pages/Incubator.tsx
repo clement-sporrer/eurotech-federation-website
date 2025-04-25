@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, Globe, Lightbulb, Rocket, Users2, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -72,15 +72,15 @@ const Incubator = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">EuroTech Incubator Program</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">EuroTech Incubator Program</h1>
               <p className="text-xl mb-6">
                 Launch your tech startup with Europe's premier student-led incubator program, 
                 connecting you with resources, mentors, and opportunities across the continent.
               </p>
               <Link to="/contact">
-                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
+                <ActionButton variant="secondary">
                   Apply Now
-                </Button>
+                </ActionButton>
               </Link>
               <div className="flex items-center mt-12 space-x-8">
                 <div className="flex flex-col items-center">
@@ -174,11 +174,11 @@ const Incubator = () => {
               and take your startup to the next level.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild>
-                <Link to="/contact" className="bg-eurotech-blue text-white hover:bg-eurotech-accent hover:text-white">
+              <Link to="/contact">
+                <ActionButton variant="primary">
                   Apply Now
-                </Link>
-              </Button>
+                </ActionButton>
+              </Link>
             </div>
           </div>
         </section>

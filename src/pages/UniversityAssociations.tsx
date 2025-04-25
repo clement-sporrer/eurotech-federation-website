@@ -1,10 +1,10 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { ExternalLink, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ActionButton } from '@/components/ui/action-button';
 
 const UniversityAssociations = () => {
   // University associations data
@@ -117,9 +117,9 @@ const UniversityAssociations = () => {
                 Discover the leading student associations across Europe's top universities that form the backbone of EuroTech Federation.
               </p>
               <Link to="/join-us" className="inline-block">
-                <button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white px-6 py-3 rounded-md font-medium transition-colors">
+                <ActionButton variant="secondary">
                   Join Our Network
-                </button>
+                </ActionButton>
               </Link>
             </div>
           </div>
@@ -205,17 +205,18 @@ const UniversityAssociations = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/join-us" className="inline-block">
-                <button className="bg-eurotech-blue hover:bg-eurotech-dark text-white px-6 py-3 rounded-md font-medium transition-colors">
+                <ActionButton variant="primary">
                   Apply to Join
-                </button>
+                </ActionButton>
               </Link>
               <a 
                 href={eurotechLinkedIn}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white px-6 py-3 rounded-md font-medium transition-colors"
               >
-                Follow Us on LinkedIn <Linkedin className="ml-2 h-5 w-5" />
+                <ActionButton variant="secondary" className="inline-flex items-center justify-center">
+                  Follow Us on LinkedIn <Linkedin className="ml-2 h-5 w-5" />
+                </ActionButton>
               </a>
             </div>
           </div>
