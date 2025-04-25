@@ -1,10 +1,9 @@
-
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Home } from 'lucide-react';
 
 const NotFound = () => {
@@ -27,9 +26,9 @@ const NotFound = () => {
           <p className="text-gray-500 max-w-md mx-auto mb-8">
             The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
           </p>
-          <Button className="bg-eurotech-blue hover:bg-eurotech-dark">
+          <ActionButton variant="primary">
             <Home className="mr-2 h-4 w-4" /> Return to Home
-          </Button>
+          </ActionButton>
         </div>
       </main>
       <Footer />

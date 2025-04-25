@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Link } from 'react-router-dom';
 import {
   Carousel,
@@ -34,9 +34,9 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
       <div className='flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0'>
         <h3 className="section-title text-eurotech-blue text-begin">{title}</h3>
         <Link to={buttonLink}>
-          <Button className="bg-eurotech-blue hover:bg-eurotech-dark text-white text-lg px-6 py-6">
+          <ActionButton variant="primary">
             {buttonText}
-          </Button>
+          </ActionButton>
         </Link>
       </div>
       <Carousel 
@@ -51,7 +51,7 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
                   <img 
                     src={partner.logo} 
                     alt={partner.name} 
-                    className="h-12 md:h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" 
+                    className="h-12 md:h-16 object-contain group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" 
                   />
                 </div>
               </Link>

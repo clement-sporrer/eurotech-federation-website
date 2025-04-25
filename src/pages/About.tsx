@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, Flag, Network, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -122,9 +122,9 @@ const About = () => {
                 bringing together top universities, student associations, and corporate partners.
               </p>
               <Link to="/join-us">
-                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
+                <ActionButton variant="secondary">
                   Join Our Mission
-                </Button>
+                </ActionButton>
               </Link>
             </div>
           </div>

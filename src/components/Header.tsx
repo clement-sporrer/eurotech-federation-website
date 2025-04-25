@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -55,7 +55,7 @@ const Header = () => {
 
           <div className="hidden md:block">
             <Link to="/join-us">
-              <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">Join Network</Button>
+              <ActionButton variant="secondary">Join Network</ActionButton>
             </Link>
           </div>
 
@@ -120,7 +120,7 @@ const Header = () => {
             </Link>
             <div className="mt-4 px-3">
               <Link to="/join-us">
-                <Button className="w-full bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">Join Network</Button>
+                <ActionButton variant="secondary" className="w-full">Join Network</ActionButton>
               </Link>
             </div>
           </div>

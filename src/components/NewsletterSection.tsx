@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
 
@@ -47,12 +46,12 @@ const NewsletterSection = () => {
               className="flex-grow bg-white/10 text-white placeholder:text-white/70 border-white/20 focus-visible:ring-white"
               required
             />
-            <Button 
+            <ActionButton 
               type="submit" 
-              className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white"
+              variant="secondary"
             >
               Subscribe
-            </Button>
+            </ActionButton>
           </form>
           
           <p className="mt-4 text-sm text-white/80">

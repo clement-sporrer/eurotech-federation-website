@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
@@ -168,13 +168,14 @@ const Contact = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <Button 
+                <ActionButton 
                   type="submit" 
-                  className="w-full bg-eurotech-blue hover:bg-eurotech-dark"
+                  variant="primary"
+                  className="w-full"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
-                </Button>
+                </ActionButton>
               </form>
             </div>
             
@@ -252,9 +253,9 @@ const Contact = () => {
             
             <div className="space-y-6">
               {faqData.map((faq, index) => (
-                <div key={index} className="border-b border-gray-300 pb-6 last:border-b-0">
-                  <h3 className="text-xl font-bold text-eurotech-blue mb-2">{faq.question}</h3>
-                  <p className="text-gray-600">{faq.answer}</p>
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-bold text-eurotech-blue mb-3">{faq.question}</h3>
+                  <p className="text-gray-700">{faq.answer}</p>
                 </div>
               ))}
             </div>

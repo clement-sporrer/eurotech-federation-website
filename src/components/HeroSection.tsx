@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
@@ -28,9 +28,9 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Link to="/join-us">
-                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white text-lg px-6 py-6 w-full sm:w-auto">
+                <ActionButton variant="secondary" className="w-full sm:w-auto">
                   Join Network
-                </Button>
+                </ActionButton>
               </Link>
             </div>
           </div>

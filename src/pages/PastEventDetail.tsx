@@ -1,8 +1,7 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
+import { ActionButton } from '@/components/ui/action-button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, MapPin, Users, Award, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -300,14 +299,14 @@ const PastEventDetail = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/events">
-                <Button className="bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white">
+                <ActionButton variant="secondary">
                   See Upcoming Events
-                </Button>
+                </ActionButton>
               </Link>
               <Link to="/join-us">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-eurotech-blue">
+                <ActionButton variant="primary" className="border border-white">
                   Join Our Network
-                </Button>
+                </ActionButton>
               </Link>
             </div>
           </div>
