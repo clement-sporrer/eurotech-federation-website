@@ -164,7 +164,7 @@ const About = () => {
         {/* Our Goals */}
         <section className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Our Goals</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Goals</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {goals.map((goal, index) => (
@@ -182,20 +182,18 @@ const About = () => {
 
         {/* Universities represented */}
         <section className="container-section py-16 md:py-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Universities represented</h2>
-          
           <PartnerGrid 
-            title="Member Universities" 
+            title="Universities represented" 
             partners={universities} 
             buttonLink="/university-associations"
-            showTitle={false}
+            showTitle={true}
           />
         </section>
 
         {/* Our Team */}
         <section className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Team</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {team.map((member, index) => (
