@@ -17,9 +17,10 @@ export interface Partner {
 export interface PartnerCarouselProps {
   title: string;
   partners: Partner[];
-  buttonText: string;
-  buttonLink: string;
+  buttonText?: string;
+  buttonLink?: string;
   itemsPerView?: string;
+  showButton?: boolean;
 }
 
 const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
@@ -27,17 +28,20 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
   partners,
   buttonText,
   buttonLink,
-  itemsPerView = "md:basis-1/3 lg:basis-1/4"
+  itemsPerView = "md:basis-1/3 lg:basis-1/4",
+  showButton = true
 }) => {
   return (
     <div className="mb-16">
       <div className='flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0'>
         <h3 className="section-title text-eurotech-blue text-begin">{title}</h3>
-        <Link to={buttonLink}>
-          <ActionButton variant="primary">
-            {buttonText}
-          </ActionButton>
-        </Link>
+        {showButton && buttonText && buttonLink && (
+          <Link to={buttonLink}>
+            <ActionButton variant="primary">
+              {buttonText}
+            </ActionButton>
+          </Link>
+        )}
       </div>
       <Carousel 
         className="w-full" 
@@ -46,7 +50,7 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
         <CarouselContent>
           {partners.map((partner, index) => (
             <CarouselItem key={index} className={itemsPerView}>
-              <Link to={buttonLink} className="block h-full">
+              <Link to={buttonLink || '#'} className="block h-full">
                 <div className="group flex justify-center items-center p-6 h-full rounded-xl transition-all duration-300">
                   <img 
                     src={partner.logo} 

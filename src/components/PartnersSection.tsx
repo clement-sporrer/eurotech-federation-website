@@ -8,18 +8,20 @@ const PartnersSection = () => {
       <div className="container-section">
         {/* Corporate Partners Carousel */}
         <PartnerCarousel 
-          title="Corporate Partners"
+          title="Some of our Corporate Partners"
           partners={companies}
           buttonText="Become a Partner"
           buttonLink="/partners"
+          showButton={false}
         />
 
         {/* University Partners Carousel */}
         <PartnerCarousel 
-          title="Universities Represented"
+          title="Some of our Universities Represented"
           partners={universities}
           buttonText="Become a University Partner"
           buttonLink="/partners"
+          showButton={false}
         />
 
         <div className="text-center mt-12">
