@@ -23,7 +23,7 @@ const PartnerGrid: React.FC<PartnerGridProps> = ({
     <div className="mb-16">
       {showTitle && (
         <div className='mb-8'>
-          <h3 className="section-title text-eurotech-blue">{title}</h3>
+          <h3 className="section-title text-eurotech-blue text-center md:text-left">{title}</h3>
         </div>
       )}
       

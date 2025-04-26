@@ -107,7 +107,7 @@ const Partners = () => {
         <section className="bg-eurotech-blue text-white pt-40 pb-24">
           <div className="container-section">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">Partner With Us</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray text-center md:text-left w-full md:w-auto">Partner With Us</h1>
               <p className="text-xl mb-6">
                 Join forces with Europe's largest student-led tech network and connect with the brightest minds across the continent.
               </p>

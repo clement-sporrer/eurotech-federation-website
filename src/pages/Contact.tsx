@@ -118,8 +118,8 @@ const Contact = () => {
         <section className="container-section pt-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-3xl font-bold text-eurotech-blue mb-6">Get in Touch</h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <h2 className="text-3xl font-bold text-eurotech-blue mb-6 text-center md:text-left">Get in Touch</h2>
+              <p className="text-lg text-gray-600 mb-8 text-center md:text-left">
                 Fill out the form below and we'll get back to you as soon as possible.
               </p>
               
@@ -180,8 +180,8 @@ const Contact = () => {
             </div>
             
             <div>
-              <h2 className="text-3xl font-bold text-eurotech-blue mb-6">Contact Information</h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <h2 className="text-3xl font-bold text-eurotech-blue mb-6 text-center md:text-left">Contact Information</h2>
+              <p className="text-lg text-gray-600 mb-8 text-center md:text-left">
                 You can also reach out to us directly using the information below.
               </p>
               

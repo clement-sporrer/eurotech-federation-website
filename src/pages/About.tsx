@@ -135,7 +135,7 @@ const About = () => {
         <AnimatedSection className="container-section pt-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-eurotech-blue mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-center md:text-left text-eurotech-blue mb-6">Our Mission</h2>
               <p className="text-lg text-gray-700 mb-4">
                 EuroTech Federation aims to position Europe as a global leader in technology 
                 innovation through a united and collaborative network of students, startups, 
@@ -148,7 +148,7 @@ const About = () => {
               </p>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-eurotech-blue mb-6">Our Vision</h2>
+              <h2 className="text-3xl font-bold text-center md:text-left text-eurotech-blue mb-6">Our Vision</h2>
               <p className="text-lg text-gray-700 mb-4">
                 A connected Europe where talent, ideas, and resources flow seamlessly 
                 across borders to create world-leading technology innovations and 
@@ -165,7 +165,7 @@ const About = () => {
         {/* Our Goals */}
         <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Goals</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center md:text-left">Our Goals</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {goals.map((goal, index) => (
@@ -194,7 +194,7 @@ const About = () => {
         {/* Our Team */}
         <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center md:text-left">Our Team</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {team.map((member, index) => (
