@@ -104,9 +104,9 @@ const Partners = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-eurotech-blue text-white pt-40 pb-24">
-          <div className="container-section">
-            <div className="max-w-3xl">
+        <section className="bg-eurotech-blue text-white pt-16">
+          <div className="container-section py-4">
+            <div className="max-w-3xl min-h-96 flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray text-center md:text-left w-full md:w-auto">Partner With Us</h1>
               <p className="text-xl mb-6">
                 Join forces with Europe's largest student-led tech network and connect with the brightest minds across the continent.
