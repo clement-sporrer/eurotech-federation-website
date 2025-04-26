@@ -81,7 +81,7 @@ const About = () => {
     },
     {
       name: "Enguerrand Perrine",
-      role: "Head of switzerland @EuroTech",
+      role: "Head of Switzerland @EuroTech",
       university: "",
       linkedin: "https://www.linkedin.com/in/enguerrand-perrine-459178224/",
       image: "/1706383800501.jpeg"
