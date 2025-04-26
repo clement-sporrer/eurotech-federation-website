@@ -32,81 +32,67 @@ const About = () => {
   const team = [
     {
       name: "Clément Sporrer",
-      role: "Co-Founder @Utopia",
+      role: "Vice President @EuroTech",
       university: "ESSEC Business School",
       linkedin: "https://www.linkedin.com/in/clementsporrer/",
       image: "/lovable-uploads/b48a4ca7-0621-46f8-990b-809affd8341d.png"
     },
     {
       name: "Stanislas Michel",
-      role: "Head of Partnerships @Utopia",
+      role: "President @EuroTech",
       university: "ESSEC Business School & Fundação Getulio Vargas",
       linkedin: "https://www.linkedin.com/in/stanislas-michel-675b18224/",
       image: "/lovable-uploads/05f48d13-7ec0-4300-8d2f-fb18a60ad628.png"
     },
     {
-      name: "Louis Piallat",
-      role: "General Secretary @Utopia",
-      university: "ESSEC Business School & Sorbonne University",
-      linkedin: "https://www.linkedin.com/in/louispiallat/",
-      image: "/lovable-uploads/b360efb5-beeb-4bd0-a7a6-f3ce41a9a04c.png"
+      name: "Louise Maunoir",
+      role: "Head of Community @EuroTech",
+      university: "",
+      linkedin: "https://www.linkedin.com/in/louise-scarlette-maunoir/",
+      image: "/1743672427395.jpeg"
     },
     {
       name: "Fawzi Elghazoui",
-      role: "Head of Com @KS",
+      role: "Research Lead Defense @EuroTech",
       university: "ESILV",
       linkedin: "https://www.linkedin.com/in/favsidv/",
       image: "/lovable-uploads/1744305940400.jpeg"
     },
     {
       name: "Nicolas Bigeard",
-      role: "Partnership advisor @Utopia",
+      role: "Head of Summit @EuroTech",
       university: "ESILV",
       linkedin: "https://www.linkedin.com/in/nicolas-bigeard-b12687272/",
       image: "/lovable-uploads/cbe74abd-6016-4e3a-87f4-b60934900860.png"
     },
     {
-      name: "Mathieu Laruelle",
-      role: "Treasurer @KS",
-      university: "ESILV",
-      linkedin: "https://www.linkedin.com/in/mathieu-laruelle/",
-      image: "/lovable-uploads/1713304215880.jpeg"
-    },
-    {
-      name: "Alexandre Mourot",
-      role: "President @BSA EPFL",
-      university: "EPFL",
-      linkedin: "https://www.linkedin.com/in/alexandre-mourot-01b965239/",
-      image: "/lovable-uploads/1730368238246.jpeg"
-    },
-    {
-      name: "Gopi Mehta",
-      role: "CS @ TUM Blockchain Club",
-      university: "TUM",
-      linkedin: "https://www.linkedin.com/in/gopimehta/",
-      image: "/lovable-uploads/1724027530719.jpeg"
-    },
-    {
       name: "Laurenz Sommerlad",
-      role: "Advisor @TUM AI",
+      role: "Head of Incubator @EuroTech",
       university: "TUM",
       linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
       image: "/lovable-uploads/1682378092540.jpeg"
     },
     {
-      name: "Ming Xiao",
-      role: "President @Imperial Blockchain Group",
-      university: "Imperial College London",
-      linkedin: "https://www.linkedin.com/in/minghan-xiao-b36678236/",
-      image: "/lovable-uploads/1728905960703.jpeg"
-    },
-    {
       name: "Alessia Antonielli",
-      role: "Co-Founder @Utopia",
+      role: "Community Manager @EuroTech",
       university: "ESSEC Business School",
       linkedin: "https://www.linkedin.com/in/alessia-antonielli/",
       image: "/lovable-uploads/1722526280418.jpeg"
     },
+    {
+      name: "Enguerrand Perrine",
+      role: "Head of switzerland @EuroTech",
+      university: "",
+      linkedin: "https://www.linkedin.com/in/enguerrand-perrine-459178224/",
+      image: "/1706383800501.jpeg"
+    }, // 1743672427395.jpeg
+    {
+      name: "Salim Boujaddi",
+      role: "Head of IT @EuroTech",
+      university: "",
+      linkedin: "https://www.linkedin.com/in/salim-boujaddi/",
+      image: "/1742235768480.jpeg"
+    }
   ];
 
   return (
