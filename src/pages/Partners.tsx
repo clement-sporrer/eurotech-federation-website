@@ -157,14 +157,14 @@ const Partners = () => {
             <PartnerGrid 
               title="Universities Represented" 
               partners={universities} 
-              buttonLink="/university-associations"
+              buttonLink="/partners"
             />
             
             {/* Corporate Partners */}
             <PartnerGrid 
               title="Corporate Partners" 
               partners={companies} 
-              buttonLink="/contact"
+              buttonLink="/partners"
             />
           </div>
         </AnimatedSection>

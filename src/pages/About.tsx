@@ -186,7 +186,7 @@ const About = () => {
           <PartnerGrid 
             title="Universities represented" 
             partners={universities} 
-            buttonLink="/university-associations"
+            buttonLink="/partners"
             showTitle={true}
           />
         </AnimatedSection>
