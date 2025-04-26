@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Network, Calendar, Lightbulb, ArrowUpRight } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import AnimatedSection from './AnimatedSection';
 
 const PillarsSection = () => {
   const pillars = [
@@ -26,7 +26,7 @@ const PillarsSection = () => {
   ];
 
   return (
-    <section className="container-section mb-16 md:mb-48">
+    <AnimatedSection className="container-section mb-16 md:mb-48">
       <div className="text-center mb-16 flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center">
         <h2 className="section-title">Our Pillars</h2>
         <p className="text-xl text-left text-gray-600 max-w-3xl">
@@ -38,7 +38,7 @@ const PillarsSection = () => {
         {pillars.map((pillar, index) => (
           <Card key={index} className="card-hover bg-eurotech-blue">
             <CardHeader>
-              <div className="mb-48">{pillar.icon}</div>
+              <div className="mb-4">{pillar.icon}</div>
               <CardTitle className="text-2xl font-heading text-white">{pillar.title}</CardTitle>
             </CardHeader>
             <CardContent>
@@ -56,7 +56,7 @@ const PillarsSection = () => {
           </Card>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

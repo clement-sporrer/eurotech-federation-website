@@ -69,9 +69,9 @@ const Incubator = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-eurotech-blue text-white pt-40 pb-24">
-          <div className="container-section">
-            <div className="max-w-3xl">
+        <section className="bg-eurotech-blue text-white pt-16 h-fit">
+          <div className="container-section py-4">
+            <div className="max-w-3xl min-h-96 flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">EuroTech Incubator Program</h1>
               <p className="text-xl mb-6">
                 Launch your tech startup with Europe's premier student-led incubator program, 

@@ -7,6 +7,7 @@ import { Briefcase, Flag, Network, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PartnerGrid from '@/components/PartnerGrid';
 import { universities } from '@/data/partnersData';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const About = () => {
   const goals = [
@@ -113,9 +114,9 @@ const About = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-eurotech-blue text-white pt-40 pb-24">
-          <div className="container-section">
-            <div className="max-w-3xl">
+        <section className="bg-eurotech-blue text-white pt-16">
+          <div className="container-section py-4">
+            <div className="max-w-3xl min-h-96 flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">About EuroTech Federation</h1>
               <p className="text-xl mb-6">
                 EuroTech Federation is the largest student-led tech network in Europe, 
@@ -131,10 +132,10 @@ const About = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="container-section pt-24">
+        <AnimatedSection className="container-section pt-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-eurotech-blue mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-center md:text-left text-eurotech-blue mb-6">Our Mission</h2>
               <p className="text-lg text-gray-700 mb-4">
                 EuroTech Federation aims to position Europe as a global leader in technology 
                 innovation through a united and collaborative network of students, startups, 
@@ -147,7 +148,7 @@ const About = () => {
               </p>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-eurotech-blue mb-6">Our Vision</h2>
+              <h2 className="text-3xl font-bold text-center md:text-left text-eurotech-blue mb-6">Our Vision</h2>
               <p className="text-lg text-gray-700 mb-4">
                 A connected Europe where talent, ideas, and resources flow seamlessly 
                 across borders to create world-leading technology innovations and 
@@ -159,12 +160,12 @@ const About = () => {
               </p>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Our Goals */}
-        <section className="bg-eurotech-gray py-16 md:py-24">
+        <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Goals</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center md:text-left">Our Goals</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {goals.map((goal, index) => (
@@ -178,22 +179,22 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Universities represented */}
-        <section className="container-section py-16 md:py-24">
+        <AnimatedSection className="container-section py-16 md:py-24">
           <PartnerGrid 
             title="Universities represented" 
             partners={universities} 
-            buttonLink="/university-associations"
+            buttonLink="/partners"
             showTitle={true}
           />
-        </section>
+        </AnimatedSection>
 
         {/* Our Team */}
-        <section className="bg-eurotech-gray py-16 md:py-24">
+        <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center md:text-left">Our Team</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {team.map((member, index) => (
@@ -223,7 +224,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
       </main>
       <Footer />
     </div>

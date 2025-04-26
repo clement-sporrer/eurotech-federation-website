@@ -1,13 +1,14 @@
 import React from 'react';
 import PartnerCarousel from '@/components/PartnerCarousel';
 import { universities, companies } from '@/data/partnersData';
+import AnimatedSection from './AnimatedSection';
 
 const PartnersSection = () => {
   // Duplicate the companies array by concatenating it with itself
   const duplicatedCompanies = [...companies, ...companies];
   
   return (
-    <section className="bg-eurotech-gray py-16 md:pb-48 md:pt-64">
+    <AnimatedSection className="bg-eurotech-gray py-16 md:pb-48 md:pt-64">
       <div className="container-section">
         {/* Corporate Partners Carousel */}
         <PartnerCarousel 
@@ -31,7 +32,7 @@ const PartnersSection = () => {
           
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

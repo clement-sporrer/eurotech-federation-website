@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     }
 
     // Get form data
-    const { name, email, subject, message } = req.body;
+    const { name, email, subject, message, formType } = req.body;
 
     // Check that all required data is present
     if (!name || !email || !subject || !message) {
@@ -51,26 +51,104 @@ export default async function handler(req, res) {
 
     // Configure SendGrid with API key
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    
+    // Prepare the email content based on form type
+    let emailSubject = subject;
+    let htmlContent = '';
+    let textContent = '';
+    
+    // Format email content based on form type
+    switch (formType) {
+      case 'student':
+        emailSubject = `EuroTech Student Application: ${name}`;
+        htmlContent = `
+          <h2>Student Application</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Details:</strong></p>
+          <div>${message.replace(/\n/g, '<br>')}</div>
+        `;
+        textContent = `
+          Student Application
+          -------------------
+          Name: ${name}
+          Email: ${email}
+          
+          Details:
+          ${message}
+        `;
+        break;
+        
+      case 'association':
+        emailSubject = `EuroTech Association Application: ${name}`;
+        htmlContent = `
+          <h2>Association Application</h2>
+          <p><strong>Contact Person:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Details:</strong></p>
+          <div>${message.replace(/\n/g, '<br>')}</div>
+        `;
+        textContent = `
+          Association Application
+          ----------------------
+          Contact Person: ${name}
+          Email: ${email}
+          
+          Details:
+          ${message}
+        `;
+        break;
+        
+      case 'organization':
+        emailSubject = `EuroTech Partnership Inquiry: ${name}`;
+        htmlContent = `
+          <h2>Organization Partnership Inquiry</h2>
+          <p><strong>Contact Person:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Details:</strong></p>
+          <div>${message.replace(/\n/g, '<br>')}</div>
+        `;
+        textContent = `
+          Organization Partnership Inquiry
+          -------------------------------
+          Contact Person: ${name}
+          Email: ${email}
+          
+          Details:
+          ${message}
+        `;
+        break;
+        
+      default:
+        // Default case for the original contact form
+        emailSubject = `EuroTech Contact: ${subject}`;
+        htmlContent = `
+          <h2>Contact Message</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Subject:</strong> ${subject}</p>
+          <p><strong>Message:</strong></p>
+          <div>${message.replace(/\n/g, '<br>')}</div>
+        `;
+        textContent = `
+          Contact Message
+          --------------
+          Name: ${name}
+          Email: ${email}
+          Subject: ${subject}
+          
+          Message:
+          ${message}
+        `;
+    }
 
     // Create message
     const msg = {
       to: process.env.SENDGRID_RECIPIENT || 'contact@eurotech-federation.org', // Default recipient
       from: process.env.SENDGRID_SENDER, // Sender configured in SendGrid
-      subject: `EuroTech Contact: ${subject}`,
-      text: `
-        Name: ${name}
-        Email: ${email}
-        
-        Message:
-        ${message}
-      `,
-      html: `
-        <strong>Name:</strong> ${name}<br>
-        <strong>Email:</strong> ${email}<br>
-        <br>
-        <strong>Message:</strong><br>
-        ${message.replace(/\n/g, '<br>')}
-      `,
+      subject: emailSubject,
+      text: textContent,
+      html: htmlContent,
     };
 
     try {
