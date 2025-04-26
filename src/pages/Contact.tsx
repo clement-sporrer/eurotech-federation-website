@@ -190,7 +190,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-eurotech-blue mr-4 mt-1" />
                   <div>
                     <h3 className="font-bold text-gray-900">Email</h3>
-                    <p className="text-gray-600">contact@eurotechfederation.com</p>
+                    <p className="text-gray-600">contact@eurotech-federation.com</p>
                     <p className="text-gray-500 text-sm mt-1">For general inquiries</p>
                   </div>
                 </div>

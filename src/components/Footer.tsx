@@ -45,11 +45,11 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/eurotech-federation/" className="text-white hover:text-eurotech-accent transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={24} />
               </a>
-              <a href="mailto:contact@eurotech-federation.org" className="text-white hover:text-eurotech-accent transition-colors">
+              <a href="mailto:contact@eurotech-federation.com" className="text-white hover:text-eurotech-accent transition-colors">
                 <Mail size={24} />
               </a>
             </div>
-            <p className="text-gray-300">contact@eurotechfederation.com</p>
+            <p className="text-gray-300">contact@eurotech-federation.com</p>
           </div>
         </div>
         
