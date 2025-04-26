@@ -47,7 +47,7 @@ const Contact = () => {
     try {
       setIsSubmitting(true);
       
-      const response = await fetch('/api/send-email', {
+      const response = await fetch(import.meta.env.VITE_API_URL + '/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,12 +10,251 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
 
 const JoinUs = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmittingStudent, setIsSubmittingStudent] = useState(false);
+  const [isSubmittingAssociation, setIsSubmittingAssociation] = useState(false);
+  const [isSubmittingOrganization, setIsSubmittingOrganization] = useState(false);
+  
+  const [studentForm, setStudentForm] = useState({
+    name: '',
+    email: '',
+    university: '',
+    field: '',
+    motivation: ''
+  });
+  
+  const [associationForm, setAssociationForm] = useState({
+    name: '',
+    university: '',
+    contactPerson: '',
+    email: '',
+    description: '',
+    motivation: ''
+  });
+  
+  const [organizationForm, setOrganizationForm] = useState({
+    name: '',
+    type: '',
+    contactPerson: '',
+    position: '',
+    email: '',
+    phone: '',
+    interests: ''
+  });
+
+  const handleStudentChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    const key = id.replace('student-', '');
+    setStudentForm(prev => ({ ...prev, [key]: value }));
+  };
+  
+  const handleAssociationChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    const key = id.replace('assoc-', '');
+    setAssociationForm(prev => ({ ...prev, [key]: value }));
+  };
+  
+  const handleOrganizationChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    const key = id.replace('org-', '');
+    setOrganizationForm(prev => ({ ...prev, [key]: value }));
+  };
+
+  const handleStudentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Form submitted",
-      description: "Thank you for your interest! We'll be in touch soon.",
-    });
+    
+    try {
+      setIsSubmittingStudent(true);
+      
+      const payload = {
+        name: studentForm.name,
+        email: studentForm.email,
+        subject: 'Student Application',
+        message: `
+University: ${studentForm.university}
+Field of Study: ${studentForm.field}
+Motivation: ${studentForm.motivation}
+        `,
+        formType: 'student'
+      };
+      
+      const response = await fetch(import.meta.env.VITE_API_URL + '/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      
+      const data = await getResponseData(response);
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'An error occurred while sending the application');
+      }
+      
+      toast({
+        title: "Application submitted!",
+        description: "Thank you for your interest! We'll review your application and be in touch soon.",
+      });
+      
+      // Reset the form
+      setStudentForm({
+        name: '',
+        email: '',
+        university: '',
+        field: '',
+        motivation: ''
+      });
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Submission failed",
+        description: error instanceof Error ? error.message : "An error occurred. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmittingStudent(false);
+    }
+  };
+  
+  const handleAssociationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      setIsSubmittingAssociation(true);
+      
+      const payload = {
+        name: associationForm.contactPerson,
+        email: associationForm.email,
+        subject: 'Association Application',
+        message: `
+Association Name: ${associationForm.name}
+University: ${associationForm.university}
+Contact Person: ${associationForm.contactPerson}
+About the Association: ${associationForm.description}
+Motivation: ${associationForm.motivation}
+        `,
+        formType: 'association'
+      };
+      
+      const response = await fetch(import.meta.env.VITE_API_URL + '/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      
+      const data = await getResponseData(response);
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'An error occurred while sending the application');
+      }
+      
+      toast({
+        title: "Application submitted!",
+        description: "Thank you for your interest! We'll review your application and be in touch soon.",
+      });
+      
+      // Reset the form
+      setAssociationForm({
+        name: '',
+        university: '',
+        contactPerson: '',
+        email: '',
+        description: '',
+        motivation: ''
+      });
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Submission failed",
+        description: error instanceof Error ? error.message : "An error occurred. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmittingAssociation(false);
+    }
+  };
+  
+  const handleOrganizationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      setIsSubmittingOrganization(true);
+      
+      const payload = {
+        name: organizationForm.contactPerson,
+        email: organizationForm.email,
+        subject: 'Organization Partnership Inquiry',
+        message: `
+Organization Name: ${organizationForm.name}
+Organization Type: ${organizationForm.type}
+Contact Person: ${organizationForm.contactPerson}
+Position: ${organizationForm.position}
+Phone: ${organizationForm.phone || 'Not provided'}
+Partnership Interests: ${organizationForm.interests}
+        `,
+        formType: 'organization'
+      };
+      
+      const response = await fetch(import.meta.env.VITE_API_URL + '/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      
+      const data = await getResponseData(response);
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'An error occurred while sending the inquiry');
+      }
+      
+      toast({
+        title: "Inquiry submitted!",
+        description: "Thank you for your interest! We'll be in touch shortly to discuss partnership opportunities.",
+      });
+      
+      // Reset the form
+      setOrganizationForm({
+        name: '',
+        type: '',
+        contactPerson: '',
+        position: '',
+        email: '',
+        phone: '',
+        interests: ''
+      });
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Submission failed",
+        description: error instanceof Error ? error.message : "An error occurred. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmittingOrganization(false);
+    }
+  };
+  
+  // Helper function to parse API response
+  const getResponseData = async (response: Response) => {
+    let data;
+    const contentType = response.headers.get("content-type");
+    if (contentType && contentType.includes("application/json")) {
+      try {
+        const text = await response.text();
+        data = text ? JSON.parse(text) : {};
+      } catch (parseError) {
+        console.error("JSON parsing error:", parseError);
+        throw new Error("Invalid server response");
+      }
+    } else {
+      console.warn("Response is not in JSON format");
+      data = { message: await response.text() || "Empty response" };
+    }
+    return data;
   };
 
   const handleSubscribe = (e: React.FormEvent) => {
@@ -120,33 +359,70 @@ const JoinUs = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleStudentSubmit} className="space-y-6">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                           <label htmlFor="student-name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                          <Input id="student-name" placeholder="John Doe" required />
+                          <Input 
+                            id="student-name" 
+                            placeholder="John Doe" 
+                            required 
+                            value={studentForm.name}
+                            onChange={handleStudentChange}
+                          />
                         </div>
                         <div>
                           <label htmlFor="student-email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                          <Input id="student-email" type="email" placeholder="you@example.com" required />
+                          <Input 
+                            id="student-email" 
+                            type="email" 
+                            placeholder="you@example.com" 
+                            required 
+                            value={studentForm.email}
+                            onChange={handleStudentChange}
+                          />
                         </div>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                           <label htmlFor="student-university" className="block text-sm font-medium text-gray-700 mb-1">University</label>
-                          <Input id="student-university" placeholder="Imperial College London" required />
+                          <Input 
+                            id="student-university" 
+                            placeholder="Imperial College London" 
+                            required 
+                            value={studentForm.university}
+                            onChange={handleStudentChange}
+                          />
                         </div>
                         <div>
                           <label htmlFor="student-field" className="block text-sm font-medium text-gray-700 mb-1">Field of Study</label>
-                          <Input id="student-field" placeholder="Computer Science" required />
+                          <Input 
+                            id="student-field" 
+                            placeholder="Computer Science" 
+                            required 
+                            value={studentForm.field}
+                            onChange={handleStudentChange}
+                          />
                         </div>
                       </div>
                       <div>
                         <label htmlFor="student-motivation" className="block text-sm font-medium text-gray-700 mb-1">Why do you want to join?</label>
-                        <Textarea id="student-motivation" placeholder="Tell us why you're interested in joining EuroTech Federation" rows={4} required />
+                        <Textarea 
+                          id="student-motivation" 
+                          placeholder="Tell us why you're interested in joining EuroTech Federation" 
+                          rows={4} 
+                          required 
+                          value={studentForm.motivation}
+                          onChange={handleStudentChange}
+                        />
                       </div>
-                      <ActionButton type="submit" variant="primary" className="w-full">
-                        Submit Application
+                      <ActionButton 
+                        type="submit" 
+                        variant="primary" 
+                        className="w-full"
+                        disabled={isSubmittingStudent}
+                      >
+                        {isSubmittingStudent ? 'Submitting...' : 'Submit Application'}
                       </ActionButton>
                     </form>
                   </CardContent>
@@ -162,37 +438,81 @@ const JoinUs = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleAssociationSubmit} className="space-y-6">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                           <label htmlFor="assoc-name" className="block text-sm font-medium text-gray-700 mb-1">Association Name</label>
-                          <Input id="assoc-name" placeholder="Imperial AI Society" required />
+                          <Input 
+                            id="assoc-name" 
+                            placeholder="Imperial AI Society" 
+                            required 
+                            value={associationForm.name}
+                            onChange={handleAssociationChange}
+                          />
                         </div>
                         <div>
                           <label htmlFor="assoc-university" className="block text-sm font-medium text-gray-700 mb-1">University</label>
-                          <Input id="assoc-university" placeholder="Imperial College London" required />
+                          <Input 
+                            id="assoc-university" 
+                            placeholder="Imperial College London" 
+                            required 
+                            value={associationForm.university}
+                            onChange={handleAssociationChange}
+                          />
                         </div>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                          <label htmlFor="assoc-contact" className="block text-sm font-medium text-gray-700 mb-1">Contact Person</label>
-                          <Input id="assoc-contact" placeholder="John Doe" required />
+                          <label htmlFor="assoc-contactPerson" className="block text-sm font-medium text-gray-700 mb-1">Contact Person</label>
+                          <Input 
+                            id="assoc-contactPerson" 
+                            placeholder="John Doe" 
+                            required 
+                            value={associationForm.contactPerson}
+                            onChange={handleAssociationChange}
+                          />
                         </div>
                         <div>
                           <label htmlFor="assoc-email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                          <Input id="assoc-email" type="email" placeholder="contact@association.org" required />
+                          <Input 
+                            id="assoc-email" 
+                            type="email" 
+                            placeholder="contact@association.org" 
+                            required 
+                            value={associationForm.email}
+                            onChange={handleAssociationChange}
+                          />
                         </div>
                       </div>
                       <div>
                         <label htmlFor="assoc-description" className="block text-sm font-medium text-gray-700 mb-1">About the Association</label>
-                        <Textarea id="assoc-description" placeholder="Tell us about your association, its purpose, and activities" rows={4} required />
+                        <Textarea 
+                          id="assoc-description" 
+                          placeholder="Tell us about your association, its purpose, and activities" 
+                          rows={4} 
+                          required 
+                          value={associationForm.description}
+                          onChange={handleAssociationChange}
+                        />
                       </div>
                       <div>
                         <label htmlFor="assoc-motivation" className="block text-sm font-medium text-gray-700 mb-1">Why do you want to join?</label>
-                        <Textarea id="assoc-motivation" placeholder="How do you envision your association contributing to and benefiting from the EuroTech Federation?" rows={4} required />
+                        <Textarea 
+                          id="assoc-motivation" 
+                          placeholder="How do you envision your association contributing to and benefiting from the EuroTech Federation?" 
+                          rows={4} 
+                          required 
+                          value={associationForm.motivation}
+                          onChange={handleAssociationChange}
+                        />
                       </div>
-                      <ActionButton type="submit" variant="primary" className="w-full">
-                        Submit Application
+                      <ActionButton 
+                        type="submit" 
+                        variant="primary" 
+                        className="w-full"
+                        disabled={isSubmittingAssociation}
+                      >
+                        {isSubmittingAssociation ? 'Submitting...' : 'Submit Application'}
                       </ActionButton>
                     </form>
                   </CardContent>
@@ -208,11 +528,17 @@ const JoinUs = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleOrganizationSubmit} className="space-y-6">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                           <label htmlFor="org-name" className="block text-sm font-medium text-gray-700 mb-1">Organization Name</label>
-                          <Input id="org-name" placeholder="Tech Company Inc." required />
+                          <Input 
+                            id="org-name" 
+                            placeholder="Tech Company Inc." 
+                            required 
+                            value={organizationForm.name}
+                            onChange={handleOrganizationChange}
+                          />
                         </div>
                         <div>
                           <label htmlFor="org-type" className="block text-sm font-medium text-gray-700 mb-1">Organization Type</label>
@@ -220,6 +546,8 @@ const JoinUs = () => {
                             id="org-type" 
                             className="w-full rounded-md border border-input bg-background px-3 py-2"
                             required
+                            value={organizationForm.type}
+                            onChange={handleOrganizationChange}
                           >
                             <option value="">Select an option</option>
                             <option value="company">Company</option>
@@ -231,30 +559,66 @@ const JoinUs = () => {
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                          <label htmlFor="org-contact" className="block text-sm font-medium text-gray-700 mb-1">Contact Person</label>
-                          <Input id="org-contact" placeholder="Jane Smith" required />
+                          <label htmlFor="org-contactPerson" className="block text-sm font-medium text-gray-700 mb-1">Contact Person</label>
+                          <Input 
+                            id="org-contactPerson" 
+                            placeholder="Jane Smith" 
+                            required 
+                            value={organizationForm.contactPerson}
+                            onChange={handleOrganizationChange}
+                          />
                         </div>
                         <div>
                           <label htmlFor="org-position" className="block text-sm font-medium text-gray-700 mb-1">Position</label>
-                          <Input id="org-position" placeholder="Head of University Relations" required />
+                          <Input 
+                            id="org-position" 
+                            placeholder="Head of University Relations" 
+                            required 
+                            value={organizationForm.position}
+                            onChange={handleOrganizationChange}
+                          />
                         </div>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                           <label htmlFor="org-email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                          <Input id="org-email" type="email" placeholder="contact@company.com" required />
+                          <Input 
+                            id="org-email" 
+                            type="email" 
+                            placeholder="contact@company.com" 
+                            required 
+                            value={organizationForm.email}
+                            onChange={handleOrganizationChange}
+                          />
                         </div>
                         <div>
                           <label htmlFor="org-phone" className="block text-sm font-medium text-gray-700 mb-1">Phone (optional)</label>
-                          <Input id="org-phone" placeholder="+1 (555) 123-4567" />
+                          <Input 
+                            id="org-phone" 
+                            placeholder="+1 (555) 123-4567"
+                            value={organizationForm.phone}
+                            onChange={handleOrganizationChange}
+                          />
                         </div>
                       </div>
                       <div>
                         <label htmlFor="org-interests" className="block text-sm font-medium text-gray-700 mb-1">Partnership Interests</label>
-                        <Textarea id="org-interests" placeholder="Tell us how you'd like to partner with EuroTech Federation" rows={4} required />
+                        <Textarea 
+                          id="org-interests" 
+                          placeholder="Tell us how you'd like to partner with EuroTech Federation" 
+                          rows={4} 
+                          required 
+                          value={organizationForm.interests}
+                          onChange={handleOrganizationChange}
+                        />
                       </div>
-                      <ActionButton type="submit" variant="primary" className="w-full">
-                        Submit Inquiry
+                      <ActionButton 
+                        type="submit" 
+                        variant="primary" 
+                        className="w-full"
+                        disabled={isSubmittingOrganization}
+                      >
+                        {isSubmittingOrganization ? 'Submitting...' : 'Submit Inquiry'}
                       </ActionButton>
                     </form>
                   </CardContent>
