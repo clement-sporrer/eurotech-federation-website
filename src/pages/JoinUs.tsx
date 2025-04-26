@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,6 +10,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
 
 const JoinUs = () => {
+  const [activeTab, setActiveTab] = useState("students");
+  const formSectionRef = useRef<HTMLDivElement>(null);
+  
   const [isSubmittingStudent, setIsSubmittingStudent] = useState(false);
   const [isSubmittingAssociation, setIsSubmittingAssociation] = useState(false);
   const [isSubmittingOrganization, setIsSubmittingOrganization] = useState(false);
@@ -40,6 +43,15 @@ const JoinUs = () => {
     phone: '',
     interests: ''
   });
+
+  const navigateToTab = (tabId: string) => {
+    setActiveTab(tabId);
+    
+    // Scroll to the form section with smooth behavior
+    if (formSectionRef.current) {
+      formSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const handleStudentChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -300,7 +312,7 @@ Partnership Interests: ${organizationForm.interests}
                 <CardDescription className="text-base text-white mb-6">
                   Join our network as an individual student to access events, opportunities, and connect with peers across Europe.
                 </CardDescription>
-                <ActionButton variant="primary">
+                <ActionButton variant="primary" onClick={() => navigateToTab("students")}>
                   Sign Up <ArrowRight className="ml-2 h-4 w-4" />
                 </ActionButton>
               </CardContent>
@@ -315,7 +327,7 @@ Partnership Interests: ${organizationForm.interests}
                 <CardDescription className="text-base text-white mb-6">
                   Student associations can join our federation to collaborate on events, share resources, and expand your network.
                 </CardDescription>
-                <ActionButton variant="primary">
+                <ActionButton variant="primary" onClick={() => navigateToTab("associations")}>
                   Apply to Join <ArrowRight className="ml-2 h-4 w-4" />
                 </ActionButton>
               </CardContent>
@@ -330,7 +342,7 @@ Partnership Interests: ${organizationForm.interests}
                 <CardDescription className="text-base text-white mb-6">
                   Companies and institutions can partner with us to access talent, sponsor events, and promote innovation.
                 </CardDescription>
-                <ActionButton variant="primary">
+                <ActionButton variant="primary" onClick={() => navigateToTab("organizations")}>
                   Become a Partner <ArrowRight className="ml-2 h-4 w-4" />
                 </ActionButton>
               </CardContent>
@@ -339,11 +351,11 @@ Partnership Interests: ${organizationForm.interests}
         </section>
 
         {/* Application Tabs */}
-        <section className="bg-eurotech-gray py-16 md:py-24">
+        <section ref={formSectionRef} className="bg-eurotech-gray py-16 md:py-24">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Apply to Join</h2>
             
-            <Tabs defaultValue="students" className="w-full">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid w-full grid-cols-3 mb-12 bg-eurotech-blue text-white">
                 <TabsTrigger value="students">Students</TabsTrigger>
                 <TabsTrigger value="associations">Associations</TabsTrigger>
