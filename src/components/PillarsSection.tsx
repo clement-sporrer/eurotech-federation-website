@@ -38,7 +38,7 @@ const PillarsSection = () => {
         {pillars.map((pillar, index) => (
           <Card key={index} className="card-hover bg-eurotech-blue">
             <CardHeader>
-              <div className="mb-48">{pillar.icon}</div>
+              <div className="mb-4">{pillar.icon}</div>
               <CardTitle className="text-2xl font-heading text-white">{pillar.title}</CardTitle>
             </CardHeader>
             <CardContent>
