@@ -10,7 +10,7 @@ import { toast } from '@/components/ui/use-toast';
 import { Link } from 'react-router-dom';
 import PartnerGrid from '@/components/PartnerGrid';
 import { universities, companies } from '@/data/partnersData';
-
+import AnimatedSection from '@/components/AnimatedSection';
 const Partners = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -121,7 +121,7 @@ const Partners = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-24 container-section">
+        <AnimatedSection className="py-24 container-section">
           <div className="flex flex-col md:flex-row items-start md:items-center w-full justify-between mb-16 gap-6">
             <h2 className="section-title">Why Partner With Us?</h2>
             <p className="text-xl text-gray-600 max-w-xl">
@@ -146,10 +146,10 @@ const Partners = () => {
               </div>
             ))}
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Partners Showcase */}
-        <section className="bg-eurotech-gray py-16 md:py-24">
+        <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
             <h2 className="section-title text-center mb-12">Our Current Partners</h2>
             
@@ -167,10 +167,10 @@ const Partners = () => {
               buttonLink="/contact"
             />
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Join Network CTA Section */}
-        <section className="py-24 container-section text-center">
+        <AnimatedSection className="py-24 container-section text-center">
           <h2 className="section-title mb-8">Join Our Growing Network</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
             Is your company or university association looking to connect with Europe's leading tech talent network?
@@ -181,7 +181,7 @@ const Partners = () => {
               Join Our Network
             </ActionButton>
           </Link>
-        </section>
+        </AnimatedSection>
      </main>
       <Footer />
     </div>

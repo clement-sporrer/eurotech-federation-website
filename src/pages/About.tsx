@@ -7,6 +7,7 @@ import { Briefcase, Flag, Network, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PartnerGrid from '@/components/PartnerGrid';
 import { universities } from '@/data/partnersData';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const About = () => {
   const goals = [
@@ -131,7 +132,7 @@ const About = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="container-section pt-24">
+        <AnimatedSection className="container-section pt-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl font-bold text-eurotech-blue mb-6">Our Mission</h2>
@@ -159,10 +160,10 @@ const About = () => {
               </p>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Our Goals */}
-        <section className="bg-eurotech-gray py-16 md:py-24">
+        <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
             <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Goals</h2>
             
@@ -178,20 +179,20 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Universities represented */}
-        <section className="container-section py-16 md:py-24">
+        <AnimatedSection className="container-section py-16 md:py-24">
           <PartnerGrid 
             title="Universities represented" 
             partners={universities} 
             buttonLink="/university-associations"
             showTitle={true}
           />
-        </section>
+        </AnimatedSection>
 
         {/* Our Team */}
-        <section className="bg-eurotech-gray py-16 md:py-24">
+        <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
             <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-left">Our Team</h2>
             
@@ -223,7 +224,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
       </main>
       <Footer />
     </div>
