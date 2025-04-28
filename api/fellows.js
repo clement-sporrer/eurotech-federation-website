@@ -1,8 +1,8 @@
-// Vercel API Function for fetching Fellows data from Google Sheets
+// Serverless API function for Fellows data
 import { google } from 'googleapis';
 
 // Initialize Google Sheets API
-const initGoogleSheetsAPI = async () => {
+async function initGoogleSheetsAPI() {
   try {
     let auth;
     
@@ -35,7 +35,7 @@ const initGoogleSheetsAPI = async () => {
   }
 };
 
-// Main API handler for Vercel
+// Handler function
 export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
