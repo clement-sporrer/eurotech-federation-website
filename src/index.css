@@ -153,7 +153,7 @@
 
 @layer utilities {
   .animate-logo-scroll {
-    animation: logo-scroll 20s linear infinite;
+    animation: logo-scroll 30s linear infinite;
   }
   
   .pause-animation-on-hover:hover {

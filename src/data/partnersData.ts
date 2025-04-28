@@ -5,6 +5,8 @@ export const universities: Partner[] = [
   { name: "Imperial College London", logo: "/Imperial_logo.png" },
   { name: "Technical University of Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
   { name: "HEC Paris", logo: "/HEC_Paris.svg" },
+  { name: "ETH Zurich", logo: "/ETH_Zürich_Logo_black.svg" },
+  { name: "University College London", logo: "/University_College_London_logo.svg" },
   { name: "EPFL", logo: "/epfl_logo.png" },
   { name: "ESSEC Business School", logo: "/ESSEC_Logo.svg" },
   { name: "Bocconi University", logo: "/Bocconi_University_Logo.png" },
