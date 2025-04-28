@@ -2,16 +2,14 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { ActionButton } from '@/components/ui/action-button';
 import { Link } from 'react-router-dom';
+import { universities } from '@/data/partnersData';
 
 const HeroSection = () => {
-  // Define logos with their paths and countries
-  const logos = [
-    { src: "/flag_france.svg", alt: "France" },
-    { src: "/flag_suisse.svg", alt: "Switzerland" },
-    { src: "/flag_uk.svg", alt: "United Kingdom" },
-    { src: "/flag_italy.svg", alt: "Italy" },
-    { src: "/flag_germany.svg", alt: "Germany" },
-  ];
+  // Only use university logos
+  const universityLogos = universities.map(partner => ({
+    src: partner.logo,
+    alt: partner.name
+  }));
 
   return (
     <section className="relative  md:h-screen bg-eurotech-blue text-white overflow-hidden pt-16">
@@ -36,42 +34,61 @@ const HeroSection = () => {
           </div>
 
           <div className="lg:w-1/3 hidden md:flex justify-center lg:justify-end animate-fade-in h-full" style={{ animationDelay: '0.3s' }}>
-            <div className="logo-scroll-wrapper relative w-full max-w-[500px] overflow-hidden">
+            <div className="logo-scroll-wrapper relative w-full max-w-[400px] overflow-hidden">
               <div className="logo-scroll-container w-full h-full">
                 {/* Top blur effect */}
                 <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-eurotech-blue via-eurotech-blue to-transparent z-10"></div>
                 
                 <div className="logo-scroll-track">
                   {/* First set of logos */}
-                  {logos.map((logo, index) => (
+                  {universityLogos.map((logo, index) => (
                     <div 
                       key={`logo-1-${index}`} 
-                      className={`opacity-80 logo-item bg-white p-1.5 rounded-lg shadow-lg w-80 mx-auto ${index % 2 === 1 ? '-translate-x-12' : 'translate-x-12'}`}
-                      style={{ transform: `translate3d(${index % 2 === 1 ? '-48px' : '48px'}, 0, 0)` }}
+                      className={`opacity-80 logo-item p-1.5 rounded-lg w-64 mx-auto`}
                     >
-                      <img src={logo.src} alt={logo.alt} className="w-full h-48 object-cover" />
+                      <img 
+                        src={logo.src} 
+                        alt={logo.alt} 
+                        className="w-full h-32 object-contain" 
+                        style={{ 
+                          filter: `brightness(0) saturate(100%) invert(100%) sepia(9%) saturate(335%) hue-rotate(40deg) brightness(115%) contrast(81%)`,
+                          /* Cette combinaison de filtres reproduit la couleur exacte #F5F3ED */
+                        }}
+                      />
                     </div>
                   ))}
                   
                   {/* Duplicate set of logos for seamless looping */}
-                  {logos.map((logo, index) => (
+                  {universityLogos.map((logo, index) => (
                     <div 
                       key={`logo-2-${index}`} 
-                      className="opacity-80 logo-item bg-white p-1.5 rounded-lg shadow-lg w-80 mx-auto"
-                      style={{ transform: `translate3d(${index % 2 === 0 ? '-48px' : '48px'}, 0, 0)` }}
+                      className={`opacity-80 logo-item p-1.5 rounded-lg w-64 mx-auto`}
                     >
-                      <img src={logo.src} alt={logo.alt} className="w-full h-48 object-cover" />
+                      <img 
+                        src={logo.src} 
+                        alt={logo.alt} 
+                        className="w-full h-32 object-contain" 
+                        style={{ 
+                          filter: `brightness(0) saturate(100%) invert(100%) sepia(9%) saturate(335%) hue-rotate(40deg) brightness(115%) contrast(81%)`,
+                        }}
+                      />
                     </div>
                   ))}
                   
                   {/* Third set for extra smooth looping */}
-                  {logos.slice(0, 2).map((logo, index) => (
+                  {universityLogos.slice(0, 2).map((logo, index) => (
                     <div 
                       key={`logo-3-${index}`} 
-                      className="opacity-80 logo-item bg-white p-1.5 rounded-lg shadow-lg w-80 mx-auto"
-                      style={{ transform: `translate3d(${index % 2 === 1 ? '-48px' : '48px'}, 0, 0)` }}
+                      className={`opacity-80 logo-item p-1.5 rounded-lg w-64 mx-auto`}
                     >
-                      <img src={logo.src} alt={logo.alt} className="w-full h-48 object-cover" />
+                      <img 
+                        src={logo.src} 
+                        alt={logo.alt} 
+                        className="w-full h-32 object-contain" 
+                        style={{ 
+                          filter: `brightness(0) saturate(100%) invert(100%) sepia(9%) saturate(335%) hue-rotate(40deg) brightness(115%) contrast(81%)`,
+                        }}
+                      />
                     </div>
                   ))}
                 </div>
