@@ -98,14 +98,14 @@ const About = () => {
     {
       name: "Clément Sporrer",
       role: "Vice President @EuroTech",
-      university: "ESSEC Business School",
+      university: "",
       linkedin: "https://www.linkedin.com/in/clementsporrer/",
       image: "/lovable-uploads/b48a4ca7-0621-46f8-990b-809affd8341d.png"
     },
     {
       name: "Stanislas Michel",
       role: "President @EuroTech",
-      university: "ESSEC Business School & Fundação Getulio Vargas",
+      university: "Fundação Getulio Vargas",
       linkedin: "https://www.linkedin.com/in/stanislas-michel-675b18224/",
       image: "/lovable-uploads/05f48d13-7ec0-4300-8d2f-fb18a60ad628.png"
     },
@@ -119,14 +119,14 @@ const About = () => {
     {
       name: "Fawzi Elghazoui",
       role: "Research Lead Defense @EuroTech",
-      university: "ESILV",
+      university: "",
       linkedin: "https://www.linkedin.com/in/favsidv/",
       image: "/lovable-uploads/1744305940400.jpeg"
     },
     {
       name: "Nicolas Bigeard",
-      role: "Head of Summit @EuroTech",
-      university: "ESILV",
+      role: "Head of Partnerships @EuroTech",
+      university: "",
       linkedin: "https://www.linkedin.com/in/nicolas-bigeard-b12687272/",
       image: "/lovable-uploads/cbe74abd-6016-4e3a-87f4-b60934900860.png"
     },
@@ -140,7 +140,7 @@ const About = () => {
     {
       name: "Alessia Antonielli",
       role: "Community Manager @EuroTech",
-      university: "ESSEC Business School",
+      university: "",
       linkedin: "https://www.linkedin.com/in/alessia-antonielli/",
       image: "/lovable-uploads/1722526280418.jpeg"
     },

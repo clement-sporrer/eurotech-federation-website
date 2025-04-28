@@ -194,19 +194,7 @@ const Contact = () => {
                     <p className="text-gray-500 text-sm mt-1">For general inquiries</p>
                   </div>
                 </div>
-                
-                <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-eurotech-blue mr-4 mt-1" />
-                  <div>
-                    <h3 className="font-bold text-gray-900">Headquarters</h3>
-                    <p className="text-gray-600">
-                      PSL Dauphine University<br />
-                      Place du Maréchal de Lattre de Tassigny<br />
-                      75016 Paris, France
-                    </p>
-                  </div>
-                </div>
-                
+               
                 <div>
                   <h3 className="font-bold text-gray-900 mb-3">Connect With Us</h3>
                   <div className="flex space-x-4">
@@ -221,19 +209,6 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Map Placeholder */}
-              <div className="mt-10 bg-gray-200 h-64 rounded-lg overflow-hidden">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.467145428186!2d2.2699736765450365!3d48.8682708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e665462d3fa229%3A0x8c56dccde4f693d0!2sUniversit%C3%A9%20Paris%20Dauphine%20-%20PSL!5e0!3m2!1sen!2sus!4v1682437085985!5m2!1sen!2sus" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
             </div>
           </div>
         </section>
@@ -245,11 +220,12 @@ const Contact = () => {
             
             <div className="space-y-6">
               {faqData.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div key={index} className="py-4 rounded-lg bg-transparent">
                   <h3 className="text-xl font-bold text-eurotech-blue mb-3">{faq.question}</h3>
                   <p className="text-gray-700">{faq.answer}</p>
                 </div>
               ))}
+
             </div>
           </div>
         </section>
