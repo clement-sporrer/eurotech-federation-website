@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ActionButton } from '@/components/ui/action-button';
@@ -9,7 +9,72 @@ import PartnerGrid from '@/components/PartnerGrid';
 import { universities } from '@/data/partnersData';
 import AnimatedSection from '@/components/AnimatedSection';
 
+// Interface for Fellow data from API
+interface Fellow {
+  photo: string;
+  fullName: string;
+  country: string;
+  linkedin: string;
+}
+
+// Interface for display format
+interface FellowDisplay {
+  image: string;
+  name: string;
+  role: string;
+  university: string;
+  linkedin: string;
+  country: string;
+}
+
 const About = () => {
+  // State to store fellows data
+  const [fellows, setFellows] = useState<FellowDisplay[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch fellows data from API
+  useEffect(() => {
+    const fetchFellows = async () => {
+      try {
+        setLoading(true);
+        // Use relative URL in production, full URL in development
+        const apiUrl = process.env.NODE_ENV === 'production' 
+          ? '/api/fellows' 
+          : 'https://eurotech-federation-website-qd3c60if1-ezds-projects.vercel.app/api/fellows'
+          
+        const response = await fetch(apiUrl);
+        
+        if (!response.ok) {
+          throw new Error(`Failed to fetch fellows: ${response.status}`);
+        }
+        
+        const data: Fellow[] = await response.json();
+        
+        // Transform API data to display format
+        const transformedData: FellowDisplay[] = data.map(fellow => ({
+          image: fellow.photo,
+          name: fellow.fullName,
+          role: "Fellow @EuroTech",
+          country: fellow.country,
+          university: "",  // API doesn't provide university info yet
+          linkedin: fellow.linkedin.includes('linkedin.com') 
+            ? fellow.linkedin 
+            : `https://linkedin.com/in/${fellow.linkedin}`
+        }));
+        
+        setFellows(transformedData);
+      } catch (err) {
+        console.error("Error fetching fellows:", err);
+        setError(err instanceof Error ? err.message : 'Unknown error');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFellows();
+  }, []);
+
   const goals = [
     {
       title: "Build an Active European Tech Network",
@@ -210,32 +275,43 @@ const About = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-              {team.map((member, index) => (
-                <div key={index} className="rounded-lg overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-64 object-cover rounded-lg"
-                  />
-                  <div className="pt-4">
-                    <h3 className="text-xl font-bold text-eurotech-blue">{member.name}</h3>
-                    <p className="text-eurotech-blue font-medium">{member.role}</p>
-                    <p className="text-eurotech-blue mb-3">{member.university}</p>
-                    <a 
-                      href={member.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-eurotech-blue hover:underline flex items-center"
-                    >
-                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                      </svg>
-                      LinkedIn
-                    </a>
-                  </div>
+            {/* Fellows Section */}
+            <div className="mt-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-6 text-center md:text-left">Fellows</h2>
+              
+              {loading ? (
+                <p className="text-center text-eurotech-blue">Loading fellows data...</p>
+              ) : error ? (
+                <p className="text-center text-red-500">Error loading fellows: {error}</p>
+              ) : fellows.length === 0 ? (
+                <p className="text-center text-eurotech-blue">No fellows data available</p>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                  {fellows.map((member, index) => (
+                    <div key={index} className="rounded-lg">
+                      <div className="space-y-3">
+                        <h3 className="text-xl font-bold text-eurotech-blue">{member.name}</h3>
+                        <p className="text-eurotech-blue font-medium">{member.role}</p>
+                        {member.university && (
+                          <p className="text-eurotech-blue">{member.university}</p>
+                        )}
+                        <p className="text-eurotech-blue italic">{member.country}</p>
+                        <a 
+                          href={member.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-eurotech-blue hover:underline flex items-center mt-4"
+                        >
+                          <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                          </svg>
+                          LinkedIn
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </AnimatedSection>
