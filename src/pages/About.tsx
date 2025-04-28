@@ -246,7 +246,8 @@ const About = () => {
         <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
             <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center md:text-left">Our Team</h2>
-            
+           <div className=''> 
+            <h2 className='text-2xl md:text-2xl font-bold text-eurotech-blue mb-6 text-center md:text-left'>Core Team</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {team.map((member, index) => (
                 <div key={index} className="rounded-lg overflow-hidden">
@@ -274,10 +275,10 @@ const About = () => {
                 </div>
               ))}
             </div>
-
+            </div>
             {/* Fellows Section */}
             <div className="mt-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-6 text-center md:text-left">Fellows</h2>
+              <h2 className="text-2xl md:text-2xl font-bold text-eurotech-blue mb-6 text-center md:text-left">Fellows</h2>
               
               {loading ? (
                 <p className="text-center text-eurotech-blue">Loading fellows data...</p>
