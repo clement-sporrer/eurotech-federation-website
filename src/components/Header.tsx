@@ -42,9 +42,6 @@ const Header = () => {
             <Link to="/events" className="text-white hover:text-eurotech-accent font-medium">
               Events
             </Link>
-            <Link to="/incubator" className="text-white hover:text-eurotech-accent font-medium">
-              Incubator
-            </Link>
             <Link to="/partners" className="text-white hover:text-eurotech-accent font-medium">
               Partners
             </Link>

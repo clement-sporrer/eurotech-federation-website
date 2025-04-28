@@ -16,12 +16,6 @@ const PillarsSection = () => {
       description: "Organizing high-impact conferences, hackathons, and networking opportunities throughout Europe.",
       icon: <Calendar className="h-12 w-12 text-white" />,
       link: "/events"
-    },
-    {
-      title: "Startup Incubator",
-      description: "Supporting the next generation of European tech entrepreneurs with resources and mentorship.",
-      icon: <Lightbulb className="h-12 w-12 text-white" />,
-      link: "/join-us"
     }
   ];
 
@@ -34,7 +28,7 @@ const PillarsSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {pillars.map((pillar, index) => (
           <Card key={index} className="card-hover bg-eurotech-blue">
             <CardHeader>
