@@ -55,6 +55,7 @@
     "embla-carousel-react": "^8.0.0-rc12",
     "express": "^5.1.0",
     "framer-motion": "^12.7.4",
+    "googleapis": "^148.0.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",

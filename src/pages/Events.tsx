@@ -95,130 +95,19 @@ const Events = () => {
 
         {/* Events Section */}
         <section className="container-section py-24">
-          <Tabs defaultValue="upcoming" className="w-full">
-            <TabsList className="mb-8 grid w-full grid-cols-2 bg-eurotech-blue text-white">
-              <TabsTrigger value="upcoming">Upcoming Events</TabsTrigger>
-              <TabsTrigger value="past">Past Events</TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="upcoming">
-              <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                <h2 className="text-3xl font-bold text-eurotech-blue mb-4 sm:mb-0">Upcoming Events</h2>
-                
-                <div className="flex items-center space-x-2">
-                  <Filter className="h-5 w-5 text-gray-600" />
-                  <div className="flex flex-wrap gap-2">
-                    {['All', 'Conference', 'Hackathon', 'Keynote', 'Side Event'].map((filter) => (
-                      <Badge 
-                        key={filter} 
-                        variant={activeFilter === filter ? "default" : "outline"}
-                        className={activeFilter === filter ? "bg-eurotech-blue" : "cursor-pointer"}
-                        onClick={() => setActiveFilter(filter)}
-                      >
-                        {filter}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
-                {filteredUpcomingEvents.map((event) => (
-                  <Card key={event.id} className="overflow-hidden card-hover">
-                    <div className="relative h-48">
-                      <img 
-                        src={event.image} 
-                        alt={event.title} 
-                        className="w-full h-full object-cover"
-                      />
-                      <Badge className="absolute top-4 right-4 bg-eurotech-blue">
-                        {event.type}
-                      </Badge>
-                    </div>
-                    <CardHeader className="pt-6">
-                      <h3 className="text-xl font-bold text-eurotech-blue">{event.title}</h3>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-gray-600 mb-4">{event.description}</p>
-                      <div className="space-y-2">
-                        <div className="flex items-center text-gray-600">
-                          <Calendar className="h-5 w-5 mr-2" />
-                          <span>{event.date}</span>
-                        </div>
-                        <div className="flex items-center text-gray-600">
-                          <MapPin className="h-5 w-5 mr-2" />
-                          <span>{event.location}</span>
-                        </div>
-                        <div className="flex items-center text-gray-600">
-                          <Users className="h-5 w-5 mr-2" />
-                          <span>{event.attendees} attendees</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                    <CardFooter>
-                      <ActionButton variant="primary" className="w-full">
-                        View Event Details
-                      </ActionButton>
-                    </CardFooter>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="past">
-              <h2 className="text-3xl font-bold text-eurotech-blue mb-8">Past Events</h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
-                {pastEvents.map((event) => (
-                  <Card key={event.id} className="overflow-hidden card-hover">
-                    <div className="relative h-48">
-                      <img 
-                        src={event.image} 
-                        alt={event.title} 
-                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all"
-                      />
-                      <Badge className="absolute top-4 right-4 bg-gray-600">
-                        {event.type}
-                      </Badge>
-                    </div>
-                    <CardHeader className="pt-6">
-                      <h3 className="text-xl font-bold text-eurotech-blue">{event.title}</h3>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-gray-600 mb-4">{event.description}</p>
-                      <div className="space-y-2">
-                        <div className="flex items-center text-gray-600">
-                          <Calendar className="h-5 w-5 mr-2" />
-                          <span>{event.date}</span>
-                        </div>
-                        <div className="flex items-center text-gray-600">
-                          <MapPin className="h-5 w-5 mr-2" />
-                          <span>{event.location}</span>
-                        </div>
-                        <div className="flex items-center text-gray-600">
-                          <Users className="h-5 w-5 mr-2" />
-                          <span>{event.attendees} attendees</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                    <CardFooter>
-                      {event.link ? (
-                        <Link to={event.link} className="w-full">
-                          <ActionButton variant="secondary" className="w-full border border-eurotech-blue">
-                            View Event Recap
-                          </ActionButton>
-                        </Link>
-                      ) : (
-                        <ActionButton variant="secondary" className="w-full border border-eurotech-blue" disabled>
-                          Recap Coming Soon
-                        </ActionButton>
-                      )}
-                    </CardFooter>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="text-3xl font-bold mb-8 text-center">Upcoming Events</h2>
+            <iframe
+              src="https://lu.ma/embed/calendar/cal-8MjGJtLdOO2UB9m/events?lt=light"
+              width="100%"
+              height="450"
+              frameBorder="0"
+              style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
+              allowFullScreen={true}
+              aria-hidden="false"
+              tabIndex={0}
+            ></iframe>
+          </div>
         </section>
       </main>
       <Footer />

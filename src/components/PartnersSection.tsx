@@ -8,7 +8,7 @@ const PartnersSection = () => {
   const duplicatedCompanies = [...companies, ...companies];
   
   return (
-    <AnimatedSection className="bg-eurotech-gray py-16 md:pb-48 md:pt-64">
+    <AnimatedSection className="bg-eurotech-gray py-16 md:pb-32 md:pt-48">
       <div className="container-section">
         {/* Corporate Partners Carousel */}
         <PartnerCarousel 

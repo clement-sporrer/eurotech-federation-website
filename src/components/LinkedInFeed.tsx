@@ -13,7 +13,7 @@ const LinkedInFeed = () => {
   }, []);
 
   return (
-    <AnimatedSection className="bg-eurotech-gray py-16 md:pb-48">
+    <AnimatedSection className="bg-eurotech-gray py-16 md:pb-32">
       <div className="container-section">
         <div className="text-center mb-16 flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center">
           <h2 className="section-title">Connect With Us</h2>

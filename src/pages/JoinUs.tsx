@@ -293,81 +293,23 @@ Partnership Interests: ${organizationForm.interests}
           </div>
         </section>
 
-        {/* Join Options Section */}
-        <section className="container-section pt-24">
-          <div className="text-center mb-16">
-            <h2 className="section-title">How to Get Involved</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Whether you're a student, association, academic institution, or company, there's a place for you in our network.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="card-hover bg-eurotech-blue">
-              <CardHeader>
-                <GraduationCap className="h-12 w-12 text-white mb-4" />
-                <CardTitle className="text-2xl font-heading text-white">For Students</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base text-white mb-6">
-                  Join our network as an individual student to access events, opportunities, and connect with peers across Europe.
-                </CardDescription>
-                <ActionButton variant="primary" onClick={() => navigateToTab("students")}>
-                  Sign Up <ArrowRight className="ml-2 h-4 w-4" />
-                </ActionButton>
-              </CardContent>
-            </Card>
-
-            <Card className="card-hover bg-eurotech-blue">
-              <CardHeader>
-                <User className="h-12 w-12 text-white mb-4" />
-                <CardTitle className="text-2xl font-heading text-white">For Associations</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base text-white mb-6">
-                  Student associations can join our federation to collaborate on events, share resources, and expand your network.
-                </CardDescription>
-                <ActionButton variant="primary" onClick={() => navigateToTab("associations")}>
-                  Apply to Join <ArrowRight className="ml-2 h-4 w-4" />
-                </ActionButton>
-              </CardContent>
-            </Card>
-
-            <Card className="card-hover bg-eurotech-blue">
-              <CardHeader>
-                <Building className="h-12 w-12 text-white mb-4" />
-                <CardTitle className="text-2xl font-heading text-white">For Organizations</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base text-white mb-6">
-                  Companies and institutions can partner with us to access talent, sponsor events, and promote innovation.
-                </CardDescription>
-                <ActionButton variant="primary" onClick={() => navigateToTab("organizations")}>
-                  Become a Partner <ArrowRight className="ml-2 h-4 w-4" />
-                </ActionButton>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
         {/* Application Tabs */}
         <section ref={formSectionRef} className="bg-eurotech-gray py-16 md:py-24">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center">Apply to Join</h2>
             
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-12 bg-eurotech-blue text-white">
-                <TabsTrigger value="students">Students</TabsTrigger>
-                <TabsTrigger value="associations">Associations</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-2 mb-12 bg-eurotech-blue text-white">
+                <TabsTrigger value="students">Fellows</TabsTrigger>
                 <TabsTrigger value="organizations">Organizations</TabsTrigger>
               </TabsList>
               
               <TabsContent value="students">
                 <Card className="bg-eurotech-gray border-none">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-eurotech-blue">Student Application</CardTitle>
+                    <CardTitle className="text-2xl text-eurotech-blue">Fellow Application</CardTitle>
                     <CardDescription>
-                      Join our network as an individual student to access opportunities and connect with peers.
+                      Join our network as an individual fellow to access opportunities and connect with peers.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -400,7 +342,7 @@ Partnership Interests: ${organizationForm.interests}
                           <label htmlFor="student-university" className="block text-sm font-medium text-gray-700 mb-1">University</label>
                           <Input 
                             id="student-university" 
-                            placeholder="Imperial College London" 
+                            placeholder="Imperial College London / NA if you are not a student" 
                             required 
                             value={studentForm.university}
                             onChange={handleStudentChange}
@@ -410,7 +352,7 @@ Partnership Interests: ${organizationForm.interests}
                           <label htmlFor="student-field" className="block text-sm font-medium text-gray-700 mb-1">Field of Study</label>
                           <Input 
                             id="student-field" 
-                            placeholder="Computer Science" 
+                            placeholder="Computer Science / NA if you are not a student" 
                             required 
                             value={studentForm.field}
                             onChange={handleStudentChange}
@@ -440,98 +382,8 @@ Partnership Interests: ${organizationForm.interests}
                   </CardContent>
                 </Card>
               </TabsContent>
-              
-              <TabsContent value="associations">
-                <Card className="bg-eurotech-gray border-none">
-                  <CardHeader>
-                    <CardTitle className="text-2xl text-eurotech-blue">Association Application</CardTitle>
-                    <CardDescription>
-                      Student associations can apply to become official members of the EuroTech Federation.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleAssociationSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="assoc-name" className="block text-sm font-medium text-gray-700 mb-1">Association Name</label>
-                          <Input 
-                            id="assoc-name" 
-                            placeholder="Imperial AI Society" 
-                            required 
-                            value={associationForm.name}
-                            onChange={handleAssociationChange}
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="assoc-university" className="block text-sm font-medium text-gray-700 mb-1">University</label>
-                          <Input 
-                            id="assoc-university" 
-                            placeholder="Imperial College London" 
-                            required 
-                            value={associationForm.university}
-                            onChange={handleAssociationChange}
-                          />
-                        </div>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="assoc-contactPerson" className="block text-sm font-medium text-gray-700 mb-1">Contact Person</label>
-                          <Input 
-                            id="assoc-contactPerson" 
-                            placeholder="John Doe" 
-                            required 
-                            value={associationForm.contactPerson}
-                            onChange={handleAssociationChange}
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="assoc-email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                          <Input 
-                            id="assoc-email" 
-                            type="email" 
-                            placeholder="contact@association.org" 
-                            required 
-                            value={associationForm.email}
-                            onChange={handleAssociationChange}
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <label htmlFor="assoc-description" className="block text-sm font-medium text-gray-700 mb-1">About the Association</label>
-                        <Textarea 
-                          id="assoc-description" 
-                          placeholder="Tell us about your association, its purpose, and activities" 
-                          rows={4} 
-                          required 
-                          value={associationForm.description}
-                          onChange={handleAssociationChange}
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="assoc-motivation" className="block text-sm font-medium text-gray-700 mb-1">Why do you want to join?</label>
-                        <Textarea 
-                          id="assoc-motivation" 
-                          placeholder="How do you envision your association contributing to and benefiting from the EuroTech Federation?" 
-                          rows={4} 
-                          required 
-                          value={associationForm.motivation}
-                          onChange={handleAssociationChange}
-                        />
-                      </div>
-                      <ActionButton 
-                        type="submit" 
-                        variant="primary" 
-                        className="w-full"
-                        disabled={isSubmittingAssociation}
-                      >
-                        {isSubmittingAssociation ? 'Submitting...' : 'Submit Application'}
-                      </ActionButton>
-                    </form>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              
-              <TabsContent value="organizations">
+             
+             <TabsContent value="organizations">
                 <Card className="bg-eurotech-gray border-none">
                   <CardHeader>
                     <CardTitle className="text-2xl text-eurotech-blue">Organization Partnership Inquiry</CardTitle>
