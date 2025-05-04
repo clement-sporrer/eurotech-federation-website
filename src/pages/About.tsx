@@ -137,13 +137,13 @@ const About = () => {
       linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
       image: "/lovable-uploads/1682378092540.jpeg"
     },
-    //{
+    {
       name: "Alessia Antonielli",
       role: "Community Manager @EuroTech",
       university: "",
       linkedin: "https://www.linkedin.com/in/alessia-antonielli/",
       image: "/lovable-uploads/1722526280418.jpeg"
-    },//
+    },
     {
       name: "Enguerrand Perrine",
       role: "Founding Fellow",
