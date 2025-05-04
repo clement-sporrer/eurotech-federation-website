@@ -138,11 +138,32 @@ const About = () => {
       image: "/lovable-uploads/1682378092540.jpeg"
     },
     {
-      name: "Alessia Antonielli",
-      role: "Community Manager @EuroTech",
+      name: "Pasha Rizali",
+      role: "Founding Fellow",
       university: "",
-      linkedin: "https://www.linkedin.com/in/alessia-antonielli/",
-      image: "/lovable-uploads/1722526280418.jpeg"
+      linkedin: "https://www.linkedin.com/in/pasha-rizali/",
+      image: ""
+    },
+    {
+      name: "Salan Isaqzoi",
+      role: "Founding Fellow",
+      university: "",
+      linkedin: "https://www.linkedin.com/in/salan-isa/",
+      image: ""
+    },
+    {
+      name: "Tobias Kotzian",
+      role: "Founding Fellow",
+      university: "",
+      linkedin: "https://www.linkedin.com/in/tobias-kotzian/",
+      image: "/lovable-uploads/b48a4ca7-0621-46f8-990b-809affd8341d.png"
+    },
+    {
+      name: "Andrea Procopio",
+      role: "Founding Fellow",
+      university: "",
+      linkedin: "https://www.linkedin.com/in/procopioandrea/",
+      image: ""
     },
     {
       name: "Enguerrand Perrine",
@@ -158,6 +179,13 @@ const About = () => {
       linkedin: "https://www.linkedin.com/in/salim-boujaddi/",
       image: "/1742235768480.jpeg"
     }
+    {
+      name: "Alessia Antonielli",
+      role: "Founding Fellow",
+      university: "",
+      linkedin: "https://www.linkedin.com/in/alessia-antonielli/",
+      image: "/lovable-uploads/1722526280418.jpeg"
+    },
   ];
 
   return (
