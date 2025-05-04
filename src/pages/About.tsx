@@ -178,14 +178,14 @@ const About = () => {
       university: "",
       linkedin: "https://www.linkedin.com/in/salim-boujaddi/",
       image: "/1742235768480.jpeg"
-    }
+    },
     {
       name: "Alessia Antonielli",
       role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/alessia-antonielli/",
       image: "/lovable-uploads/1722526280418.jpeg"
-    },
+    }
   ];
 
   return (
@@ -198,8 +198,7 @@ const About = () => {
             <div className="max-w-3xl min-h-96 flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">About EuroTech Federation</h1>
               <p className="text-xl mb-6">
-                EuroTech Federation is the largest student-led tech network in Europe, 
-                bringing together top universities, student associations, and corporate partners.
+                The next generation of European tech is already here. EuroTech Federation is a community of people under 30 — driven by action, united by vision, and building what Europe needs next.
               </p>
               <Link to="/join-us">
                 <ActionButton variant="secondary">
