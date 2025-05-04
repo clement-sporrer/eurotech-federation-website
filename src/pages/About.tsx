@@ -77,18 +77,18 @@ const About = () => {
 
   const goals = [
     {
-      title: "Build an Active European Tech Network",
-      description: "Create a vibrant community of students, professionals, and institutions across Europe to foster collaboration and innovation.",
+      title: "Connect Europe's Emerging Talent",
+      description: "Bring together builders, hackers, researchers, and creators under 30 from across Europe to share ideas and form meaningful connections.",
       icon: <Network className="h-12 w-12 text-white" />,
     },
     {
-      title: "Organize Flagship Events",
-      description: "Host high-impact conferences, hackathons, and networking events across European cities to showcase talent and ideas.",
+      title: "Support Locally-Led Initiatives",
+      description: "Encourage and amplify events and projects initiated by community members — from hackathons and roundtables to informal meetups.",
       icon: <Flag className="h-12 w-12 text-white" />,
     },
     {
-      title: "Launch a Pan-European Startup Accelerator",
-      description: "Support emerging tech entrepreneurs with resources, mentorship, and funding opportunities to create the next generation of European tech leaders.",
+      title: "Highlight and Empower Fellows",
+      description: "Recognize exceptional individuals through a selective fellowship that enables access to curated opportunities and shapes the future of the community.",
       icon: <Briefcase className="h-12 w-12 text-white" />,
     },
   ];
@@ -97,63 +97,63 @@ const About = () => {
   const team = [
     {
       name: "Clément Sporrer",
-      role: "Vice President @EuroTech",
+      role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/clementsporrer/",
       image: "/lovable-uploads/b48a4ca7-0621-46f8-990b-809affd8341d.png"
     },
     {
       name: "Stanislas Michel",
-      role: "President @EuroTech",
-      university: "Fundação Getulio Vargas",
+      role: "Founding Fellow",
+      university: "",
       linkedin: "https://www.linkedin.com/in/stanislas-michel-675b18224/",
       image: "/lovable-uploads/05f48d13-7ec0-4300-8d2f-fb18a60ad628.png"
     },
     {
       name: "Louise Maunoir",
-      role: "Head of Community @EuroTech",
+      role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/louise-scarlette-maunoir/",
       image: "/1743672427395.jpeg"
     },
     {
       name: "Fawzi Elghazoui",
-      role: "Research Lead Defense @EuroTech",
+      role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/favsidv/",
       image: "/lovable-uploads/1744305940400.jpeg"
     },
     {
       name: "Nicolas Bigeard",
-      role: "Head of Partnerships @EuroTech",
+      role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/nicolas-bigeard-b12687272/",
       image: "/lovable-uploads/cbe74abd-6016-4e3a-87f4-b60934900860.png"
     },
     {
       name: "Laurenz Sommerlad",
-      role: "Head of Incubator @EuroTech",
+      role: "Founding Fellow",
       university: "TUM",
       linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
       image: "/lovable-uploads/1682378092540.jpeg"
     },
-    {
+    //{
       name: "Alessia Antonielli",
       role: "Community Manager @EuroTech",
       university: "",
       linkedin: "https://www.linkedin.com/in/alessia-antonielli/",
       image: "/lovable-uploads/1722526280418.jpeg"
-    },
+    },//
     {
       name: "Enguerrand Perrine",
-      role: "Head of Switzerland @EuroTech",
+      role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/enguerrand-perrine-459178224/",
       image: "/1706383800501.jpeg"
     }, // 1743672427395.jpeg
     {
       name: "Salim Boujaddi",
-      role: "Head of IT @EuroTech",
+      role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/salim-boujaddi/",
       image: "/1742235768480.jpeg"
@@ -188,26 +188,21 @@ const About = () => {
             <div>
               <h2 className="text-3xl font-bold text-center md:text-left text-eurotech-blue mb-6">Our Mission</h2>
               <p className="text-lg text-gray-700 mb-4">
-                EuroTech Federation aims to position Europe as a global leader in technology 
-                innovation through a united and collaborative network of students, startups, 
-                and institutions.
+                EuroTech Federation is a community — not an organization, not an association, and not a company.
               </p>
               <p className="text-lg text-gray-700">
-                We believe in the power of connection and collaboration across borders, 
-                institutions, and disciplines to drive technological advancement and 
-                create opportunities for Europe's brightest minds.
+                We exist to connect ambitious people under 30 across Europe — to meet, collaborate, and build the future of tech together.
+                We empower members and fellows to launch ideas, support one another, and grow without borders, hierarchy, or bureaucracy.
               </p>
             </div>
             <div>
               <h2 className="text-3xl font-bold text-center md:text-left text-eurotech-blue mb-6">Our Vision</h2>
               <p className="text-lg text-gray-700 mb-4">
-                A connected Europe where talent, ideas, and resources flow seamlessly 
-                across borders to create world-leading technology innovations and 
-                solutions.
+                A bold, borderless European tech scene powered by people — not institutions.
+                We believe the next generation of builders, researchers, and creators will shape Europe’s place in the world by working together across cities, schools, and cultures.
               </p>
               <p className="text-lg text-gray-700">
-                We envision a future where European tech talent has access to the 
-                networks, knowledge, and opportunities needed to thrive on the global stage.
+                No central structure. Just trust, talent, and action.
               </p>
             </div>
           </div>
@@ -242,12 +237,12 @@ const About = () => {
           />
         </AnimatedSection>
 
-        {/* Our Team */}
+        {/* Founding Fellows */}
         <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center md:text-left">Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-12 text-center md:text-left">Founding Fellows</h2>
            <div className=''> 
-            <h2 className='text-2xl md:text-2xl font-bold text-eurotech-blue mb-6 text-center md:text-left'>Core Team</h2>
+            <h2 className='text-2xl md:text-2xl font-bold text-eurotech-blue mb-6 text-center md:text-left'>Founding Fellows</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {team.map((member, index) => (
                 <div key={index} className="rounded-lg overflow-hidden">
