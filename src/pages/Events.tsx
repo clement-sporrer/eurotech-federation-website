@@ -72,9 +72,8 @@ const Events = () => {
             <div className="max-w-3xl min-h-96 flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-eurotech-gray">Events</h1>
               <p className="text-xl mb-6">
-                Join EuroTech Federation at our events across Europe. 
-                From major conferences to intimate networking opportunities, 
-                we bring together the brightest minds in tech.
+                Join initiatives across Europe supported by EuroTech Federation — from member-led projects to fellow-driven events and aligned community gatherings. 
+                We don’t organize events ourselves, but we proudly support and amplify the ones that reflect our vision, wherever they happen.
               </p>
               <div className="flex items-center gap-4">
                 <a 
