@@ -6,14 +6,14 @@ import AnimatedSection from './AnimatedSection';
 const PillarsSection = () => {
   const pillars = [
     {
-      title: "Network",
-      description: "Building a collaborative ecosystem of students, universities, and corporate partners across Europe.",
+      title: "Open Collaboration",
+      description: "Anyone can be a member — to connect, contribute, and take part across Europe. Fellows, selected for their talent and initiative, help shape direction, uphold quality, and access unique opportunities.",
       icon: <Network className="h-12 w-12 text-white" />,
       link: "/partners"
     },
     {
-      title: "Events",
-      description: "Organizing high-impact conferences, hackathons, and networking opportunities throughout Europe.",
+      title: "Decentralized by Design",
+      description: "No legal entity. No HQ. No hierarchy. EuroTech is a peer-to-peer community where everything is locally led, voluntarily coordinated, and globally connected — powered by shared ambition, not centralized control.",
       icon: <Calendar className="h-12 w-12 text-white" />,
       link: "/events"
     }
