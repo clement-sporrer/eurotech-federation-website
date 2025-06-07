@@ -193,6 +193,7 @@ export default async function handler(req, res) {
           
           return {
             fullName: fellow['Full Name'] || '',
+            role: fellow['Role'] || '',
             country: fellow['Country'] || '',
             linkedin: linkedin,
             photo: photoUrl
