@@ -97,31 +97,31 @@ const About = () => {
   const team = [
     {
       name: "Clément Sporrer",
-      role: "Founding Fellow",
+      role: "Co-Founder",
       university: "",
       linkedin: "https://www.linkedin.com/in/clementsporrer/",
       image: "/lovable-uploads/b48a4ca7-0621-46f8-990b-809affd8341d.png"
     },
     {
       name: "Stanislas Michel",
-      role: "Founding Fellow",
+      role: "Co-Founder",
       university: "",
       linkedin: "https://www.linkedin.com/in/stanislas-michel-675b18224/",
       image: "/lovable-uploads/05f48d13-7ec0-4300-8d2f-fb18a60ad628.png"
     },
     {
       name: "Louise Maunoir",
-      role: "Founding Fellow",
+      role: "Co-Founder",
       university: "",
       linkedin: "https://www.linkedin.com/in/louise-scarlette-maunoir/",
       image: "/1743672427395.jpeg"
     },
     {
-      name: "Fawzi Elghazoui",
+      name: "Laurenz Sommerlad",
       role: "Founding Fellow",
       university: "",
-      linkedin: "https://www.linkedin.com/in/favsidv/",
-      image: "/lovable-uploads/1744305940400.jpeg"
+      linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
+      image: "/lovable-uploads/1682378092540.jpeg"
     },
     {
       name: "Nicolas Bigeard",
@@ -131,32 +131,11 @@ const About = () => {
       image: "/lovable-uploads/cbe74abd-6016-4e3a-87f4-b60934900860.png"
     },
     {
-      name: "Laurenz Sommerlad",
-      role: "Founding Fellow",
-      university: "TUM",
-      linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
-      image: "/lovable-uploads/1682378092540.jpeg"
-    },
-    {
       name: "Pasha Rizali",
       role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/pasha-rizali/",
       image: ""
-    },
-    {
-      name: "Salan Isaqzoi",
-      role: "Founding Fellow",
-      university: "",
-      linkedin: "https://www.linkedin.com/in/salan-isa/",
-      image: ""
-    },
-    {
-      name: "Tobias Kotzian",
-      role: "Founding Fellow",
-      university: "",
-      linkedin: "https://www.linkedin.com/in/tobias-kotzian/",
-      image: "/lovable-uploads/b48a4ca7-0621-46f8-990b-809affd8341d.png"
     },
     {
       name: "Andrea Procopio",
@@ -178,13 +157,13 @@ const About = () => {
       university: "",
       linkedin: "https://www.linkedin.com/in/salim-boujaddi/",
       image: "/1742235768480.jpeg"
-    },
+    },  
     {
-      name: "Alessia Antonielli",
+      name: "Tobias Kotzian",
       role: "Founding Fellow",
       university: "",
-      linkedin: "https://www.linkedin.com/in/alessia-antonielli/",
-      image: "/lovable-uploads/1722526280418.jpeg"
+      linkedin: "https://www.linkedin.com/in/tobias-kotzian/",
+      image: ""
     }
   ];
 
@@ -267,7 +246,7 @@ const About = () => {
         {/* Our Team */}
         <AnimatedSection className="bg-eurotech-gray py-16 md:py-24">
           <div className="container-section">
-            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-6 text-center md:text-left">Founding Fellows</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-eurotech-blue mb-6 text-center md:text-left">Core Team</h2>
            <div className=''> 
             <h2 className='text-2xl md:text-2xl font-bold text-eurotech-blue mb-6 text-center md:text-left'> </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
