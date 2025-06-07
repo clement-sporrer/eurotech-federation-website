@@ -135,14 +135,14 @@ const About = () => {
       role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/pasha-rizali/",
-      image: ""
+      image: "/1711452305229.jpeg"
     },
     {
       name: "Andrea Procopio",
       role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/procopioandrea/",
-      image: ""
+      image: "/WhatsApp Image 2025-06-04 at 04.32.53.jpeg"
     },
     {
       name: "Enguerrand Perrine",
@@ -163,7 +163,7 @@ const About = () => {
       role: "Founding Fellow",
       university: "",
       linkedin: "https://www.linkedin.com/in/tobias-kotzian/",
-      image: ""
+      image: "/1726684966783.jpeg"
     }
   ];
 
