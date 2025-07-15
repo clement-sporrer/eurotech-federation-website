@@ -20,6 +20,16 @@ model Application {
   answers   Json
 }
 
+model Fellow {
+  id        String @id @default(uuid())
+  createdAt DateTime @default(now())
+  fullName  String
+  country   String
+  linkedin  String
+  photo     String?
+  isActive  Boolean @default(true)
+}
+
 enum ApplicationStatus {
   PENDING
   ACCEPTED

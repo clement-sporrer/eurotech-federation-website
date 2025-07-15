@@ -11,7 +11,7 @@ export const universities: Partner[] = [
 ];
 
 export const companies: Partner[] = [
-  { name: "Kima Ventures", logo: "/kima_ventures.png" },
-  { name: "Raise Summit", logo: "/raise_summit.svg" },
+  { name: "Kima Ventures", logo: "/companies/kima_ventures.png" },
+  { name: "Raise Summit", logo: "/companies/raise_summit.svg" },
   { name: "More Coming Soon", logo: "/more.png" },
 ]; 

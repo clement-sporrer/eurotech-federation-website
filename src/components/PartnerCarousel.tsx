@@ -60,21 +60,21 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
           {partners.map((partner, index) => (
             <CarouselItem key={index} className={itemsPerView}>
               <Link href={buttonLink || '#'} className="block h-full">
-                <div className="group flex justify-center items-center p-6 h-full rounded-xl transition-all duration-300">
+                <div className="group flex justify-center items-center p-8 h-full rounded-xl transition-all duration-300">
                   <Image 
                     src={partner.logo} 
                     alt={partner.name} 
-                    width={64}
-                    height={64}
-                    className="h-12 md:h-16 object-contain group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" 
+                    width={128}
+                    height={96}
+                    className="h-20 md:h-24 lg:h-28 object-contain group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" 
                   />
                 </div>
               </Link>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-0 hidden sm:flex" />
-        <CarouselNext className="right-0 hidden sm:flex" />
+        <CarouselPrevious className="left-0 hidden sm:flex bg-eurotech-gray/10 border-eurotech-gray/20 text-eurotech-blue hover:bg-eurotech-gray/20 hover:text-eurotech-blue" />
+        <CarouselNext className="right-0 hidden sm:flex bg-eurotech-gray/10 border-eurotech-gray/20 text-eurotech-blue hover:bg-eurotech-gray/20 hover:text-eurotech-blue" />
       </Carousel>
       
       {/* Set up autoplay using useEffect */}

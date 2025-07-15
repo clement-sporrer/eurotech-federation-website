@@ -5,6 +5,15 @@
     --background: #ffffff;
     --foreground: #171717;
     
+    /* Couleurs EuroTech personnalisées */
+    --eurotech-blue: #123192;
+    --eurotech-accent: #5CBBF6;
+    --eurotech-lightblue: #4285F4;
+    --eurotech-gray: #f5f3ed;
+    --eurotech-bg: #f5f3ed;
+    --eurotech-dark: #0F2557;
+    --eurotech-light: #E8F4FD;
+    
     /* Radix UI variables */
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
@@ -40,13 +49,6 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    
-    /* EuroTech colors variables */
-    --eurotech-blue: #123192;
-    --eurotech-accent: #5CBBF6;
-    --eurotech-gray: #f5f3ed;
-    --eurotech-dark: #0F2557;
-    --eurotech-light: #E8F4FD;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -95,6 +97,11 @@
     color: var(--foreground);
     font-family: Inter, system-ui, sans-serif;
   }
+
+  .font-heading {
+    font-family: 'Geist', 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+  }
 }
 
 @layer components {
@@ -120,9 +127,131 @@
       padding-right: 2rem;
     }
   }
+
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+    }
+  }
+
+  .text-begin {
+    text-align: left;
+  }
+
+  .card-hover {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card-hover:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
 }
 
 @layer utilities {
+  /* Couleurs EuroTech personnalisées */
+  .bg-eurotech-blue {
+    background-color: var(--eurotech-blue);
+  }
+  
+  .bg-eurotech-accent {
+    background-color: var(--eurotech-accent);
+  }
+  
+  .bg-eurotech-lightblue {
+    background-color: var(--eurotech-lightblue);
+  }
+  
+  .bg-eurotech-gray {
+    background-color: var(--eurotech-gray);
+  }
+  
+  .bg-eurotech-bg {
+    background-color: var(--eurotech-bg);
+  }
+  
+  .bg-eurotech-dark {
+    background-color: var(--eurotech-dark);
+  }
+  
+  .bg-eurotech-light {
+    background-color: var(--eurotech-light);
+  }
+  
+  .text-eurotech-blue {
+    color: var(--eurotech-blue);
+  }
+  
+  .text-eurotech-accent {
+    color: var(--eurotech-accent);
+  }
+  
+  .text-eurotech-lightblue {
+    color: var(--eurotech-lightblue);
+  }
+  
+  .text-eurotech-gray {
+    color: var(--eurotech-gray);
+  }
+  
+  .text-eurotech-bg {
+    color: var(--eurotech-bg);
+  }
+  
+  .text-eurotech-dark {
+    color: var(--eurotech-dark);
+  }
+  
+  .text-eurotech-light {
+    color: var(--eurotech-light);
+  }
+  
+  .border-eurotech-blue {
+    border-color: var(--eurotech-blue);
+  }
+  
+  .border-eurotech-accent {
+    border-color: var(--eurotech-accent);
+  }
+  
+  .border-eurotech-lightblue {
+    border-color: var(--eurotech-lightblue);
+  }
+  
+  .hover\:bg-eurotech-accent:hover {
+    background-color: var(--eurotech-accent);
+  }
+  
+  .hover\:bg-eurotech-blue:hover {
+    background-color: var(--eurotech-blue);
+  }
+  
+  .hover\:bg-eurotech-lightblue:hover {
+    background-color: var(--eurotech-lightblue);
+  }
+  
+  .hover\:bg-eurotech-dark:hover {
+    background-color: var(--eurotech-dark);
+  }
+  
+  .hover\:text-eurotech-accent:hover {
+    color: var(--eurotech-accent);
+  }
+  
+  .hover\:text-eurotech-blue:hover {
+    color: var(--eurotech-blue);
+  }
+  
+  .hover\:text-eurotech-lightblue:hover {
+    color: var(--eurotech-lightblue);
+  }
+
   /* Animations personnalisées */
   @keyframes fadeIn {
     0% {
@@ -151,7 +280,7 @@
 
   /* Logo scroll animations */
   .logo-scroll-wrapper {
-    height: 600px;
+    height: 100%;
   }
 
   .logo-scroll-container {
@@ -163,9 +292,9 @@
   .logo-scroll-track {
     display: flex;
     flex-direction: column;
-    animation: logoScroll 20s linear infinite;
+    animation: logoScroll 35s linear infinite;
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 3rem 0;
   }
 
   .logo-item {
@@ -174,7 +303,10 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    opacity: 0.8;
   }
+
+  /* Suppression des animations CSS qui posaient problème */
 
   .logo-item:hover {
     transform: scale(1.05);
@@ -184,7 +316,7 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .logo-scroll-wrapper {
-      height: 400px;
+      height: 100%;
     }
     
     .logo-item {
@@ -194,44 +326,5 @@
     .logo-item img {
       height: 80px !important;
     }
-  }
-
-  /* Classes utilitaires personnalisées EuroTech */
-  .container-section {
-    max-width: 80rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media (min-width: 640px) {
-    .container-section {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container-section {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
-
-  .section-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    line-height: 1.25;
-  }
-
-  @media (min-width: 768px) {
-    .section-title {
-      font-size: 3rem;
-    }
-  }
-
-  .text-begin {
-    text-align: left;
   }
 }

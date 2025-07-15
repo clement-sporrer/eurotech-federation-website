@@ -14,8 +14,8 @@ const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
         ref={ref}
         className={cn(
           "text-lg px-6 py-6 transition-colors duration-300",
-          variant === 'primary' && "bg-eurotech-blue text-white hover:bg-eurotech-accent",
-          variant === 'secondary' && "bg-white text-eurotech-blue hover:bg-eurotech-accent hover:text-white",
+          variant === 'primary' && "bg-eurotech-blue text-eurotech-gray hover:bg-eurotech-accent",
+          variant === 'secondary' && "bg-eurotech-gray text-eurotech-blue hover:bg-eurotech-accent hover:text-eurotech-gray",
           className
         )}
         {...props}

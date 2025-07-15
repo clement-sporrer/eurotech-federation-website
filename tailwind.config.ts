@@ -1,59 +1,54 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
-export default {
-  darkMode: "class",
+const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px'
-      }
-    },
     extend: {
       colors: {
+        // Couleurs EuroTech personnalisées
+        'eurotech-blue': '#123192',
+        'eurotech-accent': '#5CBBF6',
+        'eurotech-gray': '#f5f3ed',
+        'eurotech-dark': '#0F2557',
+        'eurotech-light': '#E8F4FD',
+        
+        // Variables Radix UI pour les composants
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
+          foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
+          foreground: 'hsl(var(--destructive-foreground))',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
+          foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
+          foreground: 'hsl(var(--accent-foreground))',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
+          foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
           DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
+          foreground: 'hsl(var(--card-foreground))',
         },
         sidebar: {
           DEFAULT: 'hsl(var(--sidebar-background))',
@@ -63,91 +58,44 @@ export default {
           accent: 'hsl(var(--sidebar-accent))',
           'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
           border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))'
+          ring: 'hsl(var(--sidebar-ring))',
         },
-        // EuroTech colors - utilisation des variables CSS
-        'eurotech-blue': 'var(--eurotech-blue)',
-        'eurotech-accent': 'var(--eurotech-accent)', 
-        'eurotech-gray': 'var(--eurotech-gray)',
-        'eurotech-dark': 'var(--eurotech-dark)',
-        'eurotech-light': 'var(--eurotech-light)'
-      },
-      fontFamily: {
-        sans: ['Inter', 'var(--font-geist-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-geist-mono)', 'monospace'],
-        heading: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
-      },
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' }
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' }
-        },
-        fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(40px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        logoScroll: {
-          '0%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(-50%)' },
-        },
-        'fade-in': {
-          '0%': {
-            opacity: '0',
-            transform: 'translateY(10px)'
-          },
-          '100%': {
-            opacity: '1',
-            transform: 'translateY(0)'
-          }
-        },
-        'fade-out': {
-          '0%': {
-            opacity: '1',
-            transform: 'translateY(0)'
-          },
-          '100%': {
-            opacity: '0',
-            transform: 'translateY(10px)'
-          }
-        },
-        'float': {
-          '0%, 100%': {
-            transform: 'translateY(0)'
-          },
-          '50%': {
-            transform: 'translateY(-10px)'
-          }
-        }
+        sm: 'calc(var(--radius) - 4px)',
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in': 'fade-in 0.8s ease-out forwards',
-        'fade-out': 'fade-out 0.3s ease-out',
-        'slide-up': 'slideUp 0.8s ease-out forwards',
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
         'logo-scroll': 'logoScroll 20s linear infinite',
-        'float': 'float 3s ease-in-out infinite'
       },
-      backgroundImage: {
-        'hero-pattern': 'linear-gradient(90deg, rgba(31,75,154,0.9) 0%, rgba(92,187,246,0.8) 100%)',
-        'gradient-blue': 'linear-gradient(90deg, #1F4B9A 0%, #5CBBF6 100%)',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'circuit-pattern': 'url("/public/lovable-uploads/987b295b-2e7d-4c36-a6d1-e9bc43844786.png")'
-      }
+      scale: {
+        '102': '1.02',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        logoScroll: {
+          '0%': {
+            transform: 'translateY(0)',
+          },
+          '100%': {
+            transform: 'translateY(-50%)',
+          },
+        },
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+  plugins: [],
+}
+
+export default config
